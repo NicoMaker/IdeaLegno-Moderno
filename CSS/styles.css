@@ -1742,3 +1742,62 @@ h6 {
 .footer-future-closures-item:last-child {
   border-bottom: none;
 }
+
+
+/* ============================================================
+   FIX DEFINITIVO – Rimuove TUTTO lo spazio bianco tra titolo e badge
+   ============================================================ */
+
+/* 1. Nasconde il paragrafo descrizione vuoto, annulla margini/padding */
+.Progetti-card .descrizione:empty {
+  display: none !important;
+}
+
+.Progetti-card .descrizione {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  flex: 0 0 0 !important;   /* rimuove il flex-grow */
+}
+
+/* 2. Riduce il gap tra gli elementi della card */
+.Progetti-card .Progetti-card-content {
+  gap: 0.25rem !important;
+  justify-content: flex-start !important;
+}
+
+/* 3. Rimuove il margine superiore automatico che spingeva i badge in basso */
+.Progetti-card .categoria-badges-wrapper {
+  margin-top: 0.1rem !important;
+  padding-top: 0 !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* 4. (Facoltativo) Stessa cosa per le card delle novità */
+.novita-card .descrizione:empty {
+  display: none !important;
+}
+
+.novita-card .descrizione {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  flex: 0 0 0 !important;
+}
+
+.novita-card .Progetti-card-content {
+  gap: 0.25rem !important;
+  justify-content: flex-start !important;
+}
+
+.novita-card .categoria-badges-wrapper {
+  margin-top: 0.1rem !important;
+  padding-top: 0 !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}

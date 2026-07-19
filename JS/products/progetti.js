@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
       filtered = filtered.filter(
         (p) =>
           p.nome.toLowerCase().includes(term) ||
-          p.descrizione.toLowerCase().includes(term) ||
           p.categorie.some((c) => c.toLowerCase().includes(term)),
       );
     }
@@ -148,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="Progetti-card-content">
         <h3 class="nome">${item.nome}</h3>
-        <p class="descrizione">${item.descrizione}</p>
         ${categoriaHtml}
       </div>
     `;
