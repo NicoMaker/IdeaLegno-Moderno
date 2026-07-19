@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../CSS/product-page.css" />
     <link rel="stylesheet" href="../CSS/category-colors.css" />
     <link rel="stylesheet" href="../CSS/extra-animations.css" />
+    <link rel="stylesheet" href="../CSS/project-gallery.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -88,50 +89,75 @@
       </div>
     </header>
 
-    <main class="product-detail-container">
-      <div class="product-detail-card">
-        <div class="product-image-gallery">
-          <div class="slider-container">
-            <div class="slide">
-              <img
-                src="Img/Home/Vineria_Parete/Parete1.jpg"
-                alt="Vineria a Parete - Vista 1"
-                class="main-product-image"
-              />
-            </div>
-            <div class="slide" style="display: none">
-              <img
-                src="Img/Home/Vineria_Parete/Parete2.jpg"
-                alt="Vineria a Parete - Vista 2"
-                class="main-product-image"
-                loading="lazy"
-              />
-            </div>
-            <div class="slide" style="display: none">
-              <img
-                src="Img/Home/Vineria_Parete/Vineria.gif"
-                alt="Vineria a Parete - Vista 3"
-                class="main-product-image"
-                loading="lazy"
-              />
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <main class="product-detail-container project-view">
+      <div class="project-hero">
+        <div class="product-breadcrumb"></div>
+        <h1 class="product-title">Vineria a Parete</h1>
+        <div class="product-category" id="product-category-badges"></div>
+      </div>
+
+      <div class="product-image-gallery">
+        <div class="slider-container">
+          <div class="slide">
+            <img src="Img/Home/Vineria_Parete/Parete1.jpg" alt="" aria-hidden="true" class="slide-bg" />
+            <img
+              src="Img/Home/Vineria_Parete/Parete1.jpg"
+              alt="Vineria a Parete - Vista 1"
+              class="main-product-image"
+            />
           </div>
-          <div class="dots-container" style="text-align: center"></div>
+          <div class="slide" style="display: none">
+            <img src="Img/Home/Vineria_Parete/Parete2.jpg" alt="" aria-hidden="true" class="slide-bg" loading="lazy" />
+            <img
+              src="Img/Home/Vineria_Parete/Parete2.jpg"
+              alt="Vineria a Parete - Vista 2"
+              class="main-product-image"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide" style="display: none">
+            <img src="Img/Home/Vineria_Parete/Vineria.gif" alt="" aria-hidden="true" class="slide-bg" loading="lazy" />
+            <img
+              src="Img/Home/Vineria_Parete/Vineria.gif"
+              alt="Vineria a Parete - Vista 3"
+              class="main-product-image"
+              loading="lazy"
+            />
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-
-        <div class="product-info">
-          <div class="product-breadcrumb"></div>
-
-          <h1 class="product-title">Vineria a Parete</h1>
-          <div class="product-category" id="product-category-badges"></div>
-
-          <a href="../index.html#Prodotti" class="back-button">
-            <span class="material-icons">arrow_back</span>
-            Torna a tutti i progetti
-          </a>
+        <div class="dots-container" style="text-align: center"></div>
+        <div class="gallery-thumbs">
+          <button
+            class="gallery-thumb"
+            type="button"
+            aria-label="Vai alla foto 1"
+          >
+            <img src="Img/Home/Vineria_Parete/Parete1.jpg" alt="" loading="lazy" />
+          </button>
+          <button
+            class="gallery-thumb"
+            type="button"
+            aria-label="Vai alla foto 2"
+          >
+            <img src="Img/Home/Vineria_Parete/Parete2.jpg" alt="" loading="lazy" />
+          </button>
+          <button
+            class="gallery-thumb"
+            type="button"
+            aria-label="Vai alla foto 3"
+          >
+            <img src="Img/Home/Vineria_Parete/Vineria.gif" alt="" loading="lazy" />
+          </button>
         </div>
+      </div>
+
+      <div class="back-button-row">
+        <a href="../index.html#Prodotti" class="back-button">
+          <span class="material-icons">arrow_back</span>
+          Torna a tutti i progetti
+        </a>
       </div>
     </main>
 
@@ -150,6 +176,7 @@
     <script src="../JS/shared/category-colors.js"></script>
     <script src="../JS/product/product-page.js"></script>
     <script src="../JS/product/slider.js"></script>
+    <script src="../JS/product/gallery-enhance.js"></script>
     <script src="../JS/ui/mobile-menu.js"></script>
     <script src="../JS/footer/date-utils.js"></script>
     <script src="../JS/footer/Gestisci_chiusure.js"></script>

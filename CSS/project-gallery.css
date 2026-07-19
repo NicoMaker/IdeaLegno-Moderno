@@ -1,0 +1,231 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROJECT-GALLERY.CSS — IdeaLegno
+   Layout delle pagine progetto centrato sulle immagini:
+   intestazione centrata (breadcrumb, titolo, badge), grande galleria con
+   sfondo sfumato dell'immagine stessa, miniature cliccabili, pulsante
+   di ritorno centrato. Nessun testo aggiuntivo.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.project-view {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2.5rem) 1rem 4rem;
+}
+
+/* ── Intestazione centrata ── */
+.project-hero {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.project-view .product-breadcrumb {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.project-view .product-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--ash-darkest, #5c4a3a);
+  margin: 0 0 0.9rem;
+  line-height: 1.15;
+}
+
+.project-view .product-title::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 0.7rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-warm, #bf8b67),
+    var(--accent-rust, #a0522d)
+  );
+}
+
+.project-view .product-category {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.project-view .categoria-badges-wrapper {
+  justify-content: center;
+  margin: 0;
+}
+
+/* ── Galleria ── */
+.project-view .product-image-gallery {
+  width: 100%;
+}
+
+.project-view .slider-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--ash-darkest, #5c4a3a);
+  box-shadow: 0 24px 60px -24px rgba(44, 36, 22, 0.5);
+}
+
+.project-view .slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sfondo: la stessa foto sfocata riempie tutto il riquadro */
+.project-view .slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(26px) saturate(1.08) brightness(0.85);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+/* Foto principale: sempre intera e centrata */
+.project-view .main-product-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: min(62vh, 620px);
+  min-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 0;
+}
+
+/* Frecce più eleganti sopra lo sfondo scuro */
+.project-view .slider-container .prev,
+.project-view .slider-container .next {
+  z-index: 2;
+  background: rgba(255, 248, 231, 0.92) !important;
+  color: var(--ash-darkest, #5c4a3a) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.project-view .slider-container .prev:hover,
+.project-view .slider-container .next:hover {
+  background: var(--accent-warm, #bf8b67) !important;
+  color: #fff !important;
+}
+
+/* ── Pallini ── */
+.project-view .dots-container {
+  margin-top: 0.9rem;
+}
+
+/* ── Miniature ── */
+.gallery-thumbs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.25rem 0.25rem 0.6rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-thumbs::-webkit-scrollbar-thumb {
+  background: var(--ash-medium, #c9b99b);
+  border-radius: 6px;
+}
+
+.gallery-thumb {
+  flex: 0 0 auto;
+  width: 86px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--ash-light, #e8dcc8);
+  opacity: 0.65;
+  transition:
+    opacity 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-thumb:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--accent-rust, #a0522d);
+  box-shadow: 0 6px 16px -6px rgba(160, 82, 45, 0.55);
+}
+
+/* Poche miniature: centrale */
+.gallery-thumbs.few {
+  justify-content: center;
+}
+
+/* ── Pulsante di ritorno centrato ── */
+.project-view .back-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .project-view .main-product-image {
+    height: 52vh;
+    min-height: 260px;
+  }
+
+  .gallery-thumb {
+    width: 70px;
+    height: 52px;
+  }
+}
+
+/* ── Entrata animata (riusa il keyframe riseIn di modern.css) ── */
+html.anim .project-hero {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: riseIn 0.9s var(--ease-out) 0.1s forwards;
+}
+
+html.anim .back-button-row {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: riseIn 0.9s var(--ease-out) 0.5s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.anim .project-hero,
+  html.anim .back-button-row {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.gallery-thumbs{
+  display: none;
+}
