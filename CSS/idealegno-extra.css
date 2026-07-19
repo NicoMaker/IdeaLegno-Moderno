@@ -1,0 +1,165 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   idealegno-extra.css — Stili aggiuntivi specifici IdeaLegno
+   (sezione Riconoscimenti + Cookie Banner)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Sezione Riconoscimenti ────────────────────────────────────────────────── */
+.riconoscimenti-section {
+  background: linear-gradient(
+    180deg,
+    var(--ash-lightest, #f5f1e8) 0%,
+    var(--accent-cream, #fff8e7) 100%
+  );
+}
+
+.riconoscimenti-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.riconoscimento-card {
+  margin: 0;
+  max-width: 720px;
+  width: 100%;
+  background: var(--surface, #fff);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44, 36, 22, 0.12);
+  border: 1px solid var(--gray-medium, #d4cfc5);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.riconoscimento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(44, 36, 22, 0.2);
+}
+
+.riconoscimento-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.riconoscimento-card figcaption {
+  padding: 1rem 1.25rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ash-darkest, #5c4a3a);
+  text-align: center;
+  background: var(--accent-cream, #fff8e7);
+  border-top: 3px solid var(--accent-warm, #bf8b67);
+}
+
+/* ── Cookie Banner ─────────────────────────────────────────────────────────── */
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translate(-50%, 150%);
+  width: min(680px, calc(100% - 2rem));
+  background: var(--ash-darkest, #5c4a3a);
+  color: var(--accent-cream, #fff8e7);
+  padding: 1.1rem 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  z-index: 3000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.cookie-banner.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex: 1 1 320px;
+}
+
+.cookie-banner .iubenda-link {
+  color: var(--accent-warm, #bf8b67);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.cookie-btn {
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent-warm, #bf8b67);
+  color: #fff;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cookie-btn:hover {
+  background: var(--accent-rust, #a0522d);
+  transform: translateY(-2px);
+}
+
+.cookie-btn.decline {
+  background: transparent;
+  color: var(--accent-cream, #fff8e7);
+  border: 1px solid rgba(255, 248, 231, 0.5);
+}
+
+.cookie-btn.decline:hover {
+  background: rgba(255, 248, 231, 0.12);
+}
+
+.cookie-btn.revoke {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2500;
+  display: none;
+  font-size: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ash-dark, #8b7355);
+  opacity: 0.85;
+}
+
+.cookie-btn.revoke:hover {
+  opacity: 1;
+  background: var(--ash-darkest, #5c4a3a);
+}
+
+@media (max-width: 600px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .cookie-buttons {
+    justify-content: center;
+  }
+}

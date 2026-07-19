@@ -1,0 +1,82 @@
+{
+  "info": {
+    "titolo": "IdeaLegno di Paolo Bomben",
+    "testo": "Arredamento su misura per casa, negozi e settore nautico",
+    "p_iva": "01840490930"
+  },
+  "contatti": {
+    "telefono": "+39 3356508231",
+    "email": "paolobomben81@gmail.com",
+    "indirizzo": "https://www.google.com/maps/search/?api=1&query=Idealegno+di+Paolo+Bomben+Via+Castellana+8+Castions+di+Zoppola",
+    "indirizzo_visuale": "Via Castellana 8, 33080 Castions di Zoppola (PN)"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/idealegnodipaolobomben",
+    "instagram": "https://www.instagram.com/idealegno81?igsh=MTE2NHllcm85M2xiNA=="
+  },
+  "mappa": {
+    "latitudine": 45.9422,
+    "longitudine": 12.7655
+  },
+  "nomiGiorni": [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato"
+  ],
+
+  "orari": [
+    "Lunedì: 8:00 - 12:00 / 13:30 - 18:00",
+    "Martedì: 8:00 - 12:00 / 13:30 - 18:00",
+    "Mercoledì: 8:00 - 12:00 / 13:30 - 18:00",
+    "Giovedì: 8:00 - 12:00 / 13:30 - 18:00",
+    "Venerdì: 8:00 - 12:00 / 13:30 - 18:00",
+    "Sabato: Su appuntamento",
+    "Domenica: Chiuso"
+  ],
+
+  "orariStagionali": [],
+
+  "minutiInChiusura": 30,
+
+  "cambioStagione": {
+    "meseEstivo": 3,
+    "meseInvernale": 10
+  },
+
+  "legendaOrari": {
+    "titolo": "Legenda",
+    "colori": {
+      "aperto": "#00FF7F",
+      "in apertura": "#90EE90",
+      "in chiusura": "yellow",
+      "chiuso": "orange"
+    },
+    "testo": {
+      "aperto": "Aperto",
+      "in apertura": "In apertura",
+      "in chiusura": "In chiusura",
+      "chiuso": "Chiuso"
+    }
+  },
+
+  "festivita": [
+    "01/01",
+    "06/01",
+    "25/04",
+    "01/05",
+    "02/06",
+    "15/08",
+    "01/11",
+    "08/12",
+    "25/12",
+    "26/12"
+  ],
+
+  "chiusure": [{ "tipo": "giorno", "data": "", "motivo": "" }],
+
+  "orariExtra": [{ "giorno": "", "orari": "", "motivo": "" }]
+}

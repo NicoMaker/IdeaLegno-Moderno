@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camerette - IdeaLegno</title>
+    <meta
+      name="description"
+      content="Camerette: progetto di arredamento su misura realizzato da IdeaLegno di Paolo Bomben."
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/custom-styles.css" />
+    <link rel="stylesheet" href="../CSS/product-page.css" />
+    <link rel="stylesheet" href="../CSS/category-colors.css" />
+    <link rel="stylesheet" href="../CSS/extra-animations.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../Img/IDEALEGNO.jpg" />
+    <script>
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("anim");
+    </script>
+    <link rel="stylesheet" href="../CSS/modern.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <div class="logo-container">
+          <a href="../index.html" class="logo-link">
+            <img src="../Img/IDEALEGNO.jpg" alt="IdeaLegno" class="logo" />
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="../index.html#Home" class="nav-link">Home</a></li>
+            <li><a href="../index.html#storia" class="nav-link">Storia</a></li>
+            <li>
+              <a href="../index.html#Prodotti" class="nav-link">Progetti</a>
+            </li>
+            <li>
+              <a href="../index.html#Riconoscimenti" class="nav-link"
+                >Riconoscimenti</a
+              >
+            </li>
+            <li><a href="#Contatti" class="nav-link">Contatti</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+          <li>
+            <a href="../index.html#Home" class="mobile-nav-link">Home</a>
+          </li>
+          <li>
+            <a href="../index.html#storia" class="mobile-nav-link">Storia</a>
+          </li>
+          <li>
+            <a href="../index.html#Prodotti" class="mobile-nav-link"
+              >Progetti</a
+            >
+          </li>
+          <li>
+            <a href="../index.html#Riconoscimenti" class="mobile-nav-link"
+              >Riconoscimenti</a
+            >
+          </li>
+          <li>
+            <a href="#Contatti" class="mobile-nav-link">Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="product-detail-container">
+      <div class="product-detail-card">
+        <div class="product-image-gallery">
+          <div class="slider-container">
+            <div class="slide">
+              <img
+                src="Img/Home/Cameretta/Cameretta1.jpg"
+                alt="Camerette - Vista 1"
+                class="main-product-image"
+              />
+            </div>
+            <div class="slide" style="display: none">
+              <img
+                src="Img/Home/Cameretta/Cameretta2.jpg"
+                alt="Camerette - Vista 2"
+                class="main-product-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="slide" style="display: none">
+              <img
+                src="Img/Home/Cameretta/Cameretta3.jpg"
+                alt="Camerette - Vista 3"
+                class="main-product-image"
+                loading="lazy"
+              />
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <div class="dots-container" style="text-align: center"></div>
+        </div>
+
+        <div class="product-info">
+          <div class="product-breadcrumb"></div>
+
+          <h1 class="product-title">Camerette</h1>
+          <div class="product-category" id="product-category-badges"></div>
+
+          <a href="../index.html#Prodotti" class="back-button">
+            <span class="material-icons">arrow_back</span>
+            Torna a tutti i progetti
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer id="Contatti" class="site-footer">
+      <!-- Il contenuto del footer verrà generato dinamicamente da footer.js -->
+    </footer>
+
+    <!-- ===== CARICA BREADCRUMB PER PRIMO ===== -->
+    <script src="../JS/ui/breadcrumb.js"></script>
+
+    <!-- Gli altri script -->
+    <script src="../JS/shared/json-paths.js"></script>
+    <script src="../JS/shared/json-config.js"></script>
+    <script src="../JS/shared/app-config.js"></script>
+    <script src="../JS/shared/json-loader.js"></script>
+    <script src="../JS/shared/category-colors.js"></script>
+    <script src="../JS/product/product-page.js"></script>
+    <script src="../JS/product/slider.js"></script>
+    <script src="../JS/ui/mobile-menu.js"></script>
+    <script src="../JS/footer/date-utils.js"></script>
+    <script src="../JS/footer/Gestisci_chiusure.js"></script>
+    <script src="../JS/footer/gestisci_apertura.js"></script>
+    <script src="../JS/footer/mappa.js"></script>
+    <script src="../JS/footer/creazione_html.js"></script>
+    <script src="../JS/footer/aggiorna-orari.js"></script>
+    <script src="../JS/footer/config.js"></script>
+    <script src="../JS/ui/modern-animations.js"></script>
+    <script src="../JS/ui/extra-animations.js"></script>
+  </body>
+</html>

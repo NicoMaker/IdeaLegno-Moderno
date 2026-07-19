@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IdeaLegno | Arredamento su Misura per Casa, Negozi e Yacht</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Scopri IdeaLegno: arredamenti artigianali su misura per la casa, negozi e imbarcazioni. Design italiano, qualità artigianale e innovazione."
+    />
+    <meta
+      name="keywords"
+      content="arredamento su misura, falegnameria artigianale, mobili personalizzati, design interni, arredamento yacht, negozi arredati, mobili legno, IdeaLegno"
+    />
+    <meta name="author" content="IdeaLegno di Paolo Bomben" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.idealegnofvg.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.idealegnofvg.com/" />
+    <meta property="og:title" content="IdeaLegno | Arredamenti su Misura" />
+    <meta
+      property="og:description"
+      content="Progetti unici di arredamento per case, negozi e settore nautico. Qualità artigianale e design italiano."
+    />
+    <meta
+      property="og:image"
+      content="https://www.idealegnofvg.com/Img/IDEALEGNO.jpg"
+    />
+    <meta property="og:image:alt" content="Logo IdeaLegno" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.idealegnofvg.com/" />
+    <meta name="twitter:title" content="IdeaLegno | Arredamento su Misura" />
+    <meta
+      name="twitter:description"
+      content="Scopri le soluzioni artigianali di arredamento su misura per ogni ambiente."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.idealegnofvg.com/Img/IDEALEGNO.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Img/IDEALEGNO.jpg" />
+    <link rel="apple-touch-icon" href="Img/IDEALEGNO.jpg" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IdeaLegno",
+        "url": "https://www.idealegnofvg.com/",
+        "logo": "https://www.idealegnofvg.com/Img/IDEALEGNO.jpg",
+        "description": "Arredamento su misura per case, negozi e settore navale.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Via Castellana 8",
+          "addressLocality": "Castions di Zoppola",
+          "postalCode": "33080",
+          "addressRegion": "PN",
+          "addressCountry": "IT"
+        }
+      }
+    </script>
+
+    <!-- Font e CSS -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/custom-styles.css" />
+    <link rel="stylesheet" href="CSS/category-colors.css" />
+    <link rel="stylesheet" href="CSS/idealegno-extra.css" />
+    <link rel="stylesheet" href="CSS/extra-animations.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("anim");
+    </script>
+    <link rel="stylesheet" href="CSS/modern.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="logo-container">
+          <a href="#Home" class="logo-link">
+            <img src="Img/IDEALEGNO.jpg" alt="IdeaLegno" class="logo" />
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#Home" class="nav-link">Home</a></li>
+            <li><a href="#storia" class="nav-link">Storia</a></li>
+            <li><a href="#Prodotti" class="nav-link">Progetti</a></li>
+            <li>
+              <a href="#Riconoscimenti" class="nav-link">Riconoscimenti</a>
+            </li>
+            <li><a href="#Contatti" class="nav-link">Contatti</a></li>
+          </ul>
+        </nav>
+
+        <button class="mobile-menu-toggle" aria-label="Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+          <li>
+            <a href="#Home" class="mobile-nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#storia" class="mobile-nav-link">Storia</a>
+          </li>
+          <li>
+            <a href="#Prodotti" class="mobile-nav-link">Progetti</a>
+          </li>
+          <li>
+            <a href="#Riconoscimenti" class="mobile-nav-link">Riconoscimenti</a>
+          </li>
+          <li>
+            <a href="#Contatti" class="mobile-nav-link">Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="Home" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <!-- Banner Chiusure Dinamico -->
+        <div
+          id="hero-closure-banner"
+          class="hero-closure-banner"
+          style="display: none"
+        >
+          <span>🔴</span>
+          <span id="hero-closure-text"></span>
+        </div>
+        <h1 class="hero-title">Arredamento su Misura</h1>
+        <p class="hero-subtitle">
+          La tradizione del falegname unita all'innovazione delle moderne
+          tecnologie
+        </p>
+        <div class="hero-cta-container">
+          <a href="#Prodotti" class="cta-button">Scopri i Nostri Progetti</a>
+        </div>
+        <a
+          href="#storia"
+          class="scroll-down-arrow"
+          aria-label="Scorri verso la storia"
+        >
+          <span class="material-icons">keyboard_arrow_down</span>
+        </a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="Projects/Img/Home/Scala/Scala/Scala1.jpg"
+          alt="Scala in legno realizzata su misura da IdeaLegno"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="storia" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img
+              src="Img/Immagine.jpg"
+              alt="Arredamento su misura realizzato da IdeaLegno"
+            />
+          </div>
+          <div class="about-content">
+            <h2 class="section-title">La Nostra Storia</h2>
+            <div class="about-text">
+              <p>
+                Con la nostra passione per il legno, unita alla precisione nella
+                progettazione, ogni angolo del tuo ambiente domestico sarà reso
+                unico ed esattamente come lo desideri tu.
+                <br />
+                La nostra impresa artigiana, fondata e tutt'ora guidata da Paolo
+                Bomben, è in grado di unire la tradizione del mestiere di
+                falegname all'innovazione delle moderne tecnologie.
+              </p>
+              <button class="more-info-btn" data-target="more-info-1">
+                <span class="btn-text">Scopri di più</span>
+                <span class="material-icons btn-icon">expand_more</span>
+              </button>
+              <div class="more-info-content" id="more-info-1">
+                <p>
+                  Fondata nel 2018, IdeaLegno ha sempre mantenuto viva la
+                  tradizione artigianale italiana, combinandola con le più
+                  moderne tecnologie di lavorazione del legno. La nostra
+                  esperienza pluridecennale ci permette di affrontare ogni
+                  progetto con competenza e creatività.
+                  <br />
+                  Attraverso un'attenta e precisa progettazione delle idee,
+                  realizziamo arredamento su misura per abitazioni, attività
+                  commerciali e settore navale. L'arredo da noi creato è unico e
+                  rispecchia appieno la tua personalità e le tue esigenze.
+                  <br />
+                  Utilizziamo solo legni pregiati e materiali di alta qualità,
+                  selezionati con cura per garantire durabilità e bellezza nel
+                  tempo. La nostra attenzione per i dettagli si riflette in ogni
+                  fase della lavorazione, dalla scelta delle essenze alla
+                  finitura finale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">home</span>
+            </div>
+            <h3>Arredamento Domestico</h3>
+            <p>Cucine, soggiorni, camere da letto e bagni su misura per la tua casa</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">store</span>
+            </div>
+            <h3>Arredamento Commerciale</h3>
+            <p>Soluzioni personalizzate per negozi, uffici e spazi commerciali</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <span class="material-icons">sailing</span>
+            </div>
+            <h3>Settore Navale</h3>
+            <p>Arredamenti di lusso per yacht e imbarcazioni di ogni dimensione</p>
+          </div>
+        </div>
+        <div class="stats-strip">
+          <div class="stat-item">
+            <div class="stat-value" data-count="8">0</div>
+            <div class="stat-label">Anni di attività</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="15" data-suffix="+">0</div>
+            <div class="stat-label">Progetti in vetrina</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="3">0</div>
+            <div class="stat-label">Settori: casa, negozi, nautica</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" data-count="100" data-suffix="%">0</div>
+            <div class="stat-label">Su misura</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Products / Progetti Section -->
+    <section id="Prodotti" class="products-section">
+      <div class="container">
+        <h2 class="section-title">I Nostri Progetti</h2>
+
+        <!-- Sticky Controls Container -->
+        <div id="product-controls-sticky" class="product-controls-sticky">
+          <!-- Search Bar -->
+          <div class="search-container">
+            <div class="search-input-wrapper">
+              <input
+                type="text"
+                id="search-progetti"
+                placeholder="Cerca progetti..."
+                class="search-input"
+              />
+            </div>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="filter-container">
+            <!-- I pulsanti di filtro verranno generati dinamicamente da progetti.js -->
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="progetti-container pc-view"></div>
+      </div>
+    </section>
+
+    <!-- Riconoscimenti Section -->
+    <section id="Riconoscimenti" class="products-section riconoscimenti-section">
+      <div class="container">
+        <h2 class="section-title">I Nostri Riconoscimenti</h2>
+        <p class="section-subtitle">
+          La qualità del nostro lavoro premiata sul territorio
+        </p>
+        <div class="riconoscimenti-grid">
+          <figure class="riconoscimento-card">
+            <img
+              src="News/Img/PREMIAZIONI_2024.jpg"
+              alt="Premiazioni 2024 - IdeaLegno"
+              loading="lazy"
+            />
+            <figcaption>Premiazioni 2024</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="Contatti" class="site-footer">
+      <!-- Il contenuto del footer verrà generato dinamicamente da footer.js -->
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+      <p>
+        Questo sito utilizza i cookie per migliorare l'esperienza utente.
+        Continuando la navigazione, accetti il loro utilizzo.
+        <a href="Cookies/Cookie.html" class="iubenda-link" target="_blank"
+          >Leggi di più</a
+        >
+      </p>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-btn">Accetta</button>
+        <button id="decline-cookies" class="cookie-btn decline">Rifiuta</button>
+      </div>
+    </div>
+
+    <!-- Pulsante per modificare le preferenze -->
+    <button id="revoke-cookies" class="cookie-btn revoke">
+      Modifica preferenze cookie
+    </button>
+
+    <!-- Scripts -->
+    <script src="JS/shared/json-paths.js"></script>
+    <script src="JS/shared/json-config.js"></script>
+    <script src="JS/shared/app-config.js"></script>
+    <script src="JS/shared/json-loader.js"></script>
+    <script src="JS/shared/category-colors.js"></script>
+    <script src="JS/data/products-section-config.js"></script>
+    <script src="JS/data/products-loader.js"></script>
+    <script src="JS/ui/mobile-menu.js"></script>
+    <script src="JS/ui/more-info-story.js"></script>
+    <script src="JS/ui/active-section.js"></script>
+    <script src="JS/products/progetti.js"></script>
+    <script src="JS/ui/sticky-controls.js"></script>
+    <script src="JS/ui/cookie-banner.js"></script>
+
+    <!-- Script per banner chiusure hero (DEVE ESSERE DOPO json-loader) -->
+    <script src="JS/ui/closure-banner.js"></script>
+
+    <!-- Footer scripts (ordine obbligatorio) -->
+    <script src="JS/footer/date-utils.js"></script>
+    <script src="JS/footer/Gestisci_chiusure.js"></script>
+    <script src="JS/footer/gestisci_apertura.js"></script>
+    <script src="JS/footer/mappa.js"></script>
+    <script src="JS/footer/creazione_html.js"></script>
+    <script src="JS/footer/aggiorna-orari.js"></script>
+    <script src="JS/footer/config.js"></script>
+    <script src="JS/ui/modern-animations.js"></script>
+    <script src="JS/ui/extra-animations.js"></script>
+  </body>
+</html>

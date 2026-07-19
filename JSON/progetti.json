@@ -1,0 +1,155 @@
+{
+  "Prodotti": [
+    {
+      "nome": "Scale",
+      "descrizione": "Scale in legno su misura, progettate e realizzate artigianalmente per adattarsi perfettamente ai tuoi spazi.",
+      "immagine": "Projects/Img/Home/Scala/Scala/Scala1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/scale.html"
+    },
+    {
+      "nome": "Scale con cassetto",
+      "descrizione": "Scale con cassetti integrati: ogni gradino diventa uno spazio contenitore, unendo funzionalità e design.",
+      "immagine": "Projects/Img/Home/Scala/Scala_Cassetto/Scala1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/scale-con-cassetto.html"
+    },
+    {
+      "nome": "Scale ellittiche",
+      "descrizione": "Scale ellittiche dalle linee curve ed eleganti, un elemento scultoreo che valorizza l'ambiente.",
+      "immagine": "Projects/Img/Home/Scala/Scala_Ellittica/Scala1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/scale-ellittiche.html"
+    },
+    {
+      "nome": "Vineria a Parete",
+      "descrizione": "Vineria a parete su misura per esporre e conservare le tue bottiglie con stile.",
+      "immagine": "Projects/Img/Home/Vineria_Parete/Parete1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/vineria-a-parete.html"
+    },
+    {
+      "nome": "Pareti Luminose",
+      "descrizione": "Pareti luminose in legno per ambienti commerciali: atmosfera e carattere per il tuo spazio.",
+      "immagine": "Projects/Img/Commerciale/Parete_Luminosa/Parete1.jpg",
+      "categorie": [
+        "Commerciale"
+      ],
+      "isNovita": false,
+      "link": "Projects/pareti-luminose.html"
+    },
+    {
+      "nome": "Tavoli da Cucina",
+      "descrizione": "Tavoli da cucina in legno massello, dal disegno alla realizzazione, pensati per durare nel tempo.",
+      "immagine": "Projects/Img/Home/Tavolo/Tavolo1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/tavoli-da-cucina.html"
+    },
+    {
+      "nome": "Camerette",
+      "descrizione": "Camerette su misura che sfruttano ogni centimetro: letti, armadi e scrivanie pensati per crescere.",
+      "immagine": "Projects/Img/Home/Cameretta/Cameretta1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/camerette.html"
+    },
+    {
+      "nome": "Arredamenti Ristorante",
+      "descrizione": "Arredamento completo per ristoranti e bar: banconi, tavoli, sedute e boiserie su misura.",
+      "immagine": "Projects/Img/Commerciale/Ristorante/Ristorante1.jpg",
+      "categorie": [
+        "Commerciale"
+      ],
+      "isNovita": false,
+      "link": "Projects/arredamenti-ristorante.html"
+    },
+    {
+      "nome": "Arredamenti Bagno",
+      "descrizione": "Mobili bagno su misura in legno, resistenti all'umidità e disegnati sulle tue esigenze.",
+      "immagine": "Projects/Img/Home/Bagno/Bagno1.jpg",
+      "categorie": [
+        "Casa",
+        "Commerciale"
+      ],
+      "isNovita": false,
+      "link": "Projects/arredamenti-bagno.html"
+    },
+    {
+      "nome": "Porta Cannettata Scorrevole",
+      "descrizione": "Porta scorrevole con lavorazione cannettata: un dettaglio di design che divide gli spazi con eleganza.",
+      "immagine": "Projects/Img/Home/Porta_Cannetata_Scorrevole/Porta1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/porta-cannettata-scorrevole.html"
+    },
+    {
+      "nome": "Appartamento Arredato",
+      "descrizione": "Arredamento completo di un appartamento: un progetto unico e coordinato per ogni ambiente della casa.",
+      "immagine": "Projects/Img/Home/Appartamento_Arredato/Appartamento1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/appartamento-arredato.html"
+    },
+    {
+      "nome": "Tavolino",
+      "descrizione": "Tavolino su misura per il settore nautico: legni selezionati e finiture adatte alla vita in barca.",
+      "immagine": "Projects/Img/Nautico/Tavolino/Tavolino1.jpg",
+      "categorie": [
+        "Nautico"
+      ],
+      "isNovita": false,
+      "link": "Projects/tavolino.html"
+    },
+    {
+      "nome": "Panca",
+      "descrizione": "Panca in legno realizzata a partire dal disegno del cliente: artigianato che prende forma.",
+      "immagine": "Projects/Img/Home/Panca/Panca_Disegno.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/panca.html"
+    },
+    {
+      "nome": "Armadio Nicchia",
+      "descrizione": "Armadio a nicchia su misura: lo spazio irregolare diventa un contenitore perfettamente integrato.",
+      "immagine": "Projects/Img/Home/Armadio_Nichia/Armadio1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/armadio-nicchia.html"
+    },
+    {
+      "nome": "Deposito attrezzi con cuccia cane",
+      "descrizione": "Deposito attrezzi da giardino con cuccia per il cane integrata: funzionale, robusto e originale.",
+      "immagine": "Projects/Img/Home/Deposito_Attrezzi_con_cucina_cane/Deposito1.jpg",
+      "categorie": [
+        "Casa"
+      ],
+      "isNovita": false,
+      "link": "Projects/deposito-attrezzi-con-cuccia-cane.html"
+    }
+  ]
+}
