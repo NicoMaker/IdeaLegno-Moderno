@@ -1801,3 +1801,44 @@ h6 {
   flex-grow: 0 !important;
   flex-shrink: 0 !important;
 }
+
+/* ============================================================
+   FIX DEFINITIVO – Rimuove TUTTO lo spazio bianco
+   (sia tra titolo/categoria che DOPO le categorie)
+   ============================================================ */
+
+/* 1. Rimuove l'altezza fissa delle card e le adatta al contenuto */
+.Progetti-card,
+.novita-card {
+  min-height: auto !important;        /* elimina i 520px fissi */
+  height: auto !important;            /* altezza = contenuto effettivo */
+  align-self: start !important;       /* non si stirano per riempire la riga */
+}
+
+/* 2. Allinea le card in alto nella griglia (senza stiramento) */
+.progetti-container,
+.novita-container {
+  align-items: start !important;
+}
+
+/* 3. Nasconde il paragrafo descrizione se vuoto (già fatto, ma lo rafforzo) */
+.Progetti-card .descrizione:empty,
+.novita-card .descrizione:empty {
+  display: none !important;
+}
+
+/* 4. Riduce al minimo il gap tra titolo e badge */
+.Progetti-card .Progetti-card-content,
+.novita-card .Progetti-card-content {
+  gap: 0.1rem !important;
+  justify-content: flex-start !important;
+}
+
+/* 5. Impedisce ai badge di essere spinti in basso */
+.Progetti-card .categoria-badges-wrapper,
+.novita-card .categoria-badges-wrapper {
+  margin-top: 0.1rem !important;
+  padding-top: 0 !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}
