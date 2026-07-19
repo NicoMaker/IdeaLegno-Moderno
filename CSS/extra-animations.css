@@ -450,12 +450,3 @@ html.anim .mobile-menu.active .mobile-nav-list li:nth-child(6) {
     display: none !important;
   }
 }
-
-/* Rimuove il cursore personalizzato (pallino + anello) */
-.cursor-dot,
-.cursor-ring {
-  display: none !important;
-}
-
-/* Disabilita completamente il cursore personalizzato */
-.cursor-dot, .cursor-ring { display: none !important; }
