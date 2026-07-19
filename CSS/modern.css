@@ -510,3 +510,22 @@ html.anim .reveal-in [data-reveal-img] {
     clip-path: none !important;
   }
 }
+
+/* Rimuove la barra di avanzamento scroll */
+.scroll-progress {
+  display: none !important;
+}
+
+/* Rimuove barra di progresso e cursore personalizzato */
+.scroll-progress,
+.cursor-dot,
+.cursor-ring {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  z-index: -9999 !important;
+}

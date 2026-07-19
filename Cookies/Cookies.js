@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const refreshStatus = () => {
     if (!statusEl) return;
     const val = localStorage.getItem("cookiesAccepted");
-    if (val === "true") statusEl.textContent = "Stato attuale: cookie accettati";
+    if (val === "true")
+      statusEl.textContent = "Stato attuale: cookie accettati";
     else if (val === "false")
       statusEl.textContent = "Stato attuale: cookie rifiutati";
     else statusEl.textContent = "Stato attuale: nessuna preferenza salvata";
