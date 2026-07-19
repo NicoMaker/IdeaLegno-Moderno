@@ -246,9 +246,7 @@
     function makeParticle(fromBottom) {
       return {
         x: Math.random() * canvas.width,
-        y: fromBottom
-          ? canvas.height + 10
-          : Math.random() * canvas.height,
+        y: fromBottom ? canvas.height + 10 : Math.random() * canvas.height,
         r: 0.8 + Math.random() * 2.2,
         vy: 0.15 + Math.random() * 0.45,
         drift: (Math.random() - 0.5) * 0.35,

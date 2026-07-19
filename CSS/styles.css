@@ -1743,7 +1743,6 @@ h6 {
   border-bottom: none;
 }
 
-
 /* ============================================================
    FIX DEFINITIVO – Rimuove TUTTO lo spazio bianco tra titolo e badge
    ============================================================ */
@@ -1759,7 +1758,7 @@ h6 {
   line-height: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
-  flex: 0 0 0 !important;   /* rimuove il flex-grow */
+  flex: 0 0 0 !important; /* rimuove il flex-grow */
 }
 
 /* 2. Riduce il gap tra gli elementi della card */
@@ -1810,9 +1809,9 @@ h6 {
 /* 1. Rimuove l'altezza fissa delle card e le adatta al contenuto */
 .Progetti-card,
 .novita-card {
-  min-height: auto !important;        /* elimina i 520px fissi */
-  height: auto !important;            /* altezza = contenuto effettivo */
-  align-self: start !important;       /* non si stirano per riempire la riga */
+  min-height: auto !important; /* elimina i 520px fissi */
+  height: auto !important; /* altezza = contenuto effettivo */
+  align-self: start !important; /* non si stirano per riempire la riga */
 }
 
 /* 2. Allinea le card in alto nella griglia (senza stiramento) */
