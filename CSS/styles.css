@@ -1952,3 +1952,27 @@ h6 {
     padding: 0.6rem 0.8rem;
   }
 }
+/* ===== Fix overflow orizzontale / striscia di sfondo a destra =====
+   Su mobile un elemento poteva sforare di pochi px oltre il viewport:
+   il browser rimpiccioliva il layout e compariva una striscia di
+   sfondo a destra, con header e footer che sembravano "più stretti"
+   dello schermo. `overflow-x: clip` elimina lo sforamento SENZA creare
+   un contenitore di scroll, quindi l'header sticky continua a funzionare.
+   Fallback a `hidden` per i browser che non supportano `clip`. */
+html {
+  overflow-x: clip;
+}
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+.site-header,
+.site-footer {
+  width: 100%;
+}

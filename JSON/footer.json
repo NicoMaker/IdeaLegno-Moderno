@@ -1,5 +1,4 @@
 {
-  "timezone": "Europe/Rome",
   "info": {
     "titolo": "IdeaLegno di Paolo Bomben",
     "testo": "Arredamento su misura per casa, negozi e settore nautico",
@@ -28,6 +27,9 @@
     "Venerdì",
     "Sabato"
   ],
+
+  "timezone": "Europe/Rome",
+
 
   "orari": [
     "Lunedì: 8:00 - 12:00 / 13:30 - 18:00",
