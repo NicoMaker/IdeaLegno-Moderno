@@ -28,19 +28,30 @@
     title.setAttribute("aria-label", text);
     title.textContent = "";
 
+    // Le lettere vengono raggruppate per parola (.ht-word, white-space:nowrap)
+    // così il testo può andare a capo solo TRA le parole, mai al loro interno
+    // (in precedenza ogni lettera era uno span indipendente e il browser
+    // poteva spezzare una parola a metà, es. "Misura" -> "Misur" + "a").
     var idx = 0;
-    text.split("").forEach(function (ch) {
-      if (ch === " ") {
+    var words = text.split(" ");
+    words.forEach(function (word, wIdx) {
+      var wordSpan = document.createElement("span");
+      wordSpan.className = "ht-word";
+
+      word.split("").forEach(function (ch) {
+        var span = document.createElement("span");
+        span.className = "ht-letter";
+        span.setAttribute("aria-hidden", "true");
+        span.textContent = ch;
+        span.style.setProperty("--li", String(idx));
+        wordSpan.appendChild(span);
+        idx++;
+      });
+
+      title.appendChild(wordSpan);
+      if (wIdx < words.length - 1) {
         title.appendChild(document.createTextNode(" "));
-        return;
       }
-      var span = document.createElement("span");
-      span.className = "ht-letter";
-      span.setAttribute("aria-hidden", "true");
-      span.textContent = ch;
-      span.style.setProperty("--li", String(idx));
-      title.appendChild(span);
-      idx++;
     });
 
     title.classList.add("is-split");

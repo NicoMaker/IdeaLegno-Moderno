@@ -25,6 +25,13 @@ html.anim .hero-title.is-split {
   transform-origin: bottom left;
 }
 
+/* Ogni parola è un blocco unico: il testo va a capo solo tra le parole,
+   mai al loro interno (fix per titoli lunghi su mobile) */
+.hero-title .ht-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .hero-loaded .hero-title.is-split .ht-letter {
   animation: letterRise 0.7s var(--ease-out) forwards;
   animation-delay: calc(0.12s + var(--li) * 0.035s);

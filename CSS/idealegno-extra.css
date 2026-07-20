@@ -144,12 +144,41 @@
   font-size: 0.75rem;
   padding: 0.45rem 0.9rem;
   background: var(--ash-dark, #8b7355);
-  opacity: 0.85;
+  opacity: 1;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.4);
 }
 
 .cookie-btn.revoke:hover {
   opacity: 1;
   background: var(--ash-darkest, #5c4a3a);
+}
+
+/* Su mobile la pillola con testo lungo finiva sempre sopra al testo del
+   footer (es. gli orari). La trasformiamo in un piccolo bottone rotondo,
+   spostato a destra nello stesso "stack" dei pulsanti WhatsApp/telefono/
+   torna-su, così non copre più i contenuti e resta comunque raggiungibile
+   da ogni pagina. */
+@media (max-width: 600px) {
+  .cookie-btn.revoke {
+    left: auto;
+    right: 22px;
+    bottom: 202px; /* sopra quick-whatsapp (142px) con lo stesso passo di 60px */
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-btn.revoke::before {
+    content: "🍪";
+    font-size: 20px;
+    line-height: 1;
+  }
 }
 
 @media (max-width: 600px) {
