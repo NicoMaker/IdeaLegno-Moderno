@@ -1438,3 +1438,38 @@ footer {
     display: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX MOBILE — Barra ricerca + filtri progetti
+   Su mobile la barra "sticky" restava stretta (doppio padding) e con ombra,
+   sembrando una card che galleggia e si sovrapponeva alle card sottostanti.
+   Qui la rendiamo statica, senza ombra, allineata alla griglia dei progetti.
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .products-section .product-controls-sticky {
+    position: static !important;
+    top: auto !important;
+    box-shadow: none !important;
+    background-color: #f5f1e8 !important;
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    padding: 6px 0 14px 0 !important;
+  }
+
+  /* Lo pseudo-sfondo serviva solo alla versione sticky: non più necessario */
+  .products-section .product-controls-sticky::before {
+    display: none !important;
+  }
+
+  /* Ricerca e filtri a piena larghezza della colonna, ben centrati */
+  .products-section .product-controls-sticky .search-container {
+    padding: 0 !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .products-section .product-controls-sticky .filter-container {
+    padding: 0 !important;
+    gap: 8px !important;
+  }
+}
