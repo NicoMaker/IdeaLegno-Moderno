@@ -2,7 +2,7 @@
 
 /* Header e Layout */
 header {
-  padding: 8px 20px;
+  /* padding rimosso: ora gestito da .header-content */
 }
 
 .header-content {
@@ -10,8 +10,8 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 8px 20px;
+  box-sizing: border-box;
 }
 
 /* Logo */
@@ -1430,7 +1430,8 @@ footer {
   transform: translateY(-7.5px) rotate(-45deg) !important;
 }
 
-@media (min-width: 1025px) {
+/* ═══════ SOGLIA MENU ORRIZZONTALE ABBASSATA A 768px ═══════ */
+@media (min-width: 768px) {
   .main-nav {
     display: block;
   }
@@ -1471,5 +1472,108 @@ footer {
   .products-section .product-controls-sticky .filter-container {
     padding: 0 !important;
     gap: 8px !important;
+  }
+}
+
+/* ============================================================
+   FIX RICONOSCIMENTI - MOBILE
+   ============================================================ */
+
+/* Contenitore della sezione */
+.riconoscimenti-section {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+/* Griglia: centrata e responsive */
+.riconoscimenti-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card singola: larghezza piena su mobile, limitata su desktop */
+.riconoscimento-card {
+  margin: 0;
+  max-width: 720px;
+  width: 100%;
+  background: var(--surface, #fff);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44, 36, 22, 0.12);
+  border: 1px solid var(--gray-medium, #d4cfc5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.riconoscimento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(44, 36, 22, 0.2);
+}
+
+/* IMMAGINE: sempre a tutta larghezza, altezza adattiva, mai ritagliata */
+.riconoscimento-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center;
+  background-color: var(--gray-light, #f9f7f4);
+}
+
+/* Didascalia sotto l'immagine */
+.riconoscimento-card figcaption {
+  padding: 1rem 1.25rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ash-darkest, #5c4a3a);
+  text-align: center;
+  background: var(--accent-cream, #fff8e7);
+  border-top: 3px solid var(--accent-warm, #bf8b67);
+}
+
+/* ============================================================
+   MOBILE (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  .riconoscimenti-section {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .riconoscimenti-grid {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .riconoscimento-card {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  /* Immagine più compatta su mobile */
+  .riconoscimento-card img {
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  .riconoscimento-card figcaption {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* ============================================================
+   MOBILE PICCOLO (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .riconoscimento-card img {
+    max-height: 220px;
+  }
+
+  .riconoscimento-card figcaption {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
   }
 }
