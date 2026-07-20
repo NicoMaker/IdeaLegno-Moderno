@@ -16,6 +16,7 @@ const JsonConfig = (() => {
     progetti: "progetti.json",
     footer: "footer.json",
     palette: "palette.json",
+    hero: "hero.json",
   };
 
   const paths = {
@@ -27,6 +28,9 @@ const JsonConfig = (() => {
     },
     get palette() {
       return JsonPaths.get(files.palette);
+    },
+    get hero() {
+      return JsonPaths.get(files.hero);
     },
   };
 

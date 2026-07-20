@@ -67,6 +67,9 @@
 
 .project-view .slider-container {
   position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
   background: var(--ash-darkest, #5c4a3a);
@@ -76,30 +79,28 @@
 .project-view .slide {
   position: relative;
   overflow: hidden;
+  line-height: 0; /* elimina lo spazio sotto l'immagine inline */
 }
 
-/* Sfondo: la stessa foto sfocata riempie tutto il riquadro */
+/* Lo sfondo sfocato non serve più: la cornice avvolge la foto,
+   quindi niente fasce laterali. */
 .project-view .slide-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(26px) saturate(1.08) brightness(0.85);
-  transform: scale(1.2);
-  z-index: 0;
+  display: none;
 }
 
-/* Foto principale: sempre intera e centrata */
+/* Foto principale: riempie il suo contenitore, intera e non deformata.
+   La cornice si adatta al formato (verticale/orizzontale) della foto. */
 .project-view .main-product-image {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: min(62vh, 620px);
-  min-height: 340px;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(74vh, 700px);
+  margin: 0 auto;
   object-fit: contain;
   object-position: center;
-  display: block;
   padding: 0;
 }
 
@@ -193,9 +194,13 @@
 
 /* ── Mobile ── */
 @media (max-width: 640px) {
+  .project-view .slider-container {
+    width: 100%;
+  }
+
   .project-view .main-product-image {
-    height: 52vh;
-    min-height: 260px;
+    width: 100%;
+    max-height: 78vh;
   }
 
   .gallery-thumb {

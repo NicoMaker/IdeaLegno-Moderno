@@ -5,14 +5,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
   if (menuToggle && mobileMenu) {
+    const setMenuTop = () => {
+      const header = document.querySelector(".site-header");
+      const top = header
+        ? Math.round(header.getBoundingClientRect().height)
+        : 72;
+      document.documentElement.style.setProperty("--mm-top", top + "px");
+    };
+
     menuToggle.addEventListener("click", () => {
+      // Calcola l'altezza dell'header PRIMA di aprire (menu ancora chiuso),
+      // così l'overlay parte esattamente sotto la barra.
+      if (!mobileMenu.classList.contains("active")) setMenuTop();
+
       menuToggle.classList.toggle("active");
       mobileMenu.classList.toggle("active");
 
-      // Prevent body scroll when menu is open
+      // Blocca lo scroll della pagina quando il menu è aperto
       document.body.style.overflow = mobileMenu.classList.contains("active")
         ? "hidden"
         : "";
+    });
+
+    // Se ruoti/ridimensioni con il menu aperto, riallinea l'overlay
+    window.addEventListener("resize", () => {
+      if (mobileMenu.classList.contains("active")) setMenuTop();
     });
 
     // Close menu when clicking on a link

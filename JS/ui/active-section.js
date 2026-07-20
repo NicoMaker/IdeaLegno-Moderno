@@ -146,46 +146,64 @@ document.addEventListener("DOMContentLoaded", () => {
   function initializePage() {
     const hash = window.location.hash.substring(1);
 
+    // Se l'utente interagisce (scroll/touch), non forziamo più la posizione.
+    let userInterrupted = false;
+    ["wheel", "touchstart", "keydown", "pointerdown"].forEach((ev) =>
+      window.addEventListener(
+        ev,
+        () => {
+          userInterrupted = true;
+        },
+        { passive: true, once: true },
+      ),
+    );
+
     const scrollToHash = (targetId) => {
       const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        updateActiveLink(targetId);
-
-        const header = document.querySelector(".site-header");
-        const headerHeight = header ? header.offsetHeight : 80;
-
-        if (targetId === "Prodotti") {
-          if (window.pageYOffset > 0) {
-            const offsetPosition = targetElement.offsetTop - headerHeight;
-            window.scrollTo({ top: offsetPosition, behavior: "auto" });
-          }
-        } else if (targetId === "Contatti") {
-          console.log("⬇️ Scrolling verso Contatti (fine pagina)");
-          setTimeout(() => {
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: "auto",
-            });
-          }, 100);
-        } else if (targetId === "Home") {
-          console.log("🏠 Sezione Home, scroll non necessario.");
-        } else {
-          const offsetPosition = targetElement.offsetTop - headerHeight;
-          window.scrollTo({ top: offsetPosition, behavior: "auto" });
-        }
-
-        preventHashUpdate = true;
-
-        setTimeout(() => {
-          preventHashUpdate = false;
-          isInitialLoad = false;
-          console.log("✅ Inizializzazione completata, sistema sbloccato");
-        }, 1500);
-      } else {
+      if (!targetElement) {
         preventHashUpdate = false;
         isInitialLoad = false;
         highlightNavigation();
+        return;
       }
+
+      updateActiveLink(targetId);
+      preventHashUpdate = true;
+
+      const doScroll = () => {
+        if (userInterrupted) return;
+        const el = document.getElementById(targetId);
+        if (!el) return;
+        const header = document.querySelector(".site-header");
+        const headerHeight = header ? header.offsetHeight : 80;
+        const top =
+          targetId === "Contatti"
+            ? document.body.scrollHeight
+            : el.offsetTop - headerHeight;
+        window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+      };
+
+      if (targetId !== "Home") {
+        doScroll();
+        // I progetti sono generati dal JSON dopo il caricamento: quando
+        // arrivano (e quando le immagini finiscono di caricarsi) la pagina
+        // cambia altezza, quindi riposizioniamo lo scroll sul target reale.
+        document.addEventListener(
+          "prodottiCaricati",
+          () => setTimeout(doScroll, 60),
+          { once: true },
+        );
+        window.addEventListener("load", () => setTimeout(doScroll, 120), {
+          once: true,
+        });
+        [250, 600, 1200].forEach((t) => setTimeout(doScroll, t));
+      }
+
+      setTimeout(() => {
+        preventHashUpdate = false;
+        isInitialLoad = false;
+        console.log("✅ Inizializzazione completata, sistema sbloccato");
+      }, 1500);
     };
 
     if (hash) {

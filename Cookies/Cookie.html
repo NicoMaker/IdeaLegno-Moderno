@@ -3,106 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookie Policy - IdeaLegno</title>
+    <title>Cookie Policy · IdeaLegno</title>
+    <meta
+      name="description"
+      content="Informativa sui cookie di IdeaLegno: cosa sono, quali usiamo e come gestire le tue preferenze."
+    />
+    <meta name="robots" content="noindex, follow" />
+
+    <link rel="icon" type="image/png" href="../Img/IDEALEGNO.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="../Img/IDEALEGNO.jpg" />
     <script src="Cookies.js" defer></script>
   </head>
 
   <body>
-    <header class="cookie-header">
-      <a href="../index.html">
-        <img
-          src="../Img/IDEALEGNO.jpg"
-          alt="IdeaLegno Logo"
-          class="header-img"
-        />
+    <!-- Barra superiore compatta -->
+    <header class="topbar">
+      <a href="../index.html" class="brand" aria-label="Torna alla home di IdeaLegno">
+        <img src="../Img/IDEALEGNO.jpg" alt="" class="brand-logo" />
+        <span class="brand-name">IdeaLegno</span>
       </a>
-      <h1>Cookie Policy</h1>
+      <a href="../index.html" class="back-link">
+        <span aria-hidden="true">&larr;</span> Torna al sito
+      </a>
     </header>
 
-    <main class="cookie-container">
-      <div class="cookie-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path
-            d="M257.5 27.6c-.8-5.4-4.9-9.8-10.3-10.6c-22.1-3.1-44.6 .9-64.4 11.4l-74 39.5C89.1 78.4 73.2 94.9 63.4 115L26.7 190.6c-9.8 20.1-13 42.9-9.1 64.9l14.5 82.8c3.9 22.1 14.6 42.3 30.7 57.9l60.3 58.4c16.1 15.6 36.6 25.6 58.7 28.7l83 11.7c22.1 3.1 44.6-.9 64.4-11.4l74-39.5c19.7-10.5 35.6-27 45.4-47.2l36.7-75.5c9.8-20.1 13-42.9 9.1-64.9l-14.6-82.8c-3.9-22.1-14.6-42.3-30.7-57.9L388.9 57.5c-16.1-15.6-36.6-25.6-58.7-28.7L257.5 27.6zM164.7 347.3c-7.6 4.3-17.4 1.5-21.7-6.1c-4.3-7.6-1.5-17.4 6.1-21.7l86.2-48.8c7.6-4.3 17.4-1.5 21.7 6.1c4.3 7.6 1.5 17.4-6.1 21.7l-86.2 48.8zm92.1-102.7c-7.6 4.3-17.4 1.5-21.7-6.1c-4.3-7.6-1.5-17.4 6.1-21.7l86.2-48.8c7.6-4.3 17.4-1.5 21.7 6.1c4.3 7.6 1.5 17.4-6.1 21.7l-86.2 48.8zM317.7 68.7c-7.6 4.3-17.4 1.5-21.7-6.1c-4.3-7.6-1.5-17.4 6.1-21.7l28.7-16.2c7.6-4.3 17.4-1.5 21.7 6.1c4.3 7.6 1.5 17.4-6.1 21.7L317.7 68.7zM127.9 165.9c-4.3-7.6-1.5-17.4 6.1-21.7c7.6-4.3 17.4-1.5 21.7 6.1l16.2 28.7c4.3 7.6 1.5 17.4-6.1 21.7c-7.6 4.3-17.4 1.5-21.7-6.1l-16.2-28.7zm-48.8 86.2c-4.3-7.6-1.5-17.4 6.1-21.7c7.6-4.3 17.4-1.5 21.7 6.1l16.2 28.7c4.3 7.6 1.5 17.4-6.1 21.7c-7.6 4.3-17.4 1.5-21.7-6.1L79.1 252.1zm368.1-79.8c4.3 7.6 1.5 17.4-6.1 21.7c-7.6 4.3-17.4 1.5-21.7-6.1l-16.2-28.7c-4.3-7.6-1.5-17.4 6.1-21.7c7.6-4.3 17.4-1.5 21.7 6.1l16.2 28.7z"
-          />
-        </svg>
-      </div>
+    <!-- Intestazione -->
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Informativa</p>
+      <h1 id="page-title">Cookie Policy</h1>
+      <p class="hero-sub">
+        Come usiamo i cookie su questo sito e come puoi decidere tu cosa
+        attivare. Trasparenza prima di tutto, come nel nostro lavoro in legno.
+      </p>
+      <p class="updated">Ultimo aggiornamento: gennaio 2026</p>
+    </section>
 
-      <section>
-        <h2>Informativa sui Cookie</h2>
-        <p>
-          Questo sito utilizza i cookie per migliorare l'esperienza dell'utente.
-          I cookie sono piccoli file di testo che vengono memorizzati sul tuo
-          dispositivo. Puoi scegliere di accettarli o rifiutarli.
+    <main class="wrap">
+      <!-- Pannello preferenze: elemento centrale -->
+      <section class="panel" id="preferenze" aria-labelledby="pref-title">
+        <div class="panel-head">
+          <h2 id="pref-title">Le tue preferenze</h2>
+          <span class="status-chip" id="cookie-status" role="status" aria-live="polite">
+            Nessuna preferenza salvata
+          </span>
+        </div>
+        <p class="panel-text">
+          I cookie tecnici sono sempre attivi perché servono a far funzionare il
+          sito. Per tutti gli altri decidi tu: la scelta resta salvata su questo
+          dispositivo e puoi cambiarla quando vuoi.
         </p>
-
-        <h3>Tipologie di cookie utilizzati</h3>
-        <ul>
-          <li>
-            <strong>Cookie tecnici:</strong> Necessari per il corretto
-            funzionamento del sito.
-          </li>
-          <li>
-            <strong>Cookie di analisi:</strong> Aiutano a migliorare il sito
-            raccogliendo dati anonimi.
-          </li>
-          <li>
-            <strong>Cookie di terze parti:</strong> Utilizzati per funzionalità
-            avanzate come i social media.
-          </li>
-        </ul>
-
-        <h3>Gestione dei cookie</h3>
-        <p>
-          Puoi modificare le tue preferenze sui cookie in qualsiasi momento
-          cliccando su <strong>"Modifica preferenze cookie"</strong> nel sito.
-        </p>
-
-        <h3>Come disabilitare i cookie</h3>
-        <p>
-          La maggior parte dei browser consente di rifiutare i cookie. Di
-          seguito trovi i link per modificare le impostazioni dei cookie nei
-          browser più comuni:
-        </p>
-        <ul>
-          <li>
-            Google Chrome: Impostazioni → Privacy e sicurezza → Cookie e altri
-            dati dei siti
-          </li>
-          <li>
-            Mozilla Firefox: Opzioni → Privacy e sicurezza → Cookie e dati dei
-            siti web
-          </li>
-          <li>Safari: Preferenze → Privacy</li>
-          <li>Microsoft Edge: Impostazioni → Cookie e autorizzazioni sito</li>
-        </ul>
-
-        <h3>Durata dei cookie</h3>
-        <p>
-          I cookie di sessione rimangono attivi solo fino alla chiusura del
-          browser. I cookie persistenti rimangono nel browser per un periodo di
-          tempo specificato o fino a quando non vengono eliminati manualmente.
-        </p>
+        <div class="pref-actions">
+          <button id="accept-cookies-page" class="btn btn-primary" type="button">
+            Accetta tutti
+          </button>
+          <button id="decline-cookies-page" class="btn btn-ghost" type="button">
+            Rifiuta i non essenziali
+          </button>
+        </div>
       </section>
+
+      <!-- Contenuti -->
+      <article class="doc">
+        <section class="block">
+          <h2>Cosa sono i cookie</h2>
+          <p>
+            I cookie sono piccoli file di testo che un sito salva sul tuo
+            dispositivo mentre navighi. Servono a ricordare alcune informazioni,
+            così le pagine funzionano meglio e la visita successiva è più comoda.
+            Da soli non ti identificano personalmente.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>Quali cookie usiamo</h2>
+          <div class="cards">
+            <div class="cookie-card">
+              <span class="tag tag-tech">Sempre attivi</span>
+              <h3>Tecnici</h3>
+              <p>
+                Fanno funzionare le parti essenziali del sito, come la
+                navigazione e il ricordo delle tue scelte sui cookie. Senza,
+                alcune funzioni non partirebbero.
+              </p>
+            </div>
+            <div class="cookie-card">
+              <span class="tag tag-opt">Facoltativi</span>
+              <h3>Analitici</h3>
+              <p>
+                Ci aiutano a capire in forma anonima quali pagine vengono
+                visitate di più, per migliorare i contenuti e l'esperienza.
+              </p>
+            </div>
+            <div class="cookie-card">
+              <span class="tag tag-opt">Facoltativi</span>
+              <h3>Terze parti</h3>
+              <p>
+                Abilitano funzioni fornite da servizi esterni, ad esempio mappe
+                o collegamenti ai social. Seguono le rispettive policy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>Gestire i cookie dal browser</h2>
+          <p>
+            Oltre al pannello qui sopra, puoi controllare i cookie direttamente
+            dalle impostazioni del tuo browser:
+          </p>
+          <ul class="browser-list">
+            <li><strong>Chrome</strong> — Impostazioni › Privacy e sicurezza › Cookie</li>
+            <li><strong>Firefox</strong> — Impostazioni › Privacy e sicurezza › Cookie e dati</li>
+            <li><strong>Safari</strong> — Preferenze › Privacy</li>
+            <li><strong>Edge</strong> — Impostazioni › Cookie e autorizzazioni sito</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <h2>Durata</h2>
+          <p>
+            I cookie di sessione durano finché non chiudi il browser. Quelli
+            persistenti restano per il periodo indicato o finché non li elimini
+            manualmente.
+          </p>
+        </section>
+
+        <section class="block contact">
+          <h2>Titolare e contatti</h2>
+          <p>
+            Il trattamento è a cura di <strong>IdeaLegno di Paolo Bomben</strong>,
+            Via Castellana 8, Castions di Zoppola (PN). Per qualsiasi domanda sui
+            cookie o sui tuoi dati, scrivici pure dalla pagina contatti del sito.
+          </p>
+        </section>
+      </article>
     </main>
 
-    <!-- Banner Cookie -->
-    <div id="cookie-banner">
-      <p>
-        Questo sito utilizza i cookie per migliorare l'esperienza utente.
-        <a href="Cookie.html" style="color: #ffcc80">Leggi di più</a>
-      </p>
-      <div class="cookie-buttons">
-        <button id="accept-cookies" class="cookie-btn">Accetta</button>
-        <button id="decline-cookies" class="cookie-btn decline">Rifiuta</button>
-      </div>
-    </div>
-
-    <!-- Pulsante per modificare le preferenze -->
-    <button id="revoke-cookies" class="cookie-btn revoke">
-      Modifica preferenze cookie
-    </button>
+    <footer class="page-foot">
+      <p>© <span id="year"></span> IdeaLegno · Arredamento su misura</p>
+    </footer>
   </body>
 </html>

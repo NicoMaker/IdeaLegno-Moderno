@@ -245,6 +245,13 @@ h6 {
 
 .mobile-menu.active {
   display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--mm-top, 72px);
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   animation: slideDown var(--transition-base);
 }
 
