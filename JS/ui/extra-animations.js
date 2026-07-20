@@ -9,7 +9,7 @@
 // • Effetto ripple al click su tutti i bottoni
 // • Particelle di segatura dorata nella hero (canvas leggero)
 // • Contatori animati nella sezione Storia
-// • Cursore personalizzato (solo desktop, rispetta reduced-motion)
+// (Testi del typewriter hero caricati da JSON/hero.json)
 // ─────────────────────────────────────────────────────────────
 (function () {
   "use strict";
@@ -46,16 +46,28 @@
     title.classList.add("is-split");
   }
 
-  // ── 2. Typewriter nella hero ──
-  function initTypewriter() {
+  // ── 2. Typewriter nella hero (testi da JSON/hero.json) ──
+  // I testi si modificano SOLO in JSON/hero.json, non qui.
+  // Se il loader non è disponibile o il fetch fallisce, si usano i fallback.
+  var HERO_TEXT_FALLBACK = {
+    prefix: "Progetti unici",
+    parole: ["per la tua casa", "per il tuo negozio", "per il tuo yacht"],
+  };
+
+  function buildTypewriter(cfg) {
     var subtitle = document.querySelector(".hero-subtitle");
     if (!subtitle || document.querySelector(".hero-rotator")) return;
 
-    var words = ["per la tua casa", "per il tuo negozio", "per il tuo yacht"];
+    var prefix = (cfg && cfg.prefix) || HERO_TEXT_FALLBACK.prefix;
+    var words =
+      cfg && Array.isArray(cfg.parole) && cfg.parole.length
+        ? cfg.parole
+        : HERO_TEXT_FALLBACK.parole;
+
     var rotator = document.createElement("p");
     rotator.className = "hero-rotator";
     rotator.innerHTML =
-      'Progetti unici <span class="hr-word"></span><span class="caret"></span>';
+      prefix + ' <span class="hr-word"></span><span class="caret"></span>';
     subtitle.parentNode.insertBefore(rotator, subtitle.nextSibling);
 
     var wordEl = rotator.querySelector(".hr-word");
@@ -88,6 +100,23 @@
     }
 
     setTimeout(tick, 1400);
+  }
+
+  function initTypewriter() {
+    // Solo dove esiste la hero (la home). Sulle pagine progetto esce subito.
+    if (!document.querySelector(".hero-subtitle")) return;
+
+    if (typeof JsonData !== "undefined" && JsonData && JsonData.load) {
+      JsonData.load("hero")
+        .then(function (data) {
+          buildTypewriter(data && data.rotator ? data.rotator : null);
+        })
+        .catch(function () {
+          buildTypewriter(null);
+        });
+    } else {
+      buildTypewriter(null);
+    }
   }
 
   // ── 3. Tilt 3D delegato sulle card ──
@@ -335,56 +364,6 @@
     ).observe(strip);
   }
 
-  // ── 8. Cursore personalizzato ──
-  function initCursor() {
-    if (!finePointer) return;
-
-    var dot = document.createElement("div");
-    dot.className = "cursor-dot";
-    var ring = document.createElement("div");
-    ring.className = "cursor-ring";
-    dot.setAttribute("aria-hidden", "true");
-    ring.setAttribute("aria-hidden", "true");
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-
-    var mx = -100;
-    var my = -100;
-    var rx = -100;
-    var ry = -100;
-
-    document.addEventListener(
-      "pointermove",
-      function (e) {
-        mx = e.clientX;
-        my = e.clientY;
-        dot.style.transform =
-          "translate(" + mx + "px," + my + "px) translate(-50%,-50%)";
-
-        var interactive = e.target.closest
-          ? e.target.closest(
-              "a, button, .Progetti-card, input, .dot, .prev, .next",
-            )
-          : null;
-        ring.classList.toggle("is-hovering", !!interactive);
-      },
-      { passive: true },
-    );
-
-    function follow() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.transform =
-        "translate(" +
-        rx.toFixed(1) +
-        "px," +
-        ry.toFixed(1) +
-        "px) translate(-50%,-50%)";
-      requestAnimationFrame(follow);
-    }
-    requestAnimationFrame(follow);
-  }
-
   // ── Avvio ──
   function init() {
     if (reduceMotion) return; // il CSS mostra già tutto senza animazioni
@@ -396,7 +375,6 @@
     initRipple();
     initParticles();
     initCounters();
-    initCursor();
   }
 
   if (document.readyState === "loading") {

@@ -164,45 +164,6 @@ html.anim .quick-call {
   will-change: transform;
 }
 
-/* ---------- 6. Cursore personalizzato (solo puntatori precisi) ---------- */
-@media (pointer: fine) {
-  html.anim .cursor-dot,
-  html.anim .cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    border-radius: 50%;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-  }
-
-  html.anim .cursor-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent-rust, #a0522d);
-  }
-
-  html.anim .cursor-ring {
-    width: 34px;
-    height: 34px;
-    border: 1.5px solid var(--accent-warm, #bf8b67);
-    opacity: 0.65;
-    transition:
-      width 0.25s var(--ease-out),
-      height 0.25s var(--ease-out),
-      opacity 0.25s ease,
-      background-color 0.25s ease;
-  }
-
-  html.anim .cursor-ring.is-hovering {
-    width: 52px;
-    height: 52px;
-    opacity: 0.9;
-    background: rgba(191, 139, 103, 0.12);
-  }
-}
-
 /* ---------- 7. Particelle di segatura nella hero ---------- */
 .hero-particles {
   position: absolute;
@@ -444,8 +405,6 @@ html.anim .mobile-menu.active .mobile-nav-list li:nth-child(6) {
     animation: none;
   }
 
-  .cursor-dot,
-  .cursor-ring,
   .hero-particles {
     display: none !important;
   }
