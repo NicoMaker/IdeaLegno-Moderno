@@ -254,6 +254,10 @@ function createFooterHTML(data, giornoPartenza) {
     giorniDaVisualizzare.push(d);
   }
 
+  // Differenza di fuso attività→visitatore, per mostrare gli orari
+  // anche convertiti nell'ora locale di chi guarda.
+  const diffHours = -getTimezoneOffsetHours();
+
   var orariHtmlItems = [];
   for (var i = 0; i < giorniDaVisualizzare.length; i++) {
     var dataDelGiorno = giorniDaVisualizzare[i];
@@ -293,6 +297,16 @@ function createFooterHTML(data, giornoPartenza) {
         testoOrario =
           nomeGiorno + ": Chiuso (" + closureCheck.motivoSpecifico + ")";
       }
+    }
+
+    // Mostra anche l'orario convertito nel fuso del visitatore
+    if (
+      Math.abs(diffHours) > 0.01 &&
+      testoOrario &&
+      !testoOrario.toLowerCase().includes("chiuso")
+    ) {
+      const orarioConvertito = convertOrarioString(testoOrario, diffHours);
+      testoOrario = `${testoOrario} (${orarioConvertito})`;
     }
 
     if (i === 0) {
@@ -342,6 +356,15 @@ function createFooterHTML(data, giornoPartenza) {
         (statoApertura.minutiAllaChiusura === 1 ? "minuto" : "minuti")
       : legenda.testo["in chiusura"] || "In chiusura";
 
+  // Ora locale del visitatore + scarto rispetto all'attività
+  const userNow = getUserNow();
+  const userTimeStr =
+    String(userNow.getHours()).padStart(2, "0") +
+    ":" +
+    String(userNow.getMinutes()).padStart(2, "0");
+  const offsetHours = getTimezoneOffsetHours();
+  const offsetText = formatTimezoneOffsetText(offsetHours, info.titolo);
+
   return `
     <div class="footer-content">
       <div class="footer-grid">
@@ -362,6 +385,10 @@ function createFooterHTML(data, giornoPartenza) {
           ${countdownHTML}
           <h4 id="titolo-orari" class="footer-subtitle" style="${transizione && !transizione.eCambioOggi ? "margin-top:14px;" : ""}">${titoloOrari}</h4>
           <ul id="orari-footer" class="footer-list">${orariHtml}</ul>
+          <div class="user-local-time" style="margin-top:10px;font-size:0.8em;opacity:0.7;">
+            <span>🕒 La tua ora locale: <span id="user-local-time-display">${userTimeStr}</span></span>
+            <span id="timezone-offset-text" style="display:block;font-size:0.85em;opacity:0.6;">${offsetText}</span>
+          </div>
         </div>
 
         <div class="footer-section">
