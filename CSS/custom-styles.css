@@ -1584,6 +1584,9 @@ footer {
 .feature-card--link {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature-card--link:focus-visible {
@@ -1599,4 +1602,46 @@ footer {
 .feature-card--link:hover h3,
 .feature-card--link:focus-visible h3 {
   color: var(--accent-rust, #a0522d);
+}
+
+/* Bottone "Vedi i progetti": rende evidente che la scheda è cliccabile */
+.feature-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto; /* allinea i bottoni in fondo a tutte le schede */
+  /* spazio sopra il bottone senza spingerlo a tutta larghezza */
+  margin-bottom: 0;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-warm, #bf8b67),
+    var(--accent-rust, #a0522d)
+  );
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 8px 20px -8px rgba(160, 82, 45, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-card__cta .material-icons {
+  font-size: 1.15rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.feature-card--link:hover .feature-card__cta,
+.feature-card--link:focus-visible .feature-card__cta {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -8px rgba(160, 82, 45, 0.75);
+}
+
+.feature-card--link:hover .feature-card__cta .material-icons,
+.feature-card--link:focus-visible .feature-card__cta .material-icons {
+  transform: translateX(4px);
 }
