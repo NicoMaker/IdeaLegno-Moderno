@@ -1,49 +1,97 @@
 // sticky-controls.js
-// Gestisce il calcolo dinamico dell'altezza dell'header per i controlli sticky
+// Gestisce la barra di ricerca/filtri "sticky" usando position: fixed
+// controllato via JS invece di position: sticky via CSS.
+//
+// Perché: su Safari (iOS/macOS) c'è un bug noto per cui, se un qualsiasi
+// antenato (anche <html> o <body>) ha "overflow" diverso da "visible"
+// (incluso "overflow-x: clip", usato altrove in questo sito per evitare
+// lo scroll orizzontale), "position: sticky" smette di funzionare sui
+// discendenti. Con position: fixed calcolato via scroll listener il
+// problema non si presenta, perché fixed non dipende dagli antenati.
 
 document.addEventListener("DOMContentLoaded", () => {
   const siteHeader = document.querySelector(".site-header");
   const stickyControls = document.getElementById("product-controls-sticky");
+  const placeholder = document.getElementById("product-controls-placeholder");
 
-  // Funzione per calcolare e impostare l'altezza dell'header
-  function setHeaderHeight() {
-    if (siteHeader && stickyControls) {
-      const headerHeight = siteHeader.offsetHeight;
+  if (!siteHeader || !stickyControls || !placeholder) return;
 
-      // Imposta la posizione sticky in base all'altezza reale dell'header
-      // Aggiungiamo 5px di margine per evitare sovrapposizioni
-      const stickyTop = headerHeight + 5;
-      stickyControls.style.top = `${stickyTop}px`;
+  let naturalOffsetTop = 0; // posizione della barra nel flusso normale (non pinned)
+  let pinTop = 0; // distanza dal top quando è pinned (= altezza header + margine)
+  let isPinned = false;
 
-      console.log(
-        `🔧 Header height: ${headerHeight}px - Sticky top: ${stickyTop}px`,
-      );
+  function measure() {
+    // Se è già pinned, la rimuoviamo temporaneamente per misurare
+    // la sua posizione naturale nel flusso del documento.
+    const wasPinned = isPinned;
+    if (wasPinned) {
+      stickyControls.classList.remove("is-pinned");
+      placeholder.style.height = "0px";
+    }
+
+    const headerHeight = siteHeader.offsetHeight;
+    pinTop = headerHeight + 5;
+
+    const rect = stickyControls.getBoundingClientRect();
+    naturalOffsetTop = rect.top + window.scrollY;
+
+    if (wasPinned) {
+      stickyControls.classList.add("is-pinned");
+      placeholder.style.height = `${stickyControls.offsetHeight}px`;
+    }
+
+    updatePinState();
+  }
+
+  function updatePinState() {
+    const triggerPoint = naturalOffsetTop - pinTop;
+    const shouldPin = window.scrollY >= triggerPoint;
+
+    if (shouldPin && !isPinned) {
+      isPinned = true;
+      stickyControls.classList.add("is-pinned");
+      stickyControls.style.top = `${pinTop}px`;
+      placeholder.style.height = `${stickyControls.offsetHeight}px`;
+    } else if (!shouldPin && isPinned) {
+      isPinned = false;
+      stickyControls.classList.remove("is-pinned");
+      stickyControls.style.top = "";
+      placeholder.style.height = "0px";
+    } else if (isPinned) {
+      // Header potrebbe cambiare altezza durante lo scroll (es. si compatta)
+      stickyControls.style.top = `${pinTop}px`;
     }
   }
 
-  // Imposta l'altezza iniziale
-  setHeaderHeight();
+  measure();
 
-  // Ricalcola quando la finestra viene ridimensionata
-  let resizeTimeout;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(setHeaderHeight, 100);
-  });
-
-  // Ricalcola quando cambia l'orientamento del dispositivo
-  window.addEventListener("orientationchange", () => {
-    setTimeout(setHeaderHeight, 300);
-  });
-
-  // Ricalcola quando si scrolla verso la sezione prodotti
+  let ticking = false;
   window.addEventListener(
     "scroll",
     () => {
-      setHeaderHeight();
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updatePinState();
+          ticking = false;
+        });
+        ticking = true;
+      }
     },
     { passive: true },
   );
 
-  console.log("✅ Sistema sticky controls inizializzato");
+  let resizeTimeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(measure, 100);
+  });
+
+  window.addEventListener("orientationchange", () => {
+    setTimeout(measure, 300);
+  });
+
+  // Ricalcola anche quando cambia il contenuto della sezione (es. filtri
+  // che cambiano l'altezza della griglia sottostante non influenzano la
+  // barra, ma un cambio di font/immagini nell'header sì).
+  window.addEventListener("load", measure);
 });

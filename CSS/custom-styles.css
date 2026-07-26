@@ -1448,16 +1448,20 @@ footer {
    ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .products-section .product-controls-sticky {
-    position: static !important;
-    top: auto !important;
-    box-shadow: none !important;
+    /* La posizione (relative <-> fixed) è ora gestita da sticky-controls.js
+       tramite la classe .is-pinned, non più da position: sticky, perché
+       Safari disattiva "sticky" quando un antenato ha overflow != visible
+       (vedi fix più sotto). 'top' viene impostato via JS. */
+    position: relative !important;
+    z-index: 100 !important;
+    box-shadow: 0 6px 16px -10px rgba(44, 36, 22, 0.4) !important;
     background-color: #f5f1e8 !important;
     width: 100% !important;
     margin: 0 0 18px 0 !important;
-    padding: 6px 0 14px 0 !important;
+    padding: 10px 0 12px 0 !important;
   }
 
-  /* Lo pseudo-sfondo serviva solo alla versione sticky: non più necessario */
+  /* Lo pseudo-sfondo non serve: usiamo lo sfondo pieno sull'elemento. */
   .products-section .product-controls-sticky::before {
     display: none !important;
   }
@@ -1681,4 +1685,36 @@ footer {
     justify-self: center;
     width: min(360px, 100%);
   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX SAFARI — Barra ricerca/filtri progetti non rimane fissa allo scroll
+   su iPhone/Safari. Causa: Safari disattiva "position: sticky" su un
+   elemento se un QUALSIASI antenato (anche <html> o <body>) ha "overflow"
+   diverso da "visible" — incluso "overflow-x: clip" usato più sopra in
+   questo file per evitare lo scroll orizzontale. Chrome non ha questa
+   limitazione, per questo il problema si vede solo su Safari.
+
+   Soluzione: la barra viene "pinnata" via JavaScript (sticky-controls.js)
+   aggiungendo la classe .is-pinned e usando position: fixed, che NON
+   dipende dagli antenati e quindi funziona anche su Safari. Il div
+   #product-controls-placeholder mantiene lo spazio nel flusso del
+   documento quando la barra passa a fixed, per evitare "salti" di layout.
+   ═══════════════════════════════════════════════════════════════════════════ */
+#product-controls-sticky {
+  position: relative;
+}
+
+#product-controls-sticky.is-pinned {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 !important;
+  z-index: 100;
+  background-color: #f5f1e8;
+}
+
+#product-controls-placeholder {
+  height: 0;
 }
