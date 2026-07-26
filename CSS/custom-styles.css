@@ -1577,3 +1577,26 @@ footer {
     padding: 0.6rem 0.8rem;
   }
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   Schede categoria cliccabili (Domestico / Commerciale / Navale)
+   Portano alla sezione "I Nostri Progetti" con il filtro giusto attivo.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.feature-card--link {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.feature-card--link:focus-visible {
+  outline: 3px solid var(--accent-warm, #bf8b67);
+  outline-offset: 4px;
+}
+
+/* Piccolo segnale al passaggio del mouse / focus */
+.feature-card--link h3 {
+  transition: color 0.3s ease;
+}
+
+.feature-card--link:hover h3,
+.feature-card--link:focus-visible h3 {
+  color: var(--accent-rust, #a0522d);
+}
