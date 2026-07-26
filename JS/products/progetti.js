@@ -39,6 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function populateFilters() {
     if (!filterContainer) return;
 
+    // Icona per ogni categoria (stesse icone delle schede in home).
+    const FILTER_ICONS = {
+      Tutti: "grid_view",
+      Casa: "home",
+      Commerciale: "store",
+      Nautico: "sailing",
+    };
+
     const categories = new Set([CONFIG.defaultFilter]);
     allProducts.forEach((p) => p.categorie.forEach((c) => categories.add(c)));
 
@@ -46,7 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     categories.forEach((category) => {
       const button = document.createElement("button");
       button.classList.add("filter-button");
-      button.textContent = category;
+      const iconName = FILTER_ICONS[category] || "label";
+      button.innerHTML =
+        '<span class="material-icons filter-btn-icon" aria-hidden="true">' +
+        iconName +
+        "</span>" +
+        '<span class="filter-btn-label">' +
+        category +
+        "</span>";
       button.dataset.category = category;
       CategoryColors.applyFilterButtonStyle(button, category, false);
       button.addEventListener("click", () => {

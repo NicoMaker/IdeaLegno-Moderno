@@ -1634,7 +1634,8 @@ footer {
     box-shadow 0.3s ease;
 }
 
-.feature-card__cta .material-icons {
+.feature-card__cta .material-icons,
+.feature-card__cta .cta-arrow {
   font-size: 1.15rem;
   color: #fff;
   transition: transform 0.3s ease;
@@ -1647,6 +1648,37 @@ footer {
 }
 
 .feature-card--link:hover .feature-card__cta .material-icons,
-.feature-card--link:focus-visible .feature-card__cta .material-icons {
+.feature-card--link:focus-visible .feature-card__cta .material-icons,
+.feature-card--link:hover .feature-card__cta .cta-arrow,
+.feature-card--link:focus-visible .feature-card__cta .cta-arrow {
   transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Pulsanti-filtro con l'icona della categoria (home / store / sailing …)
+   Coerenti con le schede in home: si capisce subito e si va diretti.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.filter-btn-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.filter-btn-label {
+  line-height: 1;
+}
+
+/* Quarta scheda "Tutti i progetti": su desktop resta centrata sotto le
+   altre tre, senza restringere le schede delle categorie. */
+@media (min-width: 1025px) {
+  .feature-card--all {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(360px, 100%);
+  }
 }
