@@ -75,29 +75,35 @@
   margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
-  /* Contenitore esterno visibile con sfondo in legno: le fasce attorno
-     alla foto mostrano il legno, così la cornice resta sempre uguale. */
-  background-color: var(--ash-darkest, #5c4a3a);
-  background-image: url("../Img/Legno.jpg");
-  background-size: cover;
-  background-position: center;
+  /* Colore di riserva dietro lo sfondo sfocato. */
+  background: var(--ash-darkest, #5c4a3a);
   box-shadow: 0 24px 60px -24px rgba(44, 36, 22, 0.5);
-  /* Bordo di legno sempre visibile attorno all'immagine */
-  padding: clamp(10px, 2vw, 22px);
-  box-sizing: border-box;
 }
 
 .project-view .slide {
   position: relative;
   overflow: hidden;
-  height: 100%; /* la slide riempie l'area interna del box fisso */
+  height: 100%; /* la slide riempie tutto il box fisso */
   line-height: 0; /* elimina lo spazio sotto l'immagine inline */
+  /* Bordo attorno alla foto: lascia intravedere lo sfondo sfocato. */
+  padding: clamp(10px, 2vw, 22px);
+  box-sizing: border-box;
 }
 
-/* Lo sfondo sfocato non serve più: la cornice avvolge la foto,
-   quindi niente fasce laterali. */
+/* Sfondo del contenitore PERTINENTE ALLA PAGINA:
+   la stessa foto del progetto, sfocata e leggermente scurita.
+   Riempie tutto il box; cambia insieme alla slide. */
 .project-view .slide-bg {
-  display: none;
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(30px) brightness(0.72) saturate(1.1);
+  transform: scale(1.2); /* evita i bordi chiari lasciati dalla sfocatura */
+  z-index: 0;
 }
 
 /* Foto principale: riempie il suo contenitore, intera e non deformata.

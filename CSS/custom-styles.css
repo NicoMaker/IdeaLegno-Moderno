@@ -1604,6 +1604,11 @@ footer {
   color: var(--accent-rust, #a0522d);
 }
 
+/* Spazio tra il testo della scheda e il bottone */
+.feature-card--link p {
+  margin-bottom: 1.6rem;
+}
+
 /* Bottone "Vedi i progetti": rende evidente che la scheda è cliccabile */
 .feature-card__cta {
   display: inline-flex;
