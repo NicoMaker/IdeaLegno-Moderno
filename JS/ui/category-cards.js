@@ -27,6 +27,21 @@
   }
 
   function activate(filter) {
+    // 0) Pagina SENZA la sezione progetti (es. pagina di dettaglio di un
+    //    progetto): salvo la scelta e vado alla home, dove progetti.js
+    //    applicherà il filtro al caricamento e scorrerà fino ai progetti.
+    if (!document.getElementById("Prodotti")) {
+      try {
+        localStorage.setItem(STORAGE_KEY, filter);
+      } catch (e) {
+        /* localStorage non disponibile: si procede comunque */
+      }
+      var grid = document.querySelector(".features-grid[data-home]");
+      var home = grid ? grid.getAttribute("data-home") : "index.html";
+      window.location.href = home + "#Prodotti";
+      return;
+    }
+
     // 1) Se i pulsanti filtro esistono già, premi quello giusto:
     //    riusa tutta la logica di progetti.js (stato + scroll incluso).
     var btn = findFilterButton(filter);

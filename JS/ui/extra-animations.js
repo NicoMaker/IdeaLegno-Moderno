@@ -335,13 +335,51 @@
     ).observe(hero);
   }
 
+  // ── Calcola il valore finale di un contatore ──
+  // Se ha data-since (anno di fondazione) → anni trascorsi = anno corrente - anno.
+  // Altrimenti usa data-count (numero fisso).
+  function resolveCounterTarget(el) {
+    var since = parseInt(el.getAttribute("data-since"), 10);
+    if (!isNaN(since)) {
+      return Math.max(0, new Date().getFullYear() - since);
+    }
+    return parseInt(el.getAttribute("data-count"), 10);
+  }
+
+  // Scrive subito il valore finale (senza animazione).
+  function setCounterFinal(el) {
+    var target = resolveCounterTarget(el);
+    if (isNaN(target)) return;
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    el.textContent = prefix + target + suffix;
+  }
+
+  // Riallinea gli "anni di attività" ogni notte alle 00:00 senza ricaricare.
+  function scheduleMidnightRefresh() {
+    var now = new Date();
+    var next = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1,
+      0,
+      0,
+      1,
+    );
+    setTimeout(function () {
+      var nodes = document.querySelectorAll(".stats-strip [data-since]");
+      for (var i = 0; i < nodes.length; i++) setCounterFinal(nodes[i]);
+      scheduleMidnightRefresh();
+    }, next - now);
+  }
+
   // ── 7. Contatori animati ──
   function initCounters() {
     var strip = document.querySelector(".stats-strip");
     if (!strip) return;
 
     function animateValue(el) {
-      var target = parseInt(el.getAttribute("data-count"), 10);
+      var target = resolveCounterTarget(el);
       if (isNaN(target)) return;
       var prefix = el.getAttribute("data-prefix") || "";
       var suffix = el.getAttribute("data-suffix") || "";
@@ -377,7 +415,16 @@
 
   // ── Avvio ──
   function init() {
-    if (reduceMotion) return; // il CSS mostra già tutto senza animazioni
+    // Gli "anni di attività" (e gli altri contatori) devono mostrare il valore
+    // corretto anche quando l'utente ha attivato "riduzione movimento".
+    if (reduceMotion) {
+      var counters = document.querySelectorAll(
+        ".stats-strip [data-count], .stats-strip [data-since]",
+      );
+      for (var i = 0; i < counters.length; i++) setCounterFinal(counters[i]);
+      scheduleMidnightRefresh();
+      return; // il CSS mostra già tutto senza animazioni
+    }
 
     initLetterTitle();
     initTypewriter();
@@ -386,6 +433,7 @@
     initRipple();
     initParticles();
     initCounters();
+    scheduleMidnightRefresh();
   }
 
   if (document.readyState === "loading") {
