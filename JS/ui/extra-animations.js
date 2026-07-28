@@ -578,8 +578,15 @@
 
     if (reduceMotion || !("IntersectionObserver" in window)) {
       document.body.classList.add("hero-loaded");
+      // Anche senza animazioni i numeri devono arrivare: il listener va
+      // registrato comunque, altrimenti progetti e settori restano a 0.
+      setupProgettiListener();
+      // Tutti i contatori, non solo quelli dinamici: senza animazione vanno
+      // comunque scritti i valori finali (anni di attività, 100% su misura…).
       document
-        .querySelectorAll(".stat-value[data-source]")
+        .querySelectorAll(
+          ".stats-strip [data-count], .stats-strip [data-since], .stats-strip [data-source]",
+        )
         .forEach(setCounterFinal);
       // In caso di riduzione movimento, proviamo comunque a impostare l'etichetta
       // se i dati sono già stati caricati? In realtà qui i dati potrebbero non essere ancora arrivati,

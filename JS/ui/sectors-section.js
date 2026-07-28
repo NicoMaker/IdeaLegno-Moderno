@@ -1,8 +1,9 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // sectors-section.js — IdeaLegno
-// Genera via JavaScript le due sezioni "esplora":
-//   1) "I Nostri Settori"  → le 3 schede categoria (Casa / Commerciale / Nautico)
-//   2) "Tutti i progetti"  → la scheda unica, in una SEZIONE SEPARATA
+// Genera via JavaScript le tre sezioni finali, uguali su home e pagine interne:
+//   1) #Settori        → "I Nostri Settori", le 3 schede categoria
+//   2) #TuttiProgetti  → "Tutti i progetti", la scheda unica
+//   3) #Dati           → la barra con i numeri (anni, progetti, settori, %)
 //
 // COME SI USA
 // -----------
@@ -83,6 +84,7 @@
   // (index.html#Settori, index.html#TuttiProgetti).
   var SECTORS_ID = "Settori";
   var ALL_ID = "TuttiProgetti";
+  var STATS_ID = "Dati";
 
   var SECTORS_TITLE = "I Nostri Settori";
   var SECTORS_SUBTITLE =
@@ -149,6 +151,39 @@
     );
   }
 
+  // ── Barra dei numeri ───────────────────────────────────────────────────────
+  // I valori vengono riempiti da JS/ui/extra-animations.js: "anni di attività"
+  // dall'anno di fondazione in app-config.js, progetti e settori dall'evento
+  // "prodottiCaricati" emesso da products-loader.js.
+  function statsHTML() {
+    return (
+      '<section id="' +
+      STATS_ID +
+      '" class="about-section stats-section">' +
+      '<div class="container">' +
+      '<div class="stats-strip">' +
+      '<div class="stat-item">' +
+      '<div class="stat-value" data-since="">0</div>' +
+      '<div class="stat-label">Anni di attività</div>' +
+      "</div>" +
+      '<div class="stat-item">' +
+      '<div class="stat-value" data-source="progetti">0</div>' +
+      '<div class="stat-label">Progetti in vetrina</div>' +
+      "</div>" +
+      '<div class="stat-item">' +
+      '<div class="stat-value" data-source="categorie">0</div>' +
+      '<div class="stat-label" id="categorie-label">Settori: ...</div>' +
+      "</div>" +
+      '<div class="stat-item">' +
+      '<div class="stat-value" data-count="100" data-suffix="%">0</div>' +
+      '<div class="stat-label">Su misura</div>' +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</section>"
+    );
+  }
+
   function sectionHTML(opts) {
     var cards = opts.cards.map(cardHTML).join("");
 
@@ -198,7 +233,8 @@
         subtitle: ALL_SUBTITLE,
         cards: [ALL_CARD],
         home: home,
-      })
+      }) +
+      statsHTML()
     );
   }
 
@@ -226,7 +262,7 @@
   // ci pensiamo noi. Non interviene se la pagina è già stata spostata.
   function honourHash() {
     var id = location.hash.replace("#", "");
-    if (id !== SECTORS_ID && id !== ALL_ID) return;
+    if (id !== SECTORS_ID && id !== ALL_ID && id !== STATS_ID) return;
     if (window.scrollY > 10) return;
 
     var target = document.getElementById(id);

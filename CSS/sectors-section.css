@@ -87,8 +87,15 @@
    l'header fisso quando si arriva dall'ancora.
    ═══════════════════════════════════════════════════════════════════════════ */
 #Settori,
-#TuttiProgetti {
+#TuttiProgetti,
+#Dati {
   scroll-margin-top: 96px;
+}
+
+/* La barra dei numeri chiude il blocco: le sta bene un po' d'aria sopra,
+   ma non il padding pieno della sezione precedente. */
+.stats-section {
+  padding-top: 0;
 }
 
 /* Con due voci in più il menu desktop parte già a 768px: gap elastico e
