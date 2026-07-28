@@ -6,7 +6,9 @@
 //   • la pagina scorre automaticamente fino ai progetti filtrati
 // Riusa la logica già presente in progetti.js: preme il relativo
 // pulsante-filtro, così stato, evidenziazione e scroll restano coerenti.
-// Le schede portano data-filter="Casa" | "Commerciale" | "Nautico".
+// Le schede portano data-filter="Casa" | "Commerciale" | "Nautico" | "Tutti".
+// Le schede sono generate da JS/ui/sectors-section.js: qui si usa la delega
+// degli eventi, così l'ordine di caricamento degli script non conta.
 // ─────────────────────────────────────────────────────────────────────────────
 (function () {
   "use strict";
@@ -72,24 +74,33 @@
     }, 100);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var cards = document.querySelectorAll(".feature-card--link");
+  // ── Aggancio degli eventi ──────────────────────────────────────────────────
+  // Delega sul documento: funziona sia con le schede scritte nell'HTML sia con
+  // quelle generate da JS/ui/sectors-section.js, senza dipendere dall'ordine
+  // di caricamento degli script.
+  function closestCard(el) {
+    while (el && el !== document) {
+      if (el.classList && el.classList.contains("feature-card--link")) return el;
+      el = el.parentNode;
+    }
+    return null;
+  }
 
-    Array.prototype.forEach.call(cards, function (card) {
-      var filter = card.getAttribute("data-filter");
-      if (!filter) return;
+  document.addEventListener("click", function (e) {
+    var card = closestCard(e.target);
+    if (!card) return;
+    var filter = card.getAttribute("data-filter");
+    if (filter) activate(filter);
+  });
 
-      card.addEventListener("click", function () {
-        activate(filter);
-      });
-
-      // Accessibilità: attivazione da tastiera (Invio / Spazio).
-      card.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
-          e.preventDefault();
-          activate(filter);
-        }
-      });
-    });
+  // Accessibilità: attivazione da tastiera (Invio / Spazio).
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+    var card = closestCard(e.target);
+    if (!card) return;
+    var filter = card.getAttribute("data-filter");
+    if (!filter) return;
+    e.preventDefault();
+    activate(filter);
   });
 })();

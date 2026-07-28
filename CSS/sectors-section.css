@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   sectors-section.css — IdeaLegno
+   Stili delle DUE sezioni generate da JS/ui/sectors-section.js:
+
+     • .idealegno-explore      → "I Nostri Settori" (3 schede categoria)
+     • .idealegno-explore-all  → "Tutti i progetti" (scheda unica, centrata)
+
+   Prima le quattro schede stavano in un'unica griglia a 3 colonne, così la
+   quarta ("Tutti i progetti") finiva da sola su una seconda riga. Ora sono
+   due sezioni distinte: le tre categorie riempiono la riga, il riepilogo ha
+   il suo spazio dedicato.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Sezione 1: I Nostri Settori ─────────────────────────────────────────── */
+.idealegno-explore .features-grid--sectors {
+  margin-top: var(--spacing-xl, 2rem);
+}
+
+/* Tre colonne piene da tablet in su (a 1 colonna sotto, come da styles.css) */
+@media (min-width: 768px) {
+  .idealegno-explore .features-grid--sectors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Sezione 2: Tutti i progetti ─────────────────────────────────────────── */
+/* Segue subito la precedente: niente padding doppio in mezzo. */
+.idealegno-explore-all {
+  padding-top: 0;
+}
+
+.idealegno-explore-all .features-grid--all {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-top: var(--spacing-lg, 1.5rem);
+}
+
+.idealegno-explore-all .feature-card--all {
+  width: min(460px, 100%);
+}
+
+/* Annulla la vecchia regola pensata per la griglia unica a 4 schede
+   (custom-styles.css), che qui non serve più. */
+@media (min-width: 1025px) {
+  .idealegno-explore-all .feature-card--all {
+    grid-column: auto;
+    justify-self: center;
+    width: min(460px, 100%);
+  }
+}
+
+/* La scheda "Tutti i progetti" si distingue leggermente dalle categorie */
+.idealegno-explore-all .feature-card--all {
+  background: linear-gradient(
+    160deg,
+    var(--gray-light, #f5f1e8),
+    var(--surface, #fffdf9)
+  );
+  border-color: rgba(160, 82, 45, 0.18);
+}
+
+.idealegno-explore-all .feature-card--all:hover,
+.idealegno-explore-all .feature-card--all:focus-visible {
+  border-color: var(--accent-rust, #a0522d);
+}
+
+/* ── Sottotitoli delle due sezioni ───────────────────────────────────────── */
+.idealegno-explore .section-subtitle,
+.idealegno-explore-all .section-subtitle {
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .idealegno-explore-all .feature-card--all {
+    width: 100%;
+  }
+}

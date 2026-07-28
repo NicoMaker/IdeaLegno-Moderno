@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="../CSS/custom-styles.css" />
     <link rel="stylesheet" href="../CSS/product-page.css" />
     <link rel="stylesheet" href="../CSS/category-colors.css" />
+    <link rel="stylesheet" href="../CSS/idealegno-extra.css" />
     <link rel="stylesheet" href="../CSS/extra-animations.css" />
+    <link rel="stylesheet" href="../CSS/sectors-section.css" />
     <link rel="stylesheet" href="../CSS/project-gallery.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -30,6 +32,9 @@
         document.documentElement.classList.add("anim");
     </script>
     <link rel="stylesheet" href="../CSS/modern.css" />
+
+    <!-- Sezioni "I Nostri Settori" / "Tutti i progetti" generate da JS -->
+    <script defer src="../JS/ui/sectors-section.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -115,15 +120,6 @@
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <div class="dots-container" style="text-align: center"></div>
-        <div class="gallery-thumbs">
-          <button
-            class="gallery-thumb"
-            type="button"
-            aria-label="Vai alla foto 1"
-          >
-            <img src="Img/Home/Panca/Panca_Disegno.jpg" alt="" loading="lazy" />
-          </button>
-        </div>
       </div>
 
       <div class="back-button-row">
@@ -134,89 +130,9 @@
       </div>
     </main>
 
-        <!-- Sezioni "Esplora i settori" + statistiche (aggiunte anche nelle pagine progetto) -->
-    <section class="about-section idealegno-explore">
-      <div class="container">
-        <h2 class="section-title">I Nostri Settori</h2>
-            <div class="features-grid" data-home="../index.html">
-              <div
-                class="feature-card feature-card--link"
-                data-filter="Casa"
-                role="button"
-                tabindex="0"
-                aria-label="Mostra i progetti per la categoria Casa"
-              >
-                <div class="feature-icon">
-                  <span class="material-icons">home</span>
-                </div>
-                <h3>Arredamento Domestico</h3>
-                <p>
-                  Cucine, soggiorni, camere da letto e bagni su misura per la tua
-                  casa
-                </p>
-                <span class="feature-card__cta" aria-hidden="true">
-                  Vedi i progetti
-                  <svg class="cta-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-              </div>
-              <div
-                class="feature-card feature-card--link"
-                data-filter="Commerciale"
-                role="button"
-                tabindex="0"
-                aria-label="Mostra i progetti per la categoria Commerciale"
-              >
-                <div class="feature-icon">
-                  <span class="material-icons">store</span>
-                </div>
-                <h3>Arredamento Commerciale</h3>
-                <p>
-                  Soluzioni personalizzate per negozi, uffici e spazi commerciali
-                </p>
-                <span class="feature-card__cta" aria-hidden="true">
-                  Vedi i progetti
-                  <svg class="cta-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-              </div>
-              <div
-                class="feature-card feature-card--link"
-                data-filter="Nautico"
-                role="button"
-                tabindex="0"
-                aria-label="Mostra i progetti per la categoria Nautico"
-              >
-                <div class="feature-icon">
-                  <span class="material-icons">sailing</span>
-                </div>
-                <h3>Settore Navale</h3>
-                <p>
-                  Arredamenti di lusso per yacht e imbarcazioni di ogni dimensione
-                </p>
-                <span class="feature-card__cta" aria-hidden="true">
-                  Vedi i progetti
-                  <svg class="cta-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-              </div>
-              <div
-                class="feature-card feature-card--link feature-card--all"
-                data-filter="Tutti"
-                role="button"
-                tabindex="0"
-                aria-label="Mostra tutti i progetti"
-              >
-                <div class="feature-icon">
-                  <span class="material-icons">grid_view</span>
-                </div>
-                <h3>Tutti i progetti</h3>
-                <p>Sfoglia tutti i nostri lavori, in ogni settore</p>
-                <span class="feature-card__cta" aria-hidden="true">
-                  Vedi tutti
-                  <svg class="cta-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-              </div>
-            </div>
-      </div>
-    </section>
+    <!-- Sezioni "I Nostri Settori" + "Tutti i progetti":
+         generate da JS/ui/sectors-section.js (due sezioni separate) -->
+    <div data-idealegno-sectors data-home="../index.html"></div>
 
     <footer id="Contatti" class="site-footer">
       <!-- Il contenuto del footer verrà generato dinamicamente da footer.js -->
@@ -233,7 +149,6 @@
     <script src="../JS/shared/category-colors.js"></script>
     <script src="../JS/product/product-page.js"></script>
     <script src="../JS/product/slider.js"></script>
-    <script src="../JS/product/gallery-enhance.js"></script>
     <script src="../JS/ui/mobile-menu.js"></script>
     <script src="../JS/footer/date-utils.js"></script>
     <script src="../JS/footer/Gestisci_chiusure.js"></script>
