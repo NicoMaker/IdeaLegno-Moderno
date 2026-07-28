@@ -19,6 +19,11 @@
   ).matches;
   var finePointer = window.matchMedia("(pointer: fine)").matches;
 
+  // ── Variabili globali per i dati dal JSON ──
+  let progettiCount = null;
+  let categorieCount = null;
+  let categorieList = []; // per generare l'etichetta
+
   // ── 1. Titolo hero: split in lettere ──
   function initLetterTitle() {
     var title = document.querySelector(".hero-title");
@@ -28,10 +33,6 @@
     title.setAttribute("aria-label", text);
     title.textContent = "";
 
-    // Le lettere vengono raggruppate per parola (.ht-word, white-space:nowrap)
-    // così il testo può andare a capo solo TRA le parole, mai al loro interno
-    // (in precedenza ogni lettera era uno span indipendente e il browser
-    // poteva spezzare una parola a metà, es. "Misura" -> "Misur" + "a").
     var idx = 0;
     var words = text.split(" ");
     words.forEach(function (word, wIdx) {
@@ -58,8 +59,6 @@
   }
 
   // ── 2. Typewriter nella hero (testi da JSON/hero.json) ──
-  // I testi si modificano SOLO in JSON/hero.json, non qui.
-  // Se il loader non è disponibile o il fetch fallisce, si usano i fallback.
   var HERO_TEXT_FALLBACK = {
     prefix: "Progetti unici",
     parole: ["per la tua casa", "per il tuo negozio", "per il tuo yacht"],
@@ -114,7 +113,6 @@
   }
 
   function initTypewriter() {
-    // Solo dove esiste la hero (la home). Sulle pagine progetto esce subito.
     if (!document.querySelector(".hero-subtitle")) return;
 
     if (typeof JsonData !== "undefined" && JsonData && JsonData.load) {
@@ -133,14 +131,13 @@
   // ── 3. Tilt 3D delegato sulle card ──
   function initTilt() {
     if (!finePointer) return;
-    var MAX = 7; // gradi massimi
+    var MAX = 7;
 
     document.addEventListener(
       "pointermove",
       function (e) {
         var card = e.target.closest ? e.target.closest(".Progetti-card") : null;
 
-        // resetta le card non più sotto il cursore
         document
           .querySelectorAll(".Progetti-card.is-tilting")
           .forEach(function (c) {
@@ -235,7 +232,6 @@
     }
 
     scan();
-    // i pulsanti flottanti vengono creati da modern-animations.js
     setTimeout(scan, 800);
   }
 
@@ -320,7 +316,6 @@
 
     window.addEventListener("resize", resize, { passive: true });
 
-    // anima solo quando la hero è visibile
     new IntersectionObserver(
       function (entries) {
         var visible = entries[0].isIntersecting;
@@ -336,9 +331,6 @@
   }
 
   // ── Calcola il valore finale di un contatore ──
-  // - data-since con un anno (es. "2018") → anni trascorsi da quell'anno.
-  // - data-since SENZA valore → usa l'anno di fondazione dalla config (AppConfig.azienda.annoFondazione).
-  // - altrimenti usa data-count (numero fisso).
   function getAnnoFondazione() {
     try {
       if (typeof AppConfig !== "undefined" && AppConfig.azienda) {
@@ -352,10 +344,17 @@
   }
 
   function resolveCounterTarget(el) {
+    var source = el.getAttribute("data-source");
+    if (source === "progetti") {
+      return progettiCount !== null ? progettiCount : null;
+    }
+    if (source === "categorie") {
+      return categorieCount !== null ? categorieCount : null;
+    }
     if (el.hasAttribute("data-since")) {
       var raw = el.getAttribute("data-since");
       var since = parseInt(raw, 10);
-      if (isNaN(since)) since = getAnnoFondazione(); // valore preso dalla config
+      if (isNaN(since)) since = getAnnoFondazione();
       if (since !== null && !isNaN(since)) {
         return Math.max(0, new Date().getFullYear() - since);
       }
@@ -363,16 +362,84 @@
     return parseInt(el.getAttribute("data-count"), 10);
   }
 
-  // Scrive subito il valore finale (senza animazione).
+  // Imposta il valore finale (senza animazione) su un elemento
   function setCounterFinal(el) {
     var target = resolveCounterTarget(el);
-    if (isNaN(target)) return;
+    if (target === null || isNaN(target)) return;
     var prefix = el.getAttribute("data-prefix") || "";
     var suffix = el.getAttribute("data-suffix") || "";
     el.textContent = prefix + target + suffix;
   }
 
-  // Riallinea gli "anni di attività" ogni notte alle 00:00 senza ricaricare.
+  // ── Aggiorna il contatore dei progetti ──
+  function updateProgettiCounter() {
+    var el = document.querySelector('.stat-value[data-source="progetti"]');
+    if (!el) return;
+    var target = progettiCount;
+    if (target === null || isNaN(target)) {
+      el.textContent = "...";
+      return;
+    }
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    el.textContent = prefix + target + suffix;
+    // Effetto flash opzionale
+    el.style.transition = "color 0.15s";
+    el.style.color = "#d4a373";
+    setTimeout(() => {
+      el.style.color = "";
+    }, 300);
+  }
+
+  // ── Aggiorna il contatore delle categorie ──
+  function updateCategorieCounter() {
+    var el = document.querySelector('.stat-value[data-source="categorie"]');
+    if (!el) return;
+    var target = categorieCount;
+    if (target === null || isNaN(target)) {
+      el.textContent = "...";
+      return;
+    }
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    el.textContent = prefix + target + suffix;
+    el.style.transition = "color 0.15s";
+    el.style.color = "#d4a373";
+    setTimeout(() => {
+      el.style.color = "";
+    }, 300);
+  }
+
+  // ── NUOVA: Aggiorna l'etichetta dei settori ──
+  function updateCategorieLabel() {
+    var labelEl = document.getElementById("categorie-label");
+    if (!labelEl) return;
+
+    if (!categorieList || categorieList.length === 0) {
+      labelEl.textContent = "Settori: nessuno";
+      return;
+    }
+
+    // Formatta i nomi delle categorie con la prima lettera maiuscola
+    var formatted = categorieList.map(function (cat) {
+      return cat.charAt(0).toUpperCase() + cat.slice(1);
+    });
+
+    // Unisci con virgola, e se più di due, usa " e " per l'ultimo (opzionale)
+    var text;
+    if (formatted.length === 1) {
+      text = "Settore: " + formatted[0];
+    } else if (formatted.length === 2) {
+      text = "Settori: " + formatted[0] + " e " + formatted[1];
+    } else {
+      // più di due: lista con virgole, ultimo con " e "
+      var last = formatted.pop();
+      text = "Settori: " + formatted.join(", ") + " e " + last;
+    }
+    labelEl.textContent = text;
+  }
+
+  // ── Riallinea gli "anni di attività" ogni notte alle 00:00 ──
   function scheduleMidnightRefresh() {
     var now = new Date();
     var next = new Date(
@@ -395,9 +462,14 @@
     var strip = document.querySelector(".stats-strip");
     if (!strip) return;
 
+    function isDynamicSource(el) {
+      var src = el.getAttribute("data-source");
+      return src === "progetti" || src === "categorie";
+    }
+
     function animateValue(el) {
       var target = resolveCounterTarget(el);
-      if (isNaN(target)) return;
+      if (target === null || isNaN(target)) return;
       var prefix = el.getAttribute("data-prefix") || "";
       var suffix = el.getAttribute("data-suffix") || "";
       var duration = 1600;
@@ -406,7 +478,6 @@
       function frame(ts) {
         if (!start) start = ts;
         var t = Math.min((ts - start) / duration, 1);
-        // ease-out cubico
         var eased = 1 - Math.pow(1 - t, 3);
         el.textContent = prefix + Math.round(target * eased) + suffix;
         if (t < 1) requestAnimationFrame(frame);
@@ -419,31 +490,107 @@
       }
     }
 
+    // Osserva lo strip per avviare le animazioni su tutti i contatori
     new IntersectionObserver(
       function (entries, obs) {
         if (!entries[0].isIntersecting) return;
         strip.classList.add("stats-in");
-        strip
-          .querySelectorAll("[data-count], [data-since]")
-          .forEach(animateValue);
+
+        var allCounters = strip.querySelectorAll(
+          "[data-count], [data-since], [data-source]",
+        );
+        allCounters.forEach(function (el) {
+          if (isDynamicSource(el)) {
+            var src = el.getAttribute("data-source");
+            var val = src === "progetti" ? progettiCount : categorieCount;
+            if (val !== null && !isNaN(val)) {
+              animateValue(el);
+            } else {
+              if (!el.textContent || el.textContent === "0") {
+                el.textContent = "...";
+              }
+            }
+          } else {
+            animateValue(el);
+          }
+        });
+
         obs.disconnect();
       },
       { threshold: 0.35 },
     ).observe(strip);
   }
 
+  // ── Ascolta l'evento di caricamento dei progetti ──
+  function setupProgettiListener() {
+    document.addEventListener("prodottiCaricati", function (e) {
+      var prodotti = e.detail.prodotti;
+      progettiCount = prodotti.length;
+
+      // Calcola le categorie uniche
+      var categorieSet = new Set();
+      prodotti.forEach(function (p) {
+        if (p.categorie && Array.isArray(p.categorie)) {
+          p.categorie.forEach(function (cat) {
+            if (cat) categorieSet.add(cat);
+          });
+        }
+      });
+      categorieCount = categorieSet.size;
+      categorieList = Array.from(categorieSet).sort(); // ordine alfabetico
+
+      // Aggiorna contatori e etichetta
+      updateProgettiCounter();
+      updateCategorieCounter();
+      updateCategorieLabel(); // <--- NUOVA CHIAMATA
+
+      // Se lo strip è già visibile (stats-in), avvia animazione per i contatori in attesa
+      var strip = document.querySelector(".stats-strip");
+      if (strip && strip.classList.contains("stats-in")) {
+        var dynamicEls = strip.querySelectorAll(
+          '.stat-value[data-source="progetti"], .stat-value[data-source="categorie"]',
+        );
+        dynamicEls.forEach(function (el) {
+          if (el.textContent === "...") {
+            animateValue(el);
+          }
+        });
+      }
+    });
+
+    // Gestione errore: mostra 0 e label vuota
+    document.addEventListener("prodottiErrore", function () {
+      progettiCount = 0;
+      categorieCount = 0;
+      categorieList = [];
+      updateProgettiCounter();
+      updateCategorieCounter();
+      var labelEl = document.getElementById("categorie-label");
+      if (labelEl) labelEl.textContent = "Settori: nessuno";
+    });
+  }
+
   // ── Avvio ──
   function init() {
-    // Gli "anni di attività" (e gli altri contatori) devono mostrare il valore
-    // corretto anche quando l'utente ha attivato "riduzione movimento".
-    if (reduceMotion) {
-      var counters = document.querySelectorAll(
-        ".stats-strip [data-count], .stats-strip [data-since]",
-      );
-      for (var i = 0; i < counters.length; i++) setCounterFinal(counters[i]);
-      scheduleMidnightRefresh();
-      return; // il CSS mostra già tutto senza animazioni
+    if (typeof initHeader === "function") initHeader();
+    if (typeof initFloatingButtons === "function") initFloatingButtons();
+    if (typeof initSectionDividers === "function") initSectionDividers();
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      document.body.classList.add("hero-loaded");
+      document
+        .querySelectorAll(".stat-value[data-source]")
+        .forEach(setCounterFinal);
+      // In caso di riduzione movimento, proviamo comunque a impostare l'etichetta
+      // se i dati sono già stati caricati? In realtà qui i dati potrebbero non essere ancora arrivati,
+      // ma se il caricamento è già avvenuto, updateCategorieLabel verrà chiamato dal listener.
+      // Quindi va bene così.
+      return;
     }
+
+    if (typeof initHero === "function") initHero();
+    if (typeof initParallax === "function") initParallax();
+    if (typeof initPageTransitions === "function") initPageTransitions();
 
     initLetterTitle();
     initTypewriter();
@@ -453,6 +600,19 @@
     initParticles();
     initCounters();
     scheduleMidnightRefresh();
+
+    setupProgettiListener();
+
+    setTimeout(function () {
+      document
+        .querySelectorAll("[data-reveal]:not(.reveal-in)")
+        .forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) {
+            el.classList.add("reveal-in");
+          }
+        });
+    }, 4000);
   }
 
   if (document.readyState === "loading") {
