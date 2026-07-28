@@ -333,3 +333,54 @@
   border-bottom: 2px solid #b8860b;
   padding-bottom: 2px;
 }
+
+
+/* ============================================================
+   RIMUOVE TUTTI I CONTORNI DALLE IMMAGINI PAGINA PRODOTTO
+   ============================================================ */
+
+/* 1. Nessun bordo/padding/ombra sull'immagine principale */
+.main-product-image {
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* se c'è uno sfondo sotto */
+}
+
+/* 2. Nessun bordo sul contenitore dello slider */
+.slider-container {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* toglie anche lo sfondo sfumato */
+}
+
+/* 3. Rimuove il padding interno del contenitore che potrebbe creare un bordo falso */
+.slider-container {
+  padding: 0 !important;
+}
+
+/* 4. Se ci sono altre immagini nella galleria (es. slide) */
+.slide img,
+.product-image-gallery img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 5. Se il bordo è su un wrapper generico */
+.product-image-gallery {
+  border: none !important;
+  outline: none !important;
+}
+
+/* 6. Rimuove il bordo colorato (accent-warm) che potrebbe essere sul contenitore */
+.product-detail-card .slider-container {
+  border: none !important;
+}
+
+/* Se il bordo è in realtà un'ombra esterna, la rimuoviamo */
+.product-detail-container * {
+  box-shadow: none !important; /* attenzione: potrebbe rimuovere ombre utili, ma per le immagini va bene */
+}
