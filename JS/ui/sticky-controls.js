@@ -8,11 +8,21 @@
 // lo scroll orizzontale), "position: sticky" smette di funzionare sui
 // discendenti. Con position: fixed calcolato via scroll listener il
 // problema non si presenta, perché fixed non dipende dagli antenati.
+//
+// La barra resta agganciata SOLO all'interno della sezione "I Nostri
+// Progetti": appena il fondo della sezione passa sopra la barra, questa
+// sparisce in dissolvenza (classe .is-out) e ricompare tornando indietro.
+// Non viene sganciata davvero, così il segnaposto mantiene la sua altezza
+// e il contenuto sotto non fa salti.
 
 document.addEventListener("DOMContentLoaded", () => {
   const siteHeader = document.querySelector(".site-header");
   const stickyControls = document.getElementById("product-controls-sticky");
   const placeholder = document.getElementById("product-controls-placeholder");
+
+  // Sezione che "possiede" la barra: fuori di qui la barra non si vede.
+  const projectsSection =
+    stickyControls.closest("section") || document.getElementById("Prodotti");
 
   if (!siteHeader || !stickyControls || !placeholder) return;
 
@@ -43,6 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePinState();
   }
 
+  // La barra è "fuori sezione" quando il fondo della sezione progetti
+  // è ormai risalito sopra la barra stessa.
+  function updateOutOfSection() {
+    if (!projectsSection) return;
+
+    const barHeight = stickyControls.offsetHeight;
+    const sectionBottom = projectsSection.getBoundingClientRect().bottom;
+    const isOut = isPinned && sectionBottom < pinTop + barHeight;
+
+    stickyControls.classList.toggle("is-out", isOut);
+  }
+
   function updatePinState() {
     const triggerPoint = naturalOffsetTop - pinTop;
     const shouldPin = window.scrollY >= triggerPoint;
@@ -61,6 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // Header potrebbe cambiare altezza durante lo scroll (es. si compatta)
       stickyControls.style.top = `${pinTop}px`;
     }
+
+    if (!isPinned) stickyControls.classList.remove("is-out");
+    updateOutOfSection();
   }
 
   measure();
@@ -94,4 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // che cambiano l'altezza della griglia sottostante non influenzano la
   // barra, ma un cambio di font/immagini nell'header sì).
   window.addEventListener("load", measure);
+
+  // I progetti arrivano dal JSON dopo il caricamento: la sezione cambia
+  // altezza, quindi rimisuriamo.
+  document.addEventListener("prodottiCaricati", () => setTimeout(measure, 60));
 });
