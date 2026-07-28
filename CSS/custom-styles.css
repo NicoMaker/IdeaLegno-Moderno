@@ -1507,7 +1507,9 @@ footer {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(44, 36, 22, 0.12);
   border: 1px solid var(--gray-medium, #d4cfc5);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .riconoscimento-card:hover {

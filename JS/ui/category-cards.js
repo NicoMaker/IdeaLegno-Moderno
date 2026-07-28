@@ -80,7 +80,8 @@
   // di caricamento degli script.
   function closestCard(el) {
     while (el && el !== document) {
-      if (el.classList && el.classList.contains("feature-card--link")) return el;
+      if (el.classList && el.classList.contains("feature-card--link"))
+        return el;
       el = el.parentNode;
     }
     return null;

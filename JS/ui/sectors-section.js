@@ -230,18 +230,16 @@
   function buildFor(host) {
     var home = resolveHome(host);
 
-    return (
-      sectionHTML({
-        id: SECTORS_ID,
-        sectionClass: "idealegno-explore",
-        gridClass: "features-grid--sectors",
-        title: SECTORS_TITLE,
-        subtitle: SECTORS_SUBTITLE,
-        cards: SECTORS.concat([ALL_CARD]),
-        home: home,
-        extra: wantsStats(host) ? statsHTML() : "",
-      })
-    );
+    return sectionHTML({
+      id: SECTORS_ID,
+      sectionClass: "idealegno-explore",
+      gridClass: "features-grid--sectors",
+      title: SECTORS_TITLE,
+      subtitle: SECTORS_SUBTITLE,
+      cards: SECTORS.concat([ALL_CARD]),
+      home: home,
+      extra: wantsStats(host) ? statsHTML() : "",
+    });
   }
 
   // ── Render: sostituisce il segnaposto con le due sezioni ───────────────────
