@@ -79,3 +79,30 @@
     width: 100%;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Ancoraggi dall'header
+   Le due sezioni hanno un id (#Settori e #TuttiProgetti) richiamato dalle
+   voci di menu. Lo scroll-margin evita che il titolo finisca sotto
+   l'header fisso quando si arriva dall'ancora.
+   ═══════════════════════════════════════════════════════════════════════════ */
+#Settori,
+#TuttiProgetti {
+  scroll-margin-top: 96px;
+}
+
+/* Con due voci in più il menu desktop parte già a 768px: gap elastico e
+   possibilità di andare a capo, così non esce mai dalla riga. */
+@media (min-width: 768px) {
+  .nav-list {
+    gap: clamp(0.85rem, 2.2vw, var(--spacing-xl));
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-link {
+    font-size: 0.92rem;
+  }
+}

@@ -79,6 +79,11 @@
     modifier: "feature-card--all",
   };
 
+  // Id delle due sezioni: sono gli ancoraggi usati dai link nell'header
+  // (index.html#Settori, index.html#TuttiProgetti).
+  var SECTORS_ID = "Settori";
+  var ALL_ID = "TuttiProgetti";
+
   var SECTORS_TITLE = "I Nostri Settori";
   var SECTORS_SUBTITLE =
     "Scegli l'ambito che ti interessa: ti portiamo direttamente ai progetti realizzati.";
@@ -148,7 +153,9 @@
     var cards = opts.cards.map(cardHTML).join("");
 
     return (
-      '<section class="about-section ' +
+      '<section id="' +
+      esc(opts.id) +
+      '" class="about-section ' +
       opts.sectionClass +
       '">' +
       '<div class="container">' +
@@ -175,6 +182,7 @@
 
     return (
       sectionHTML({
+        id: SECTORS_ID,
         sectionClass: "idealegno-explore",
         gridClass: "features-grid--sectors",
         title: SECTORS_TITLE,
@@ -183,6 +191,7 @@
         home: home,
       }) +
       sectionHTML({
+        id: ALL_ID,
         sectionClass: "idealegno-explore-all",
         gridClass: "features-grid--all",
         title: ALL_TITLE,
@@ -211,9 +220,26 @@
     });
   }
 
+  // Se si arriva sulla pagina con l'ancora già nell'URL
+  // (es. Progetti/scale.html#Settori oppure index.html#TuttiProgetti) e il
+  // browser non ha fatto il salto perché la sezione non esisteva ancora,
+  // ci pensiamo noi. Non interviene se la pagina è già stata spostata.
+  function honourHash() {
+    var id = location.hash.replace("#", "");
+    if (id !== SECTORS_ID && id !== ALL_ID) return;
+    if (window.scrollY > 10) return;
+
+    var target = document.getElementById(id);
+    if (target) target.scrollIntoView();
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", render);
   } else {
     render();
   }
+
+  window.addEventListener("load", function () {
+    setTimeout(honourHash, 80);
+  });
 })();
