@@ -168,3 +168,145 @@ html.anim .back-button-row {
     transform: none;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMAZIONI DELLA GALLERIA
+   1) entrata di frecce, pallini e cornice al caricamento della pagina
+   2) cambio foto: la nuova entra dal verso in cui stai navigando
+   Le classi .slide-in-next / .slide-in-prev le mette JS/product/slider.js.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Entrata al caricamento ── */
+@keyframes galleryFrameIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Nota: product-page.css blocca le frecce con
+   "transform: translateY(-50%) !important" (serve a tenerle centrate e ferme
+   al click). Una dichiarazione !important vince sui keyframe, quindi qui NON
+   si anima il transform: si animano opacity e left/right, che sono liberi. */
+@keyframes arrowInLeft {
+  from {
+    opacity: 0;
+    left: -12px;
+  }
+  to {
+    opacity: 1;
+    left: var(--spacing-md);
+  }
+}
+
+@keyframes arrowInRight {
+  from {
+    opacity: 0;
+    right: -12px;
+  }
+  to {
+    opacity: 1;
+    right: var(--spacing-md);
+  }
+}
+
+@keyframes dotsIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html.anim .project-view .slider-container {
+  animation: galleryFrameIn 0.85s var(--ease-out) 0.15s both;
+}
+
+html.anim .project-view .slider-container .prev {
+  animation: arrowInLeft 0.7s var(--ease-out) 0.55s both;
+}
+
+html.anim .project-view .slider-container .next {
+  animation: arrowInRight 0.7s var(--ease-out) 0.55s both;
+}
+
+html.anim .project-view .dots-container {
+  animation: dotsIn 0.7s var(--ease-out) 0.7s both;
+}
+
+/* Le frecce restano reattive al passaggio del mouse anche dopo l'entrata:
+   l'animazione usa translate, quindi lo scatto dell'hover va sulla scala. */
+.project-view .slider-container .prev,
+.project-view .slider-container .next {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    scale 0.25s var(--ease-out);
+}
+
+.project-view .slider-container .prev:hover,
+.project-view .slider-container .next:hover {
+  scale: 1.12;
+}
+
+.project-view .slider-container .prev:active,
+.project-view .slider-container .next:active {
+  scale: 0.94;
+}
+
+/* ── 2. Cambio foto con le frecce / pallini / swipe / tastiera ── */
+@keyframes gallerySlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(7%) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gallerySlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-7%) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.project-view .slide.slide-in-next {
+  animation: gallerySlideNext 0.45s var(--ease-out) both;
+}
+
+.project-view .slide.slide-in-prev {
+  animation: gallerySlidePrev 0.45s var(--ease-out) both;
+}
+
+/* ── Rispetto delle preferenze di sistema ── */
+@media (prefers-reduced-motion: reduce) {
+  html.anim .project-view .slider-container,
+  html.anim .project-view .slider-container .prev,
+  html.anim .project-view .slider-container .next,
+  html.anim .project-view .dots-container,
+  .project-view .slide.slide-in-next,
+  .project-view .slide.slide-in-prev {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-view .slider-container .prev,
+  .project-view .slider-container .next {
+    transition: none;
+  }
+}

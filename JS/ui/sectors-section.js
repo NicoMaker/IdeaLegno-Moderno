@@ -1,9 +1,16 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // sectors-section.js — IdeaLegno
-// Genera via JavaScript le tre sezioni finali, uguali su home e pagine interne:
-//   1) #Settori        → "I Nostri Settori", le 3 schede categoria
-//   2) #TuttiProgetti  → "Tutti i progetti", la scheda unica
-//   3) #Dati           → la barra con i numeri (anni, progetti, settori, %)
+// Genera via JavaScript un'unica sezione finale, identica su home e pagine
+// interne: #Settori → "I Nostri Settori", che contiene
+//   • le 3 schede categoria
+//   • la scheda "Tutti i progetti" (#TuttiProgetti) centrata sotto
+//   • la barra con i numeri (#Dati): anni, progetti, settori, % su misura —
+//     SOLO in home. Nelle pagine interne la sezione si ferma alle schede.
+// Gli id restano validi come ancore per le voci di menu.
+//
+// La barra dei numeri si può forzare con data-stats sul segnaposto:
+//     <div data-idealegno-sectors data-stats="false"></div>   → mai
+//     <div data-idealegno-sectors data-stats="true"></div>    → sempre
 //
 // COME SI USA
 // -----------
@@ -42,6 +49,11 @@
   // la home sta un livello sopra.
   var SUBFOLDERS = ["projects", "news", "contact", "cookies"];
 
+  // Ancore usate dai link nell'header e dai collegamenti esterni.
+  var SECTORS_ID = "Settori";
+  var ALL_ID = "TuttiProgetti";
+  var STATS_ID = "Dati";
+
   // ── Contenuti delle schede ─────────────────────────────────────────────────
   var SECTORS = [
     {
@@ -78,20 +90,13 @@
     cta: "Vedi tutti",
     aria: "Mostra tutti i progetti",
     modifier: "feature-card--all",
+    id: ALL_ID, // l'ancora #TuttiProgetti resta valida
   };
-
-  // Id delle due sezioni: sono gli ancoraggi usati dai link nell'header
-  // (index.html#Settori, index.html#TuttiProgetti).
-  var SECTORS_ID = "Settori";
-  var ALL_ID = "TuttiProgetti";
-  var STATS_ID = "Dati";
 
   var SECTORS_TITLE = "I Nostri Settori";
   var SECTORS_SUBTITLE =
-    "Scegli l'ambito che ti interessa: ti portiamo direttamente ai progetti realizzati.";
-  var ALL_TITLE = "Tutti i progetti";
-  var ALL_SUBTITLE =
-    "Preferisci dare un'occhiata d'insieme? Qui trovi ogni lavoro, senza filtri.";
+    "Scegli l'ambito che ti interessa, oppure sfoglia tutti i lavori: " +
+    "ti portiamo direttamente ai progetti realizzati.";
 
   // ── Utility ────────────────────────────────────────────────────────────────
   function esc(str) {
@@ -102,16 +107,27 @@
       .replace(/"/g, "&quot;");
   }
 
+  // Siamo in una pagina interna (Projects/…) o nella home?
+  function isSubpage() {
+    var parts = location.pathname.split("/").filter(Boolean);
+    parts.pop(); // toglie il nome del file
+    var folder = (parts[parts.length - 1] || "").toLowerCase();
+    return SUBFOLDERS.indexOf(folder) !== -1;
+  }
+
   // Percorso della home: esplicito (data-home) oppure dedotto dall'URL.
   function resolveHome(host) {
     var explicit = host.getAttribute("data-home");
     if (explicit) return explicit;
 
-    var parts = location.pathname.split("/").filter(Boolean);
-    parts.pop(); // toglie il nome del file
-    var folder = (parts[parts.length - 1] || "").toLowerCase();
+    return isSubpage() ? "../index.html" : "index.html";
+  }
 
-    return SUBFOLDERS.indexOf(folder) !== -1 ? "../index.html" : "index.html";
+  // La barra dei numeri va solo in home, salvo indicazione contraria.
+  function wantsStats(host) {
+    var attr = host.getAttribute("data-stats");
+    if (attr !== null) return attr !== "false";
+    return !isSubpage();
   }
 
   var ARROW =
@@ -125,7 +141,9 @@
     if (card.modifier) cls += " " + card.modifier;
 
     return (
-      '<div class="' +
+      "<div" +
+      (card.id ? ' id="' + esc(card.id) + '"' : "") +
+      ' class="' +
       cls +
       '" data-filter="' +
       esc(card.filter) +
@@ -157,11 +175,9 @@
   // "prodottiCaricati" emesso da products-loader.js.
   function statsHTML() {
     return (
-      '<section id="' +
+      '<div id="' +
       STATS_ID +
-      '" class="about-section stats-section">' +
-      '<div class="container">' +
-      '<div class="stats-strip">' +
+      '" class="stats-strip">' +
       '<div class="stat-item">' +
       '<div class="stat-value" data-since="">0</div>' +
       '<div class="stat-label">Anni di attività</div>' +
@@ -178,9 +194,7 @@
       '<div class="stat-value" data-count="100" data-suffix="%">0</div>' +
       '<div class="stat-label">Su misura</div>' +
       "</div>" +
-      "</div>" +
-      "</div>" +
-      "</section>"
+      "</div>"
     );
   }
 
@@ -207,6 +221,7 @@
       '">' +
       cards +
       "</div>" +
+      (opts.extra || "") +
       "</div>" +
       "</section>"
     );
@@ -222,19 +237,10 @@
         gridClass: "features-grid--sectors",
         title: SECTORS_TITLE,
         subtitle: SECTORS_SUBTITLE,
-        cards: SECTORS,
+        cards: SECTORS.concat([ALL_CARD]),
         home: home,
-      }) +
-      sectionHTML({
-        id: ALL_ID,
-        sectionClass: "idealegno-explore-all",
-        gridClass: "features-grid--all",
-        title: ALL_TITLE,
-        subtitle: ALL_SUBTITLE,
-        cards: [ALL_CARD],
-        home: home,
-      }) +
-      statsHTML()
+        extra: wantsStats(host) ? statsHTML() : "",
+      })
     );
   }
 

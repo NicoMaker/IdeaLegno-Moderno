@@ -1,6 +1,10 @@
 /**
  * Slider.js - Sistema di navigazione per slideshow
  * Supporta: navigazione con frecce, tastiera, swipe mobile e pallini indicatori
+ *
+ * Ogni cambio di foto entra con una piccola animazione, nel verso in cui si
+ * sta navigando: avanti la foto arriva da destra, indietro da sinistra.
+ * Le classi CSS corrispondenti sono in CSS/project-gallery.css.
  */
 
 let slideIndex = 1;
@@ -54,21 +58,23 @@ function createDots(numSlides, container) {
 
 // Navigazione con frecce prev/next
 const plusSlides = (n) => {
+  const direction = n < 0 ? "prev" : "next";
   slideIndex += n;
-  showSlides(slideIndex);
+  showSlides(slideIndex, direction);
 };
 
-// Navigazione diretta tramite pallini
+// Navigazione diretta tramite pallini / miniature
 const currentSlide = (n) => {
+  const direction = n < slideIndex ? "prev" : n > slideIndex ? "next" : null;
   slideIndex = n;
-  showSlides(slideIndex);
+  showSlides(slideIndex, direction);
 };
 
 // ============================================================================
 // VISUALIZZAZIONE SLIDE
 // ============================================================================
 
-function showSlides(n) {
+function showSlides(n, direction) {
   const slides = document.getElementsByClassName("slide");
   const dots = document.getElementsByClassName("dot");
 
@@ -91,8 +97,26 @@ function showSlides(n) {
   }
 
   // Mostra la slide corrente e attiva il pallino corrispondente
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
+  const current = slides[slideIndex - 1];
+  current.style.display = "block";
+  if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add("active");
+
+  animateEntrance(current, direction);
+}
+
+// ============================================================================
+// ANIMAZIONE DI ENTRATA DELLA FOTO
+// ============================================================================
+
+function animateEntrance(slide, direction) {
+  if (!direction) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  slide.classList.remove("slide-in-next", "slide-in-prev");
+  // Forza un reflow: senza, riaggiungere la stessa classe non fa ripartire
+  // l'animazione quando si preme più volte la stessa freccia.
+  void slide.offsetWidth;
+  slide.classList.add(direction === "prev" ? "slide-in-prev" : "slide-in-next");
 }
 
 // ============================================================================

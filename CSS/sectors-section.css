@@ -1,56 +1,36 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    sectors-section.css — IdeaLegno
-   Stili delle DUE sezioni generate da JS/ui/sectors-section.js:
+   Stili delle sezioni generate da JS/ui/sectors-section.js:
 
-     • .idealegno-explore      → "I Nostri Settori" (3 schede categoria)
-     • .idealegno-explore-all  → "Tutti i progetti" (scheda unica, centrata)
+   Un'unica sezione #Settori ("I Nostri Settori") che contiene:
+     • le 3 schede categoria in riga
+     • la scheda "Tutti i progetti" (#TuttiProgetti) centrata sotto
+     • la barra con i numeri (#Dati)
 
-   Prima le quattro schede stavano in un'unica griglia a 3 colonne, così la
-   quarta ("Tutti i progetti") finiva da sola su una seconda riga. Ora sono
-   due sezioni distinte: le tre categorie riempiono la riga, il riepilogo ha
-   il suo spazio dedicato.
+   La stessa sezione compare in home e nelle pagine progetto.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Sezione 1: I Nostri Settori ─────────────────────────────────────────── */
 .idealegno-explore .features-grid--sectors {
   margin-top: var(--spacing-xl, 2rem);
 }
 
-/* Tre colonne piene da tablet in su (a 1 colonna sotto, come da styles.css) */
+/* Tre colonne piene da tablet in su (sotto resta una colonna, da styles.css) */
 @media (min-width: 768px) {
   .idealegno-explore .features-grid--sectors {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-/* ── Sezione 2: Tutti i progetti ─────────────────────────────────────────── */
-/* Segue subito la precedente: niente padding doppio in mezzo. */
-.idealegno-explore-all {
-  padding-top: 0;
-}
-
-.idealegno-explore-all .features-grid--all {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  margin-top: var(--spacing-lg, 1.5rem);
-}
-
-.idealegno-explore-all .feature-card--all {
-  width: min(460px, 100%);
-}
-
-/* Annulla la vecchia regola pensata per la griglia unica a 4 schede
-   (custom-styles.css), che qui non serve più. */
-@media (min-width: 1025px) {
-  .idealegno-explore-all .feature-card--all {
-    grid-column: auto;
+  /* La quarta scheda occupa tutta la riga e resta centrata: non spezza
+     l'allineamento delle tre categorie sopra. */
+  .idealegno-explore .feature-card--all {
+    grid-column: 1 / -1;
     justify-self: center;
     width: min(460px, 100%);
   }
 }
 
 /* La scheda "Tutti i progetti" si distingue leggermente dalle categorie */
-.idealegno-explore-all .feature-card--all {
+.idealegno-explore .feature-card--all {
   background: linear-gradient(
     160deg,
     var(--gray-light, #f5f1e8),
@@ -59,30 +39,21 @@
   border-color: rgba(160, 82, 45, 0.18);
 }
 
-.idealegno-explore-all .feature-card--all:hover,
-.idealegno-explore-all .feature-card--all:focus-visible {
+.idealegno-explore .feature-card--all:hover,
+.idealegno-explore .feature-card--all:focus-visible {
   border-color: var(--accent-rust, #a0522d);
 }
 
-/* ── Sottotitoli delle due sezioni ───────────────────────────────────────── */
-.idealegno-explore .section-subtitle,
-.idealegno-explore-all .section-subtitle {
+.idealegno-explore .section-subtitle {
   text-align: center;
-  max-width: 60ch;
+  max-width: 62ch;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* ── Mobile ──────────────────────────────────────────────────────────────── */
-@media (max-width: 640px) {
-  .idealegno-explore-all .feature-card--all {
-    width: 100%;
-  }
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════
    Ancoraggi dall'header
-   Le due sezioni hanno un id (#Settori e #TuttiProgetti) richiamato dalle
+   Le sezioni hanno un id (#Settori, #TuttiProgetti, #Dati) richiamato dalle
    voci di menu. Lo scroll-margin evita che il titolo finisca sotto
    l'header fisso quando si arriva dall'ancora.
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -92,13 +63,12 @@
   scroll-margin-top: 96px;
 }
 
-/* La barra dei numeri chiude il blocco: le sta bene un po' d'aria sopra,
-   ma non il padding pieno della sezione precedente. */
-.stats-section {
-  padding-top: 0;
+/* La barra dei numeri chiude la sezione, subito sotto le schede. */
+.idealegno-explore .stats-strip {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
 }
 
-/* Con due voci in più il menu desktop parte già a 768px: gap elastico e
+/* Con una voce in più il menu desktop parte già a 768px: gap elastico e
    possibilità di andare a capo, così non esce mai dalla riga. */
 @media (min-width: 768px) {
   .nav-list {

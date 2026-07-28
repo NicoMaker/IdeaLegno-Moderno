@@ -50,7 +50,6 @@
             <li><a href="../index.html#Home" class="nav-link">Home</a></li>
             <li><a href="../index.html#storia" class="nav-link">Storia</a></li>
             <li><a href="#Settori" class="nav-link">Settori</a></li>
-            <li><a href="#Dati" class="nav-link">Dati</a></li>
             <li>
               <a href="../index.html#Prodotti" class="nav-link">Progetti</a>
             </li>
@@ -81,9 +80,6 @@
           </li>
           <li>
             <a href="#Settori" class="mobile-nav-link">Settori</a>
-          </li>
-          <li>
-            <a href="#Dati" class="mobile-nav-link">Dati</a>
           </li>
           <li>
             <a href="../index.html#Prodotti" class="mobile-nav-link"
@@ -245,7 +241,11 @@
 
     <!-- Sezioni "I Nostri Settori" + "Tutti i progetti":
          generate da JS/ui/sectors-section.js (due sezioni separate) -->
-    <div data-idealegno-sectors data-home="../index.html"></div>
+    <div
+      data-idealegno-sectors
+      data-home="../index.html"
+      data-stats="false"
+    ></div>
 
     <footer id="Contatti" class="site-footer">
       <!-- Il contenuto del footer verrà generato dinamicamente da footer.js -->
@@ -260,8 +260,6 @@
     <script src="../JS/shared/app-config.js"></script>
     <script src="../JS/shared/json-loader.js"></script>
     <script src="../JS/shared/category-colors.js"></script>
-    <script src="../JS/data/products-section-config.js"></script>
-    <script src="../JS/data/products-loader.js"></script>
     <script src="../JS/product/product-page.js"></script>
     <script src="../JS/product/slider.js"></script>
     <script src="../JS/ui/mobile-menu.js"></script>
