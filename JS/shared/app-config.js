@@ -20,6 +20,12 @@ const AppConfig = (() => {
     scrollMargin: 20, // px extra sotto header + controls
   };
 
+  // Dati aziendali. Cambia SOLO qui l'anno di fondazione:
+  // gli "anni di attività" nel sito si calcolano da soli (anno corrente - questo).
+  const azienda = {
+    annoFondazione: 2018,
+  };
+
   const footer = {
     jsonKey: jsonKeys.footer,
   };
@@ -28,5 +34,5 @@ const AppConfig = (() => {
     jsonKey: jsonKeys.palette,
   };
 
-  return { jsonKeys, products, footer, palette };
+  return { jsonKeys, products, footer, palette, azienda };
 })();

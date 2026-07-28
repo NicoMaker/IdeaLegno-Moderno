@@ -336,12 +336,29 @@
   }
 
   // ── Calcola il valore finale di un contatore ──
-  // Se ha data-since (anno di fondazione) → anni trascorsi = anno corrente - anno.
-  // Altrimenti usa data-count (numero fisso).
+  // - data-since con un anno (es. "2018") → anni trascorsi da quell'anno.
+  // - data-since SENZA valore → usa l'anno di fondazione dalla config (AppConfig.azienda.annoFondazione).
+  // - altrimenti usa data-count (numero fisso).
+  function getAnnoFondazione() {
+    try {
+      if (typeof AppConfig !== "undefined" && AppConfig.azienda) {
+        var a = parseInt(AppConfig.azienda.annoFondazione, 10);
+        if (!isNaN(a)) return a;
+      }
+    } catch (e) {
+      /* config non disponibile */
+    }
+    return null;
+  }
+
   function resolveCounterTarget(el) {
-    var since = parseInt(el.getAttribute("data-since"), 10);
-    if (!isNaN(since)) {
-      return Math.max(0, new Date().getFullYear() - since);
+    if (el.hasAttribute("data-since")) {
+      var raw = el.getAttribute("data-since");
+      var since = parseInt(raw, 10);
+      if (isNaN(since)) since = getAnnoFondazione(); // valore preso dalla config
+      if (since !== null && !isNaN(since)) {
+        return Math.max(0, new Date().getFullYear() - since);
+      }
     }
     return parseInt(el.getAttribute("data-count"), 10);
   }
@@ -406,7 +423,9 @@
       function (entries, obs) {
         if (!entries[0].isIntersecting) return;
         strip.classList.add("stats-in");
-        strip.querySelectorAll("[data-count]").forEach(animateValue);
+        strip
+          .querySelectorAll("[data-count], [data-since]")
+          .forEach(animateValue);
         obs.disconnect();
       },
       { threshold: 0.35 },
