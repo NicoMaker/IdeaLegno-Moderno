@@ -2,53 +2,44 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".mobile-menu-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuClose = document.querySelector(".mobile-menu-close");
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
   if (menuToggle && mobileMenu) {
-    const setMenuTop = () => {
-      const header = document.querySelector(".site-header");
-      const top = header
-        ? Math.round(header.getBoundingClientRect().height)
-        : 72;
-      document.documentElement.style.setProperty("--mm-top", top + "px");
+    const openMenu = () => {
+      menuToggle.classList.add("active");
+      mobileMenu.classList.add("active");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+      menuToggle.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      document.body.style.overflow = "";
     };
 
     menuToggle.addEventListener("click", () => {
-      // Calcola l'altezza dell'header PRIMA di aprire (menu ancora chiuso),
-      // così l'overlay parte esattamente sotto la barra.
-      if (!mobileMenu.classList.contains("active")) setMenuTop();
-
-      menuToggle.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
-
-      // Blocca lo scroll della pagina quando il menu è aperto
-      document.body.style.overflow = mobileMenu.classList.contains("active")
-        ? "hidden"
-        : "";
+      if (mobileMenu.classList.contains("active")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
 
-    // Se ruoti/ridimensioni con il menu aperto, riallinea l'overlay
-    window.addEventListener("resize", () => {
-      if (mobileMenu.classList.contains("active")) setMenuTop();
-    });
+    // Pulsante "X" dentro l'overlay
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", closeMenu);
+    }
 
-    // Close menu when clicking on a link
+    // Chiudi il menu quando si clicca su un link
     mobileNavLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("active");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeMenu);
     });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-        menuToggle.classList.remove("active");
-        if (mobileMenu.classList.contains("active")) {
-          mobileMenu.classList.remove("active");
-          document.body.style.overflow = "";
-        }
+    // Chiudi il menu con il tasto Esc
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+        closeMenu();
       }
     });
   }

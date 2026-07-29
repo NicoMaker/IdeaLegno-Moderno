@@ -234,36 +234,82 @@ h6 {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile Menu */
+/* Mobile Menu — overlay a schermo intero (logo + X in alto, come da riferimento) */
 .mobile-menu {
-  display: none;
+  display: block;
+  position: fixed;
+  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
   background-color: var(--surface);
-  z-index: 1002; /* Assicurati che sia sopra l'header e gli altri contenuti */
-  border-top: 1px solid var(--gray-medium);
-  box-shadow: var(--shadow-md);
+  z-index: 2000; /* Sopra header, contenuti e pulsanti flottanti */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition:
+    opacity var(--transition-base),
+    visibility 0s linear var(--transition-base),
+    transform var(--transition-base);
 }
 
 .mobile-menu.active {
-  display: block;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: var(--mm-top, 72px);
-  bottom: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  animation: slideDown var(--transition-base);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity var(--transition-base),
+    visibility 0s linear 0s,
+    transform var(--transition-base);
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--gray-medium);
+}
+
+.mobile-menu-logo-link {
+  display: block;
+}
+
+.mobile-menu-logo {
+  height: 40px;
+  width: auto;
+}
+
+.mobile-menu-close {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-secondary);
+  transform-origin: center;
+}
+
+.mobile-menu-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .mobile-nav-list {
@@ -818,6 +864,9 @@ h6 {
     display: block;
   }
   .mobile-menu-toggle {
+    display: none;
+  }
+  .mobile-menu {
     display: none;
   }
 }
