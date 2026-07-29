@@ -1745,3 +1745,21 @@ footer {
     transition: none;
   }
 }
+
+/* Evidenziazione link "Progetti" nelle pagine secondarie */
+.nav-list a.active,
+.mobile-nav-list a.active {
+  color: #b8860b !important;
+  font-weight: 600;
+  border-bottom: 2px solid #b8860b;
+  padding-bottom: 2px;
+}
+
+/* Evidenziazione link "Progetti" nelle pagine secondarie */
+.nav-list a.active,
+.mobile-nav-list a.active {
+  color: #b8860b !important;
+  font-weight: 600;
+  border-bottom: 2px solid #b8860b;
+  padding-bottom: 2px;
+}

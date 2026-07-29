@@ -7,13 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===== 1. CREA IL BREADCRUMB =====
   const container = document.querySelector(".product-breadcrumb");
   if (container) {
-    // Prende il nome dal titolo H1
     const h1 =
       document.querySelector("h1.product-title") ||
       document.querySelector("h1");
     const productName = h1 ? h1.innerText.trim() : "Prodotto";
 
-    // Percorso FISSO: torna sempre alla root con ../
     container.innerHTML = `
       <a href="../index.html">Home</a>
       <span class="sep">›</span>
@@ -27,6 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===== 2. EVIDENZIA IL LINK "PRODOTTI" =====
+  // Rimuove active da tutti i link del menu
+  const allLinks = document.querySelectorAll(
+    '.nav-list a, .mobile-nav-list a',
+  );
+  allLinks.forEach(function (link) {
+    link.classList.remove('active');
+  });
+
+  // Aggiunge active al link che punta a #Prodotti (anche con percorso relativo)
   const links = document.querySelectorAll(
     '.nav-list a[href*="#Prodotti"], .mobile-nav-list a[href*="#Prodotti"]',
   );

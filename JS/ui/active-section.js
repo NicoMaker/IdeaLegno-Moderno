@@ -10,7 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let preventHashUpdate = false;
   let isInitialLoad = true;
 
+  // ── Rileva se siamo in una pagina di dettaglio progetto ──
+  function isProjectPage() {
+    return (
+      document.querySelector(".product-detail-container") !== null ||
+      window.location.pathname.includes("/Projects/")
+    );
+  }
+
   function highlightNavigation() {
+    // Se siamo in una pagina progetto, attiviamo "Progetti" e usciamo
+    if (isProjectPage()) {
+      updateActiveLink("Prodotti");
+      return;
+    }
+
     if (isInitialLoad) return;
 
     const scrollY = window.pageYOffset;
@@ -23,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
       bottom: section.offsetTop + section.offsetHeight,
     }));
 
+    // Se non ci sono sezioni, esci (non dovrebbe succedere in home)
+    if (sectionPositions.length === 0) return;
+
     // Controlla se siamo alla fine della pagina (Contatti)
     const windowBottom = scrollY + window.innerHeight;
     const documentHeight = document.documentElement.scrollHeight;
@@ -31,12 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSectionId = "Contatti";
     } else {
       // Trova la sezione corrente basandosi sulla posizione di scroll
-      // Usa un offset per l'header
       const header = document.querySelector(".site-header");
       const headerHeight = header ? header.offsetHeight : 80;
-      const scrollPosition = scrollY + headerHeight + 100; // Aggiungi un margine
+      const scrollPosition = scrollY + headerHeight + 100;
 
-      // Trova la sezione che contiene la posizione corrente
       for (let i = sectionPositions.length - 1; i >= 0; i--) {
         const section = sectionPositions[i];
         if (scrollPosition >= section.top) {
@@ -45,29 +60,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Se siamo in cima alla pagina
       if (scrollY < 100) {
         currentSectionId = "Home";
       }
     }
 
-    // Se non abbiamo trovato una sezione, usa Home come default
     if (!currentSectionId) {
       currentSectionId = "Home";
     }
 
-    // Aggiorna i link di navigazione
     updateActiveLink(currentSectionId);
 
-    // NON aggiornare l'hash se è bloccato
     if (preventHashUpdate) return;
 
-    // Aggiorna l'hash SOLO se è diverso dall'attuale
     const currentHash = window.location.hash.substring(1);
     if (currentHash !== currentSectionId) {
       try {
         history.replaceState(null, null, `#${currentSectionId}`);
-        console.log(`📍 Hash aggiornato: #${currentSectionId}`);
       } catch (e) {
         console.error("Errore nell'aggiornamento dell'hash:", e);
       }
@@ -77,21 +86,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateActiveLink(sectionId) {
     navLinks.forEach((link) => {
       const targetId = link.getAttribute("href").substring(1);
-      if (targetId === sectionId) {
+      // Gestisce link relativi come "../index.html#Prodotti"
+      const hashIndex = targetId.indexOf("#");
+      const targetHash = hashIndex !== -1 ? targetId.substring(hashIndex + 1) : targetId;
+      if (targetHash === sectionId) {
         link.classList.add("active");
       } else {
         link.classList.remove("active");
       }
     });
-    console.log(`🎯 Link attivo: ${sectionId}`);
   }
 
   // Click su link
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      const targetId = link.getAttribute("href").substring(1);
-
+      let href = link.getAttribute("href");
+      // Se il link punta a una pagina esterna (es. ../index.html#...), gestisci
+      if (href.startsWith("..") || href.startsWith("/") || href.includes(".html")) {
+        window.location.href = href;
+        return;
+      }
+      const targetId = href.substring(1);
       if (targetId === "Contatti" && !document.getElementById("Contatti")) {
         document.addEventListener(
           "footerLoaded",
@@ -102,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         return;
       }
-
       scrollToSection(targetId);
     });
   });
@@ -126,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const offsetPosition = targetElement.offsetTop - totalOffset;
     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
 
-    console.log(`🔄 Scroll verso: ${targetId}`);
-
     setTimeout(() => {
       preventHashUpdate = false;
       isManualNavigation = false;
@@ -137,16 +150,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll listener con debounce
   window.addEventListener("scroll", () => {
     if (isManualNavigation || isInitialLoad) return;
-
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(highlightNavigation, 150);
   });
 
   // Inizializzazione
   function initializePage() {
-    const hash = window.location.hash.substring(1);
+    // Se siamo in una pagina progetto, attiviamo subito "Progetti" e non facciamo altro
+    if (isProjectPage()) {
+      updateActiveLink("Prodotti");
+      return;
+    }
 
-    // Se l'utente interagisce (scroll/touch), non forziamo più la posizione.
+    const hash = window.location.hash.substring(1);
     let userInterrupted = false;
     ["wheel", "touchstart", "keydown", "pointerdown"].forEach((ev) =>
       window.addEventListener(
@@ -185,9 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (targetId !== "Home") {
         doScroll();
-        // I progetti sono generati dal JSON dopo il caricamento: quando
-        // arrivano (e quando le immagini finiscono di caricarsi) la pagina
-        // cambia altezza, quindi riposizioniamo lo scroll sul target reale.
         document.addEventListener(
           "prodottiCaricati",
           () => setTimeout(doScroll, 60),
@@ -202,31 +215,21 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         preventHashUpdate = false;
         isInitialLoad = false;
-        console.log("✅ Inizializzazione completata, sistema sbloccato");
       }, 1500);
     };
 
     if (hash) {
-      console.log(`🎯 Hash rilevato al caricamento: #${hash}`);
-
       if (hash === "Contatti") {
         preventHashUpdate = true;
-        console.log(
-          "🔄 In attesa del caricamento del footer per sezione Contatti...",
-        );
-
         document.addEventListener(
           "footerLoaded",
           () => {
-            console.log("✅ Footer caricato, scroll verso Contatti");
             scrollToHash(hash);
           },
           { once: true },
         );
-
         setTimeout(() => {
           if (!document.getElementById("Contatti")) {
-            console.warn("⚠️ Timeout: Footer non caricato entro 5 secondi");
             preventHashUpdate = false;
             isInitialLoad = false;
             highlightNavigation();
@@ -236,10 +239,8 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollToHash(hash);
       }
     } else {
-      console.log("🏠 Nessun hash, imposto #Home");
       updateActiveLink("Home");
       history.replaceState(null, null, "#Home");
-
       setTimeout(() => {
         preventHashUpdate = false;
         isInitialLoad = false;
