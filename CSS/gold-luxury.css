@@ -1,0 +1,260 @@
+/* ============================================================
+   GOLD-LUXURY.CSS — IdeaLegno
+   Livello di accenti oro eleganti sopra il tema esistente.
+   Non tocca layout/struttura: aggiunge solo colore, bagliori
+   e piccoli ornamenti (bordi, sottolinee, nastro premi, testo
+   sfumato) coerenti con lo stile legno/artigianale del sito.
+   Va caricato PER ULTIMO (dopo modern.css).
+   ============================================================ */
+
+:root {
+  --gold: #c9a227;
+  --gold-soft: #e6c866;
+  --gold-light: #f6e7ae;
+  --gold-dark: #8a6a14;
+  --gold-gradient: linear-gradient(135deg, #f6e7ae 0%, #d4af37 45%, #9c7a1d 100%);
+  --gold-gradient-diag: linear-gradient(
+    120deg,
+    #9c7a1d 0%,
+    #d4af37 25%,
+    #f6e7ae 50%,
+    #d4af37 75%,
+    #9c7a1d 100%
+  );
+  --gold-shadow: 0 8px 22px rgba(201, 162, 39, 0.38);
+}
+
+/* ---------- Selezione testo ---------- */
+::selection {
+  background: var(--gold-soft);
+  color: var(--black, #2c2416);
+}
+
+/* ---------- Barra di progresso lettura ---------- */
+.scroll-progress {
+  background: var(--gold-gradient-diag) !important;
+  background-size: 200% 100% !important;
+}
+
+/* ---------- Titoli di sezione: piccola linea oro ---------- */
+.section-title {
+  position: relative;
+  padding-bottom: 1.15rem;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gold-gradient);
+}
+
+/* ---------- Bottone CTA principale (Hero) ---------- */
+.cta-button {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: var(--gold-shadow) !important;
+}
+.cta-button:hover {
+  background: var(--gold-gradient-diag) !important;
+  background-size: 200% 100% !important;
+  animation: goldShimmer 1.8s linear infinite;
+  color: #2c2416 !important;
+  box-shadow: 0 12px 32px rgba(201, 162, 39, 0.5) !important;
+}
+@keyframes goldShimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ---------- Navigazione: sottolinea oro ---------- */
+.nav-link::after {
+  background: var(--gold-gradient) !important;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-dark) !important;
+}
+.mobile-nav-link.active::before {
+  background-color: var(--gold) !important;
+}
+
+/* ---------- Logo: bagliore dorato all'hover ---------- */
+.logo-link:hover .logo {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+}
+
+/* ---------- "Scopri di più" ---------- */
+.more-info-btn {
+  color: var(--gold-dark);
+}
+.more-info-btn:hover {
+  color: var(--gold);
+}
+
+/* ---------- Schede Settori (Domestico / Commerciale / Navale) ---------- */
+.feature-card--link:hover h3,
+.feature-card--link:focus-visible h3 {
+  color: var(--gold-dark) !important;
+}
+.feature-card--link:focus-visible {
+  outline-color: var(--gold) !important;
+}
+.feature-card__cta {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  box-shadow: 0 8px 20px -8px rgba(201, 162, 39, 0.6) !important;
+}
+.feature-card__cta .material-icons,
+.feature-card__cta .cta-arrow {
+  color: #2c2416 !important;
+}
+.feature-card--link:hover .feature-card__cta,
+.feature-card--link:focus-visible .feature-card__cta {
+  box-shadow: 0 12px 28px -8px rgba(201, 162, 39, 0.75) !important;
+}
+.idealegno-explore .feature-card--all:hover,
+.idealegno-explore .feature-card--all:focus-visible {
+  border-color: var(--gold) !important;
+}
+
+/* ---------- Filtri progetti ---------- */
+.filter-button.active,
+.filter-button.active:hover {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  border-color: var(--gold-dark) !important;
+  box-shadow: var(--gold-shadow) !important;
+}
+.filter-button:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+}
+
+/* ---------- Card progetti: alone dorato all'hover ---------- */
+.Progetti-card,
+.novita-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+.Progetti-card:hover,
+.novita-card:hover {
+  box-shadow:
+    0 20px 42px rgba(201, 162, 39, 0.28),
+    0 0 0 2px var(--gold-soft) inset !important;
+}
+
+/* Badge "Novità" in oro */
+.novita-badge {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  box-shadow: 0 4px 14px rgba(201, 162, 39, 0.45);
+}
+
+/* ---------- Sezione Riconoscimenti: cornice e nastro premio ---------- */
+.riconoscimenti-section .section-subtitle {
+  color: var(--gold-dark);
+}
+
+.riconoscimento-card {
+  position: relative;
+  border: 2px solid var(--gold-soft) !important;
+  box-shadow:
+    0 10px 30px rgba(44, 36, 22, 0.14),
+    0 0 0 1px rgba(212, 175, 55, 0.28) !important;
+}
+
+.riconoscimento-card figcaption {
+  background: linear-gradient(180deg, #fff8e7 0%, var(--gold-light) 100%) !important;
+  border-top: 3px solid var(--gold) !important;
+  color: var(--gold-dark) !important;
+}
+
+/* Nastro dorato d'angolo, stile "medaglia" */
+.riconoscimento-card::after {
+  content: "★ PREMIATI";
+  position: absolute;
+  top: 20px;
+  left: -42px;
+  width: 170px;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #3a2c0d;
+  background: var(--gold-gradient);
+  transform: rotate(-45deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ---------- Numeri statistiche (sezione Storia/Dati): oro sfumato ---------- */
+.stats-strip {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+.stat-value {
+  background: var(--gold-gradient-diag);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-soft); /* fallback se background-clip non supportato */
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  position: relative;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient-diag);
+  background-size: 200% 100%;
+}
+.footer-title {
+  position: relative;
+  display: inline-block;
+  color: var(--gold-light) !important;
+}
+.footer-subtitle {
+  color: var(--gold-soft) !important;
+}
+.social-link:hover,
+.social-links a:hover {
+  background-color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: #2c2416 !important;
+}
+
+/* ---------- Cookie banner: pulsante "Accetta" in oro ---------- */
+.cookie-btn:not(.decline):not(.revoke) {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+}
+.cookie-btn:not(.decline):not(.revoke):hover {
+  background: var(--gold-gradient-diag) !important;
+  background-size: 200% 100% !important;
+}
+
+/* ---------- Riduzione motion per chi lo richiede ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button:hover,
+  .scroll-progress,
+  .cookie-btn:hover {
+    animation: none !important;
+  }
+}
