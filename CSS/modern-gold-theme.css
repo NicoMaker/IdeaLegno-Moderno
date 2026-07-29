@@ -89,13 +89,11 @@ input:focus-visible,
    1. HEADER — vetro sfumato allo scroll + nav più elegante
    ============================================================ */
 .site-header {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(160%) blur(10px);
-  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(201, 162, 80, 0.15);
 }
 .site-header.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.86);
+  background-color: #ffffff;
   box-shadow: var(--shadow-soft);
   border-bottom-color: rgba(201, 162, 80, 0.28);
 }
@@ -365,11 +363,24 @@ input:focus-visible,
   box-shadow: 0 4px 16px rgba(179, 135, 60, 0.28) !important;
 }
 
-.filter-button {
-  box-shadow: 0 2px 10px -4px rgba(44, 36, 22, 0.25);
+/* Le categorie (Casa, Commerciale, Nautico...) restano esattamente come
+   erano: colore proprio, bordo proprio, nessun alone aggiunto — così si
+   distinguono bene tra loro senza appesantirsi. Il tocco oro è riservato
+   al filtro "Tutti", che è quello predefinito/principale. */
+.filter-button[data-category="Tutti"].active {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: var(--shadow-gold-glow) !important;
 }
-.filter-button:hover {
-  box-shadow: 0 8px 18px -8px rgba(44, 36, 22, 0.35);
+.filter-button[data-category="Tutti"]:not(.active) {
+  box-shadow:
+    0 2px 10px -5px rgba(179, 135, 60, 0.35),
+    0 3px 14px -9px rgba(179, 135, 60, 0.3) !important;
+}
+.filter-button[data-category="Tutti"]:not(.active):hover {
+  box-shadow: var(--shadow-gold-glow) !important;
 }
 
 /* ============================================================
