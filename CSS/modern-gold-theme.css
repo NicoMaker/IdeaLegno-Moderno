@@ -1,0 +1,621 @@
+/* ============================================================================
+   MODERN-GOLD-THEME.CSS — IdeaLegno
+   Layer finale di restyling: modernizza header, hero, card, form e footer
+   con una palette "oro caldo" coerente con il legno, micro-interazioni
+   raffinate e miglioramenti responsive. Va caricato PER ULTIMO (dopo
+   modern.css): sovrascrive solo ciò che serve, senza toccare gli altri file.
+   ============================================================================ */
+
+:root {
+  /* ---- Palette oro (champagne/antico, coerente col legno caldo) ---- */
+  --gold-100: #f7ecd0;
+  --gold-300: #eccf8e;
+  --gold-500: #cda250;
+  --gold-600: #b3873c;
+  --gold-700: #8a6a2b;
+  --gold-gradient: linear-gradient(
+    135deg,
+    #f6e3ae 0%,
+    #d9b46a 35%,
+    #b3873c 70%,
+    #8a6a2b 100%
+  );
+  --gold-gradient-soft: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-500) 50%,
+    transparent 100%
+  );
+
+  /* ---- Superfici ed elevazioni moderne ---- */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --shadow-soft: 0 10px 30px -14px rgba(44, 36, 22, 0.22);
+  --shadow-elevated: 0 24px 60px -22px rgba(44, 36, 22, 0.38);
+  --shadow-gold-glow: 0 10px 26px -10px rgba(179, 135, 60, 0.55);
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --container-max: 1360px;
+}
+
+/* ============================================================
+   0. BASE — dettagli globali moderni
+   ============================================================ */
+/* NB: niente "overflow-x:hidden" qui su html/body — su molti browser
+   mobile rompe position:sticky (header) e position:fixed (menu mobile
+   e pulsanti flottanti), causando header che scappa e hamburger che
+   sembra non rispondere. */
+
+::selection {
+  background: var(--gold-500);
+  color: #2c2416;
+}
+
+/* Focus da tastiera coerente e visibile ovunque */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.nav-link:focus-visible,
+.filter-button:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar dorata (Chrome/Edge/Safari) */
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ash-lightest, #f5f1e8);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-gradient);
+  border-radius: 20px;
+  border: 2px solid var(--ash-lightest, #f5f1e8);
+}
+* {
+  scrollbar-color: var(--gold-600) var(--ash-lightest, #f5f1e8);
+  scrollbar-width: thin;
+}
+
+/* Contenitore centrale: prima non aveva un max-width */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   1. HEADER — vetro sfumato allo scroll + nav più elegante
+   ============================================================ */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid rgba(201, 162, 80, 0.15);
+}
+.site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+  border-bottom-color: rgba(201, 162, 80, 0.28);
+}
+/* Filo dorato che appare in fondo all'header quando si scrolla */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s var(--ease-premium);
+}
+.site-header.is-scrolled::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Sottolineatura nav: da ruggine a oro sfumato */
+.nav-link::after {
+  background: var(--gold-gradient) !important;
+  height: 2px;
+}
+.nav-link {
+  color: var(--gold-700) !important;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-600) !important;
+}
+
+.mobile-nav-link.active {
+  color: var(--gold-700) !important;
+}
+.mobile-nav-link.active::before {
+  background: var(--gold-gradient) !important;
+}
+.mobile-menu.active {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.97);
+}
+
+/* ============================================================
+   2. HERO — profondità in più, CTA dorata con "shine"
+   ============================================================ */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 15, 8, 0.32) 0%,
+    rgba(20, 15, 8, 0.18) 45%,
+    rgba(20, 15, 8, 0.62) 100%
+  );
+}
+
+.hero-cta-container {
+  position: relative;
+  padding-top: var(--spacing-md);
+  /* Il contenitore è flex "in riga" (per un eventuale secondo bottone):
+     forziamo la colonna così la linea decorativa sta sopra il bottone,
+     entrambi centrati sullo stesso asse. */
+  flex-direction: column;
+}
+/* Piccola linea dorata sopra il pulsante, per dare respiro editoriale */
+.hero-cta-container::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin: 0 auto var(--spacing-md);
+  background: var(--gold-gradient);
+  border-radius: 2px;
+  order: -1; /* garantisce che resti sopra il bottone anche in flex */
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-gold-glow) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.7s var(--ease-premium);
+}
+.cta-button:hover::before {
+  left: 130%;
+}
+.cta-button:hover {
+  box-shadow: 0 16px 34px -12px rgba(179, 135, 60, 0.65) !important;
+}
+
+.scroll-down-arrow {
+  color: var(--gold-300);
+}
+
+/* ============================================================
+   3. TITOLI DI SEZIONE — sottolineatura oro, centrata e sottile
+   ============================================================ */
+.section-title {
+  padding-bottom: 20px;
+}
+.section-title::after {
+  left: 50%;
+  width: 64px;
+  margin-left: -32px;
+  height: 4px;
+  background: var(--gold-gradient) !important;
+  background-color: transparent !important;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   4. ABOUT — cornice dorata soffusa sull'immagine storia
+   ============================================================ */
+.about-image {
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 80, 0.4),
+    var(--shadow-elevated);
+  border-radius: var(--radius-lg);
+}
+
+.more-info-btn {
+  color: var(--gold-700);
+}
+.more-info-btn:hover {
+  color: var(--gold-600);
+}
+
+/* Fascia statistiche (contatori "anni di esperienza" ecc.) */
+.stats-strip {
+  position: relative;
+  border: 1px solid rgba(201, 162, 80, 0.35);
+}
+.stats-strip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: var(--gold-gradient);
+  border-radius: 2px;
+}
+.stat-value {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-500);
+}
+
+/* Pulsante "Vedi i progetti" nelle card Settori: da ruggine a oro sfumato */
+.feature-card--link:hover h3,
+.feature-card--link:focus-visible h3 {
+  color: var(--gold-700) !important;
+}
+
+.feature-card__cta {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  box-shadow: var(--shadow-gold-glow) !important;
+}
+.feature-card__cta .material-icons,
+.feature-card__cta .cta-arrow {
+  color: #2c2110 !important;
+}
+.feature-card--link:hover .feature-card__cta,
+.feature-card--link:focus-visible .feature-card__cta {
+  box-shadow: 0 14px 28px -10px rgba(179, 135, 60, 0.65) !important;
+}
+
+/* ============================================================
+   5. CARD — Progetti, Novità, Settori, Riconoscimenti
+   ============================================================ */
+.Progetti-card,
+.novita-card,
+.feature-card,
+.riconoscimento-card {
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(44, 36, 22, 0.06);
+  border-radius: 16px;
+}
+
+.Progetti-card:hover,
+.novita-card:hover,
+.feature-card:hover {
+  border-color: rgba(201, 162, 80, 0.5);
+}
+
+/* Linea dorata che si "accende" sopra la card al passaggio del mouse */
+.Progetti-card,
+.novita-card,
+.feature-card {
+  position: relative;
+}
+.Progetti-card::before,
+.novita-card::before,
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.45s var(--ease-premium);
+  z-index: 3;
+  border-radius: 16px 16px 0 0;
+}
+.Progetti-card:hover::before,
+.novita-card:hover::before,
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.riconoscimento-card {
+  overflow: hidden;
+  transition:
+    box-shadow 0.4s var(--ease-premium),
+    transform 0.4s var(--ease-premium);
+}
+.riconoscimento-card:hover {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-6px);
+  border-color: rgba(201, 162, 80, 0.55);
+}
+
+/* ============================================================
+   6. RICERCA / FILTRI — barra sticky in stile "vetro"
+   ============================================================ */
+#product-controls-sticky.is-pinned {
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  box-shadow: var(--shadow-soft);
+}
+
+.search-input {
+  border-color: rgba(201, 162, 80, 0.55) !important;
+}
+.search-input:focus {
+  border-color: var(--gold-600) !important;
+  box-shadow: 0 4px 16px rgba(179, 135, 60, 0.28) !important;
+}
+
+.filter-button {
+  box-shadow: 0 2px 10px -4px rgba(44, 36, 22, 0.25);
+}
+.filter-button:hover {
+  box-shadow: 0 8px 18px -8px rgba(44, 36, 22, 0.35);
+}
+
+/* ============================================================
+   7. FOOTER — il tocco dorato principale, come richiesto
+   ============================================================ */
+.site-footer {
+  position: relative;
+  background-image:
+    linear-gradient(
+      160deg,
+      rgba(15, 11, 6, 0.78) 0%,
+      rgba(20, 15, 8, 0.62) 55%,
+      rgba(15, 11, 6, 0.82) 100%
+    ),
+    url("../Img/Legno.jpg");
+}
+/* Filo dorato che apre il footer, a fare da "cornice" elegante */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+}
+/* Bagliore dorato molto soffuso, in alto a destra */
+.site-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    900px 420px at 88% -10%,
+    rgba(212, 175, 106, 0.16),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.footer-title {
+  font-family: var(--font-heading);
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-300);
+  display: inline-block;
+}
+
+.footer-subtitle {
+  color: var(--gold-300) !important;
+  position: relative;
+  padding-left: 16px;
+}
+.footer-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  background: var(--gold-gradient);
+}
+
+.footer-item a {
+  transition: color 0.25s ease;
+}
+.footer-item a:hover {
+  color: var(--gold-300);
+}
+.footer-item .material-icons {
+  color: var(--gold-500);
+}
+
+/* Icone social: cerchio dorato al passaggio del mouse */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 106, 0.35);
+  transition:
+    background 0.3s ease,
+    transform 0.3s var(--ease-premium),
+    border-color 0.3s ease;
+}
+.social-links a:hover {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  transform: translateY(-4px);
+}
+
+.footer-map {
+  box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.35);
+}
+
+.footer-bottom {
+  position: relative;
+  border-top-color: rgba(212, 175, 106, 0.28) !important;
+}
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: var(--gold-gradient);
+}
+
+.legenda-orari .footer-subtitle {
+  padding-left: 0;
+}
+.legenda-orari .footer-subtitle::before {
+  display: none;
+}
+
+/* ============================================================
+   8. PULSANTI FLOTTANTI & COOKIE BANNER
+   ============================================================ */
+.back-to-top {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+}
+.back-to-top:hover {
+  filter: brightness(1.08);
+}
+
+.quick-call {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+}
+.quick-call:hover {
+  filter: brightness(1.08);
+}
+
+.cookie-btn:not(.decline):not(.revoke) {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  font-weight: 700;
+}
+
+/* ============================================================
+   9. PAGINE PRODOTTO — stessa identità dorata delle altre pagine
+   ============================================================ */
+.product-detail-card {
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid rgba(201, 162, 80, 0.18);
+}
+
+.dot.active,
+.dot:hover {
+  background: var(--gold-gradient) !important;
+}
+
+.prev,
+.next {
+  background-color: rgba(41, 31, 16, 0.55);
+}
+.prev:hover,
+.next:hover {
+  background: var(--gold-gradient) !important;
+  color: #2c2110;
+}
+
+.product-info .product-price {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-600);
+}
+
+.product-description li::before {
+  color: var(--gold-600);
+}
+
+.back-button {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  box-shadow: var(--shadow-gold-glow) !important;
+}
+.back-button:hover {
+  filter: brightness(1.06);
+}
+
+/* ============================================================
+   10. RESPONSIVE — rifiniture fluide e touch target più comodi
+   ============================================================ */
+
+/* Tipografia più fluida sulle intestazioni principali */
+.footer-title {
+  font-size: clamp(1.5rem, 3.2vw, 1.9rem);
+}
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* Target di tocco più generosi su schermi piccoli */
+@media (max-width: 600px) {
+  .nav-link,
+  .mobile-nav-link,
+  .filter-button,
+  .cookie-btn,
+  .cta-button {
+    min-height: 44px;
+  }
+  .social-links a {
+    width: 46px;
+    height: 46px;
+  }
+  .hero-cta-container::before {
+    width: 48px;
+  }
+}
+
+/* Griglie più ariose sui monitor molto larghi */
+@media (min-width: 1440px) {
+  .progetti-container,
+  .novita-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer-grid {
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Tablet: la sezione storia respira meglio con due colonne più equilibrate */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+  }
+}
+
+/* Riduzione movimento: niente shine né trasformazioni extra */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button::before {
+    display: none;
+  }
+  .site-header::after {
+    transition: none;
+  }
+}

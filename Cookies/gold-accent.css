@@ -1,0 +1,32 @@
+/* Piccolo tocco dorato, coerente con il resto del sito IdeaLegno */
+:root {
+  --gold-gradient: linear-gradient(135deg, #f6e3ae 0%, #d9b46a 35%, #b3873c 70%, #8a6a2b 100%);
+}
+
+.topbar {
+  border-bottom-color: rgba(212, 175, 106, 0.4);
+}
+
+.eyebrow {
+  color: var(--gold-700, #8a6a2b);
+}
+
+.btn-primary {
+  background: var(--gold-gradient) !important;
+  color: #2c2110 !important;
+  box-shadow: 0 10px 24px -12px rgba(179, 135, 60, 0.6) !important;
+}
+
+.tag-opt {
+  background: rgba(212, 175, 106, 0.2);
+  color: #8a6a2b;
+}
+
+.status-chip.is-accepted {
+  border-color: rgba(212, 175, 106, 0.4);
+}
+
+::selection {
+  background: #cda250;
+  color: #2c2416;
+}
