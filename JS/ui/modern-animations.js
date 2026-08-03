@@ -160,6 +160,16 @@
         markReveal(el, "up", i);
       });
 
+    // Barra di ricerca e bottoni filtro progetti, con leggero stagger
+    root.querySelectorAll(".search-container").forEach(function (el) {
+      markReveal(el, "up");
+    });
+    root
+      .querySelectorAll(".filter-container .filter-button")
+      .forEach(function (el, i) {
+        markReveal(el, "up", i);
+      });
+
     // Card prodotti e novità (generate dal JS del sito) con stagger
     root
       .querySelectorAll(".novita-container, .progetti-container")

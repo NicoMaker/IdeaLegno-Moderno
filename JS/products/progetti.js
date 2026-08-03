@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const progettiContainer = document.querySelector(".progetti-container");
   const filterContainer = document.querySelector(".filter-container");
   const searchInput = document.getElementById("search-progetti");
+  const searchClearBtn = document.querySelector(".search-clear");
 
   if (!progettiContainer) return;
 
@@ -85,6 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
         isActive,
       );
     });
+  }
+
+  function updateClearButtonVisibility() {
+    if (!searchClearBtn) return;
+    searchClearBtn.classList.toggle(
+      "is-visible",
+      !!(searchInput && searchInput.value),
+    );
   }
 
   function scrollToProductGrid() {
@@ -200,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSearchTerm = storedSearchTerm;
         if (searchInput) searchInput.value = storedSearchTerm;
       }
+      updateClearButtonVisibility();
     } catch (e) {
       console.error("Impossibile caricare lo stato dal localStorage:", e);
     }
@@ -210,9 +220,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (searchInput) {
     searchInput.addEventListener("input", () => {
       currentSearchTerm = searchInput.value;
+      updateClearButtonVisibility();
       saveStateToLocalStorage();
       applyFiltersAndSearch();
       scrollToProductGrid();
+    });
+  }
+
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener("click", () => {
+      if (!searchInput) return;
+      searchInput.value = "";
+      currentSearchTerm = "";
+      updateClearButtonVisibility();
+      saveStateToLocalStorage();
+      applyFiltersAndSearch();
+      searchInput.focus();
     });
   }
 
@@ -231,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Finestra tornata in focus");
     loadStateFromStorage();
     if (searchInput) searchInput.value = currentSearchTerm;
+    updateClearButtonVisibility();
     applyFiltersAndSearch();
     updateFilterButtons();
   });

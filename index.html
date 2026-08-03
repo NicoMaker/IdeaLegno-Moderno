@@ -92,6 +92,7 @@
     </script>
     <link rel="stylesheet" href="CSS/modern.css" />
     <link rel="stylesheet" href="CSS/gold-luxury.css" />
+    <link rel="stylesheet" href="CSS/progetti-controls-refresh.css" />
 
     <!-- Sezioni "I Nostri Settori" / "Tutti i progetti" generate da JS -->
     <script defer src="JS/ui/sectors-section.js"></script>
@@ -268,12 +269,24 @@
           <!-- Search Bar -->
           <div class="search-container">
             <div class="search-input-wrapper">
+              <span class="material-icons search-icon" aria-hidden="true"
+                >search</span
+              >
               <input
                 type="text"
                 id="search-progetti"
                 placeholder="Cerca progetti..."
                 class="search-input"
+                autocomplete="off"
               />
+              <button
+                type="button"
+                class="search-clear"
+                aria-label="Cancella ricerca"
+                tabindex="-1"
+              >
+                <span class="material-icons" aria-hidden="true">close</span>
+              </button>
             </div>
           </div>
 
@@ -283,7 +296,6 @@
           </div>
         </div>
 
-        <br />
         <!-- Products Grid -->
         <div class="progetti-container pc-view"></div>
       </div>
