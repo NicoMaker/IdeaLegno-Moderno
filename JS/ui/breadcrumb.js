@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ===== 2. EVIDENZIA IL LINK "PRODOTTI" =====
   // Rimuove active da tutti i link del menu
-  const allLinks = document.querySelectorAll(
-    '.nav-list a, .mobile-nav-list a',
-  );
+  const allLinks = document.querySelectorAll(".nav-list a, .mobile-nav-list a");
   allLinks.forEach(function (link) {
-    link.classList.remove('active');
+    link.classList.remove("active");
   });
 
   // Aggiunge active al link che punta a #Prodotti (anche con percorso relativo)

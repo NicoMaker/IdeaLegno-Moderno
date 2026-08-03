@@ -88,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = link.getAttribute("href").substring(1);
       // Gestisce link relativi come "../index.html#Prodotti"
       const hashIndex = targetId.indexOf("#");
-      const targetHash = hashIndex !== -1 ? targetId.substring(hashIndex + 1) : targetId;
+      const targetHash =
+        hashIndex !== -1 ? targetId.substring(hashIndex + 1) : targetId;
       if (targetHash === sectionId) {
         link.classList.add("active");
       } else {
@@ -103,7 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       let href = link.getAttribute("href");
       // Se il link punta a una pagina esterna (es. ../index.html#...), gestisci
-      if (href.startsWith("..") || href.startsWith("/") || href.includes(".html")) {
+      if (
+        href.startsWith("..") ||
+        href.startsWith("/") ||
+        href.includes(".html")
+      ) {
         window.location.href = href;
         return;
       }

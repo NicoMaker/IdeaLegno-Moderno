@@ -12,7 +12,12 @@
   --gold-soft: #e6c866;
   --gold-light: #f6e7ae;
   --gold-dark: #8a6a14;
-  --gold-gradient: linear-gradient(135deg, #f6e7ae 0%, #d4af37 45%, #9c7a1d 100%);
+  --gold-gradient: linear-gradient(
+    135deg,
+    #f6e7ae 0%,
+    #d4af37 45%,
+    #9c7a1d 100%
+  );
   --gold-gradient-diag: linear-gradient(
     120deg,
     #9c7a1d 0%,
@@ -172,7 +177,11 @@
 }
 
 .riconoscimento-card figcaption {
-  background: linear-gradient(180deg, #fff8e7 0%, var(--gold-light) 100%) !important;
+  background: linear-gradient(
+    180deg,
+    #fff8e7 0%,
+    var(--gold-light) 100%
+  ) !important;
   border-top: 3px solid var(--gold) !important;
   color: var(--gold-dark) !important;
 }
