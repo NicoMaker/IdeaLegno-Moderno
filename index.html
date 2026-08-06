@@ -738,7 +738,7 @@
     <link rel="stylesheet" href="CSS/theme/progetti-refresh-filter-buttons/media-prefers-reduced-motion-reduce.css" />
     <link rel="stylesheet" href="CSS/theme/progetti-refresh-filter-buttons/media-hover-none-and-pointer-coarse.css" />
     <!-- Sezioni "I Nostri Settori" / "Tutti i progetti" generate da JS -->
-    <script defer src="JS/ui/sectors-section.js"></script>
+    <script defer src="JS/ui/sectors-section/sectors-section.js"></script>
   </head>
 
   <body>
@@ -900,7 +900,7 @@
     </section>
 
     <!-- Sezioni "I Nostri Settori" + "Tutti i progetti":
-         generate da JS/ui/sectors-section.js (due sezioni separate) -->
+         generate da JS/ui/sectors-section/sectors-section.js (due sezioni separate) -->
     <div data-idealegno-sectors data-home="index.html"></div>
 
     <!-- Products / Progetti Section -->
@@ -998,23 +998,23 @@
     </button>
 
     <!-- Scripts -->
-    <script src="JS/shared/json-paths.js"></script>
-    <script src="JS/shared/json-config.js"></script>
-    <script src="JS/shared/app-config.js"></script>
-    <script src="JS/shared/json-loader.js"></script>
-    <script src="JS/shared/category-colors.js"></script>
-    <script src="JS/data/products-section-config.js"></script>
-    <script src="JS/data/products-loader.js"></script>
-    <script src="JS/ui/mobile-menu.js"></script>
-    <script src="JS/ui/more-info-story.js"></script>
-    <script src="JS/ui/active-section.js"></script>
-    <script src="JS/products/progetti.js"></script>
-    <script src="JS/ui/category-cards.js"></script>
-    <script src="JS/ui/sticky-controls.js"></script>
-    <script src="JS/ui/cookie-banner.js"></script>
+    <script src="JS/shared/json/json-paths.js"></script>
+    <script src="JS/shared/json/json-config.js"></script>
+    <script src="JS/shared/app-config/app-config.js"></script>
+    <script src="JS/shared/json/json-loader.js"></script>
+    <script src="JS/shared/category-colors/category-colors.js"></script>
+    <script src="JS/data/products-section-config/products-section-config.js"></script>
+    <script src="JS/data/products-loader/products-loader.js"></script>
+    <script src="JS/ui/mobile-menu/mobile-menu.js"></script>
+    <script src="JS/ui/more-info-story/more-info-story.js"></script>
+    <script src="JS/ui/active-section/active-section.js"></script>
+    <script src="JS/products/progetti/progetti.js"></script>
+    <script src="JS/ui/category-cards/category-cards.js"></script>
+    <script src="JS/ui/sticky-controls/sticky-controls.js"></script>
+    <script src="JS/ui/cookie-banner/cookie-banner.js"></script>
 
     <!-- Script per banner chiusure hero (DEVE ESSERE DOPO json-loader) -->
-    <script src="JS/ui/closure-banner.js"></script>
+    <script src="JS/ui/closure-banner/closure-banner.js"></script>
 
     <!-- Footer scripts (ordine obbligatorio) -->
     <script src="JS/footer/date-utils/timezone-state.js"></script>
@@ -1054,8 +1054,8 @@
     <script src="JS/footer/gestisci-chiusure/find-consecutive-closure-end.js"></script>
     <script src="JS/footer/gestisci-chiusure/get-single-day-closure-reason.js"></script>
     <script src="JS/footer/gestisci-chiusure/get-all-upcoming-closures.js"></script>
-    <script src="JS/footer/gestisci_apertura.js"></script>
-    <script src="JS/footer/mappa.js"></script>
+    <script src="JS/footer/gestisci-apertura/gestisci_apertura.js"></script>
+    <script src="JS/footer/mappa/mappa.js"></script>
     <script src="JS/footer/creazione-html/whatsapp-url.js"></script>
     <script src="JS/footer/creazione-html/all-stagioni-html.js"></script>
     <script src="JS/footer/creazione-html/closures-html.js"></script>
@@ -1067,8 +1067,25 @@
     <script src="JS/footer/aggiorna-orari-parts/ferma-countdown-stagione.js"></script>
     <script src="JS/footer/aggiorna-orari-parts/get-data-cambio.js"></script>
     <script src="JS/footer/aggiorna-orari-parts/aggiorna-colore-orari.js"></script>
-    <script src="JS/footer/config.js"></script>
-    <script src="JS/ui/modern-animations.js"></script>
-    <script src="JS/ui/extra-animations.js"></script>
+    <script src="JS/footer/config/config.js"></script>
+    <script src="JS/ui/modern-animations/state.js"></script>
+    <script src="JS/ui/modern-animations/hero-cinematic.js"></script>
+    <script src="JS/ui/modern-animations/header-progress-bar.js"></script>
+    <script src="JS/ui/modern-animations/floating-buttons.js"></script>
+    <script src="JS/ui/modern-animations/scroll-reveal.js"></script>
+    <script src="JS/ui/modern-animations/parallax.js"></script>
+    <script src="JS/ui/modern-animations/page-transitions.js"></script>
+    <script src="JS/ui/modern-animations/section-dividers.js"></script>
+    <script src="JS/ui/modern-animations/init.js"></script>
+    <script src="JS/ui/extra-animations/state.js"></script>
+    <script src="JS/ui/extra-animations/hero-letter-title.js"></script>
+    <script src="JS/ui/extra-animations/hero-typewriter.js"></script>
+    <script src="JS/ui/extra-animations/card-tilt.js"></script>
+    <script src="JS/ui/extra-animations/magnetic-buttons.js"></script>
+    <script src="JS/ui/extra-animations/button-ripple.js"></script>
+    <script src="JS/ui/extra-animations/hero-particles.js"></script>
+    <script src="JS/ui/extra-animations/counters.js"></script>
+    <script src="JS/ui/extra-animations/progetti-listener.js"></script>
+    <script src="JS/ui/extra-animations/init.js"></script>
   </body>
 </html>
