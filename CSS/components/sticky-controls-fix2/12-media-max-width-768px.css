@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+@media (max-width: 768px) {
+  .product-controls-sticky {
+    padding: var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .filter-container {
+    gap: var(--spacing-xs);
+  }
+
+  .filter-button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+}

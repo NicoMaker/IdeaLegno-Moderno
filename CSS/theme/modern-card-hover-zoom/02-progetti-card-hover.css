@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/modern-card-hover-zoom.css (a sua volta da CSS/modern.css (righe 173-201)) ---- */
+
+.Progetti-card:hover,
+.novita-card:hover,
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px -16px rgba(44, 36, 22, 0.3);
+}

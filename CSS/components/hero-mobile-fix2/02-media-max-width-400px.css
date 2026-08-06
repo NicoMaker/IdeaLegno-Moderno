@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/hero-mobile-fix2.css (a sua volta da CSS/custom-styles.css (righe 1347-1390)) ---- */
+
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.8rem !important;
+  }
+  .hero-closure-banner {
+    font-size: 0.85rem !important;
+    padding: 10px 12px !important;
+  }
+}
+

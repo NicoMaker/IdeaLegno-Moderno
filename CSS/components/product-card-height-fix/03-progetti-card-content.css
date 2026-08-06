@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/components/product-card-height-fix.css (a sua volta da CSS/styles.css (righe 1100-1169)) ---- */
+
+
+/* Il contenuto della card si espande per riempire lo spazio */
+.Progetti-card-content {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex-grow: 1; /* Si espande per riempire lo spazio disponibile */
+  text-align: center;
+}

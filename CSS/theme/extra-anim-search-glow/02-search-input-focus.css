@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-search-glow.css (a sua volta da CSS/extra-animations.css (righe 274-287)) ---- */
+
+
+.search-input:focus {
+  box-shadow:
+    0 0 0 3px rgba(191, 139, 103, 0.35),
+    0 10px 26px -12px rgba(44, 36, 22, 0.35);
+  transform: translateY(-2px);
+}
+

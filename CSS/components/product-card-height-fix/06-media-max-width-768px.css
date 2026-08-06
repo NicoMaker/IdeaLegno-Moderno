@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/product-card-height-fix.css (a sua volta da CSS/styles.css (righe 1100-1169)) ---- */
+
+
+/* Responsive: adatta l'altezza minima su schermi più piccoli */
+@media (max-width: 768px) {
+  .Progetti-card {
+    min-height: 480px; /* Leggermente più bassa su mobile */
+  }
+}

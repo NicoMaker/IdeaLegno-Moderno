@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/progetti-refresh-filter-buttons.css (a sua volta da CSS/progetti-controls-refresh.css (righe 159-259)) ---- */
+
+
+.filter-button:not(.active):hover {
+  transform: translateY(-4px) scale(1.045) !important;
+  box-shadow: 0 10px 24px -8px rgba(44, 36, 22, 0.25) !important;
+}

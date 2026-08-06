@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+.search-container {
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-md) auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+  background-color: #f5f1e8;
+}

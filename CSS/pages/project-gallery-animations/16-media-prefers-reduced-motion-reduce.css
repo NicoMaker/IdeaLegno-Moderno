@@ -1,0 +1,21 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+
+
+/* ── Rispetto delle preferenze di sistema ── */
+@media (prefers-reduced-motion: reduce) {
+  html.anim .project-view .slider-container,
+  html.anim .project-view .slider-container .prev,
+  html.anim .project-view .slider-container .next,
+  html.anim .project-view .dots-container,
+  .project-view .slide.slide-in-next,
+  .project-view .slide.slide-in-prev {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-view .slider-container .prev,
+  .project-view .slider-container .next {
+    transition: none;
+  }
+}

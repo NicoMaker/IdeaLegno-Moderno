@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/modern-button-arrow.css (a sua volta da CSS/modern.css (righe 213-232)) ---- */
+/* ---------- 8. Bottoni: freccia che appare all'hover ---------- */
+.cta-button {
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    background 0.3s ease,
+    color 0.3s ease !important;
+}

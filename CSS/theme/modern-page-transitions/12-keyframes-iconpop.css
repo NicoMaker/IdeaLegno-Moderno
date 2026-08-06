@@ -1,0 +1,16 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+
+@keyframes iconPop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.12);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

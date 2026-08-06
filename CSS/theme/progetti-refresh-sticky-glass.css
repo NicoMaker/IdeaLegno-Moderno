@@ -1,0 +1,12 @@
+/* ---- estratto da CSS/progetti-controls-refresh.css (righe 61-71) ---- */
+/* ------------------------------------------------------------
+   2. BARRA STICKY: vetro sfumato quando è "pinnata" allo scroll
+   ------------------------------------------------------------ */
+
+#product-controls-sticky.is-pinned {
+  background-color: rgba(245, 241, 232, 0.86) !important;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 10px 30px -14px rgba(44, 36, 22, 0.28);
+}
+

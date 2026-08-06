@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-custom.css (a sua volta da CSS/custom-styles.css (righe 166-249)) ---- */
+
+
+.Progetti-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  contain: layout; /* Previene il reflow fuori dalla card */
+}

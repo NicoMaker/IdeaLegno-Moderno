@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/modern-floating-buttons.css (a sua volta da CSS/modern.css (righe 258-351)) ---- */
+
+.quick-whatsapp::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  opacity: 0;
+  animation: callPulse 3s ease-out infinite;
+  pointer-events: none;
+}

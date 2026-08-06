@@ -1,0 +1,20 @@
+/* ---- regola CSS estratta da CSS/theme/progetti-refresh-spacing.css (a sua volta da CSS/progetti-controls-refresh.css (righe 1-60)) ---- */
+/* ============================================================
+   PROGETTI-CONTROLS-REFRESH.CSS — IdeaLegno
+   Rifinitura della sezione "I Nostri Progetti": meno spazio
+   vuoto tra titolo, barra di ricerca, filtri e griglia, più
+   un livello di animazioni/micro-interazioni moderne su
+   search bar e bottoni filtro.
+   Va caricato PER ULTIMO (dopo gold-luxury.css) così vince
+   la cascata in modo prevedibile senza dover riscrivere gli
+   altri file CSS del sito.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. SPAZI: titolo → barra di ricerca → filtri → griglia
+   ------------------------------------------------------------ */
+
+.section-title {
+  margin-bottom: 10px;
+  padding-bottom: 0.7rem;
+}

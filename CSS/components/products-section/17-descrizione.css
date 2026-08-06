@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/components/products-section.css (a sua volta da CSS/styles.css (righe 579-760)) ---- */
+
+
+.descrizione {
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: auto;
+  padding-bottom: var(--spacing-sm);
+  flex-grow: 1;
+}

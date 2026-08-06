@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   Schede categoria cliccabili (Domestico / Commerciale / Navale)
+   Portano alla sezione "I Nostri Progetti" con il filtro giusto attivo.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.feature-card--link {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

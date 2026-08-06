@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.copyright {
+  font-size: 16px;
+  color: white;
+  border-top: 2px solid #ffcc80;
+  padding-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+

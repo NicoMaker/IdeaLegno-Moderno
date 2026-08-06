@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.back-button:hover .material-icons {
+  transform: translateX(-3px);
+}

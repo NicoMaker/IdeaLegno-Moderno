@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/products-section.css (a sua volta da CSS/styles.css (righe 579-760)) ---- */
+
+
+.immagine {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-slow);
+}

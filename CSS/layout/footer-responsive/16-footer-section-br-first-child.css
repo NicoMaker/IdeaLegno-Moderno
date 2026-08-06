@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Rimuovi eventuali <br> visivi */
+.footer-section > br:first-child {
+  display: none;
+}

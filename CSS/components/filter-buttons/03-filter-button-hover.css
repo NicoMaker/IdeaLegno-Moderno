@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/filter-buttons.css (a sua volta da CSS/custom-styles.css (righe 444-481)) ---- */
+
+
+.filter-button:hover {
+  background-color: #5c4033; /* Marrone Scuro */
+  color: #ffffff; /* Testo Bianco */
+  transform: translateY(-3px);
+}

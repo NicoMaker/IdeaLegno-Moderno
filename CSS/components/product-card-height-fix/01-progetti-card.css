@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/components/product-card-height-fix.css (a sua volta da CSS/styles.css (righe 1100-1169)) ---- */
+/* SOLUZIONE 1: Altezza minima fissa per tutte le card */
+.Progetti-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 520px; /* Altezza minima uguale per tutte */
+  height: 100%; /* Occupa tutta l'altezza disponibile nella griglia */
+}

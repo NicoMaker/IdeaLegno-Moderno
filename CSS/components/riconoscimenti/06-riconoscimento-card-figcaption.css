@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/components/riconoscimenti.css (a sua volta da CSS/styles.css (righe 1904-1964)) ---- */
+
+
+/* Didascalia sotto l'immagine */
+.riconoscimento-card figcaption {
+  padding: 1rem 1.25rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ash-darkest, #5c4a3a);
+  text-align: center;
+  background: var(--accent-cream, #fff8e7);
+  border-top: 3px solid var(--accent-warm, #bf8b67);
+}
+

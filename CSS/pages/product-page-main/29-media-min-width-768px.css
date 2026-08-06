@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .product-detail-card {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .main-product-image {
+    height: 560px;
+  }
+}

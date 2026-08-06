@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-about-section.css (a sua volta da CSS/modern.css (righe 202-212)) ---- */
+
+.about-image img {
+  transition: transform 1s var(--ease-out);
+}

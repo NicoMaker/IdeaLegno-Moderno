@@ -1,0 +1,20 @@
+/* ---- regola CSS estratta da CSS/theme/progetti-refresh-filter-buttons.css (a sua volta da CSS/progetti-controls-refresh.css (righe 159-259)) ---- */
+
+
+.filter-button:not(.active)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}

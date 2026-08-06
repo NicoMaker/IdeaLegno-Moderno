@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
+
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
+}

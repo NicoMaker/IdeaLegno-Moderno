@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/utilities/layout-overflow-fix.css (a sua volta da CSS/styles.css (righe 2008-2114)) ---- */
+/* ===== Fix overflow orizzontale / striscia di sfondo a destra =====
+   Su mobile un elemento poteva sforare di pochi px oltre il viewport:
+   il browser rimpiccioliva il layout e compariva una striscia di
+   sfondo a destra, con header e footer che sembravano "più stretti"
+   dello schermo. `overflow-x: clip` elimina lo sforamento SENZA creare
+   un contenitore di scroll, quindi l'header sticky continua a funzionare.
+   Fallback a `hidden` per i browser che non supportano `clip`. */
+html {
+  overflow-x: clip;
+}

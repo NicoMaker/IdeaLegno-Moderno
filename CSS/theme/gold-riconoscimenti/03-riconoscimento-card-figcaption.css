@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/gold-riconoscimenti.css (a sua volta da CSS/gold-luxury.css (righe 166-209)) ---- */
+
+
+.riconoscimento-card figcaption {
+  background: linear-gradient(
+    180deg,
+    #fff8e7 0%,
+    var(--gold-light) 100%
+  ) !important;
+  border-top: 3px solid var(--gold) !important;
+  color: var(--gold-dark) !important;
+}

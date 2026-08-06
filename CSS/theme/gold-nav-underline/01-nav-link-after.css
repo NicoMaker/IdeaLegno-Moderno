@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/gold-nav-underline.css (a sua volta da CSS/gold-luxury.css (righe 81-92)) ---- */
+/* ---------- Navigazione: sottolinea oro ---------- */
+.nav-link::after {
+  background: var(--gold-gradient) !important;
+}

@@ -1,0 +1,9 @@
+/* ---- estratto da CSS/extra-animations.css (righe 166-173) ---- */
+/* ---------- 5. Bottoni magnetici ---------- */
+html.anim .cta-button,
+html.anim .back-to-top,
+html.anim .quick-whatsapp,
+html.anim .quick-call {
+  will-change: transform;
+}
+

@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/category-colors.css ---- */
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .categoria-badge {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}

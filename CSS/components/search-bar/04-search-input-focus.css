@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/components/search-bar.css (a sua volta da CSS/styles.css (righe 960-996)) ---- */
+
+
+.search-input:focus {
+  outline: none;
+  border-color: #5a3a1a;
+}

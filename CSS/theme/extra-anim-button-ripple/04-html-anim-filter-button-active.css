@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-button-ripple.css (a sua volta da CSS/extra-animations.css (righe 122-165)) ---- */
+
+
+/* pop del filtro selezionato */
+html.anim .filter-button.active {
+  animation: filterPop 0.45s var(--ease-out);
+}

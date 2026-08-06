@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/modern-hero-cinematic.css (a sua volta da CSS/modern.css (righe 89-137)) ---- */
+
+@keyframes riseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

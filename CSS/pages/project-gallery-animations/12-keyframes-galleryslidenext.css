@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+
+
+/* ── 2. Cambio foto con le frecce / pallini / swipe / tastiera ── */
+@keyframes gallerySlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(7%) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/progetti-refresh-filter-buttons.css (a sua volta da CSS/progetti-controls-refresh.css (righe 159-259)) ---- */
+
+
+@media (prefers-reduced-motion: reduce) {
+  .filter-button,
+  .filter-btn-icon {
+    transition: none !important;
+  }
+  .filter-button.active::before {
+    animation: none;
+  }
+}

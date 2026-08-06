@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/gold-filter-buttons.css (a sua volta da CSS/gold-luxury.css (righe 132-144)) ---- */
+
+.filter-button:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold-dark) !important;
+}
+

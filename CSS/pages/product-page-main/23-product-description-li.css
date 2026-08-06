@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.product-description li {
+  padding: var(--spacing-sm) 0;
+  padding-left: var(--spacing-lg);
+  position: relative;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}

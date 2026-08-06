@@ -1,0 +1,16 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
+
+
+/* Container dei filtri */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  position: relative;
+  z-index: 2;
+  background-color: #f5f1e8;
+}

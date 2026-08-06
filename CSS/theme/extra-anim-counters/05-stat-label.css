@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-counters.css (a sua volta da CSS/extra-animations.css (righe 189-256)) ---- */
+
+
+.stat-label {
+  margin-top: 0.35rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}

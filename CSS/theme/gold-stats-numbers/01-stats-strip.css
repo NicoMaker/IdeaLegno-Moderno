@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/gold-stats-numbers.css (a sua volta da CSS/gold-luxury.css (righe 210-222)) ---- */
+/* ---------- Numeri statistiche (sezione Storia/Dati): oro sfumato ---------- */
+.stats-strip {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}

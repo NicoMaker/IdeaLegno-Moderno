@@ -1,0 +1,25 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+/* Mobile Menu — overlay a schermo intero (logo + X in alto, come da riferimento) */
+.mobile-menu {
+  display: block;
+  position: fixed;
+  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100dvh;
+  background-color: var(--surface);
+  z-index: 2000; /* Sopra header, contenuti e pulsanti flottanti */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition:
+    opacity var(--transition-base),
+    visibility 0s linear var(--transition-base),
+    transform var(--transition-base);
+}

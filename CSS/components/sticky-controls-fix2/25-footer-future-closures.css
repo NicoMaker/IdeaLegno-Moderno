@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+.footer-future-closures {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 10px;
+}

@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/components/about.css (a sua volta da CSS/styles.css (righe 441-578)) ---- */
+
+
+.more-info-content.active {
+  max-height: 1000px;
+  overflow: visible;
+}

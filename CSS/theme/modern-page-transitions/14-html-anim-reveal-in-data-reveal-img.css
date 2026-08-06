@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+
+html.anim .reveal-in [data-reveal-img] {
+  clip-path: inset(0 0 0 0);
+}

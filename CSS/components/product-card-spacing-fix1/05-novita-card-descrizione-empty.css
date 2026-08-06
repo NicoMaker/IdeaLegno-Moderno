@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/components/product-card-spacing-fix1.css (a sua volta da CSS/styles.css (righe 1805-1862)) ---- */
+
+
+/* 4. (Facoltativo) Stessa cosa per le card delle novità */
+.novita-card .descrizione:empty {
+  display: none !important;
+}

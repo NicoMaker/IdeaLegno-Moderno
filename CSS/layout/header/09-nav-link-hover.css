@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}

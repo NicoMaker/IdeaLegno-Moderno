@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-novita-badge.css (a sua volta da CSS/extra-animations.css (righe 257-273)) ---- */
+/* ---------- 9. Badge Novità pulsante ---------- */
+html.anim .novita-badge {
+  animation: novitaPulse 2.2s ease-in-out infinite;
+}

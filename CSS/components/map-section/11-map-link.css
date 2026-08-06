@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.map-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid #ffcc80;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  background-color: rgba(139, 90, 43, 0.8);
+}

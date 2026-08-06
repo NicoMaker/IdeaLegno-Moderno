@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
+
+
+.cookie-btn.revoke {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2500;
+  display: none;
+  font-size: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  background: var(--ash-dark, #8b7355);
+  opacity: 1;
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.4);
+}

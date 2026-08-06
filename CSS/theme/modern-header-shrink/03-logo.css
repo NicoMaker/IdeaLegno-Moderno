@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-header-shrink.css (a sua volta da CSS/modern.css (righe 38-88)) ---- */
+
+.logo {
+  transition: transform 0.35s var(--ease-out);
+}

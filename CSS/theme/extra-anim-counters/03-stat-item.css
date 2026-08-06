@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-counters.css (a sua volta da CSS/extra-animations.css (righe 189-256)) ---- */
+
+
+.stat-item {
+  text-align: center;
+  color: var(--accent-cream, #fff8e7);
+}

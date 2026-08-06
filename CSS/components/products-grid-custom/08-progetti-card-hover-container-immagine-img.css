@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-custom.css (a sua volta da CSS/custom-styles.css (righe 166-249)) ---- */
+
+
+.Progetti-card:hover .container-immagine img {
+  transform: scale(1.05);
+}

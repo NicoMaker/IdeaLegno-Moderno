@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/utilities/responsive.css (a sua volta da CSS/styles.css (righe 861-919)) ---- */
+/* ===== Responsive Design ===== */
+@media (min-width: 768px) {
+  .main-nav {
+    display: block;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}

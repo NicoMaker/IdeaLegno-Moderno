@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/gold-cta-button.css (a sua volta da CSS/gold-luxury.css (righe 61-80)) ---- */
+
+@keyframes goldShimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+

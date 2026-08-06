@@ -1,0 +1,19 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+@media (hover: none) and (pointer: coarse) {
+  .filter-button:hover {
+    background-color: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--gray-medium);
+    transform: none;
+    box-shadow: none !important;
+  }
+
+  .filter-button.active:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    box-shadow: none !important;
+  }
+}

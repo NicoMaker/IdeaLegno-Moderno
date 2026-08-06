@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/modern-floating-buttons.css (a sua volta da CSS/modern.css (righe 258-351)) ---- */
+
+.quick-whatsapp:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #1ebe5b;
+}

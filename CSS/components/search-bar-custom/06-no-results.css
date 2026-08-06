@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/components/search-bar-custom.css (a sua volta da CSS/custom-styles.css (righe 514-563)) ---- */
+
+
+.no-results {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #666;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 80%;
+}
+

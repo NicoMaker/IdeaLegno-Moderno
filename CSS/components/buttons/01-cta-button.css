@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/buttons.css (a sua volta da CSS/custom-styles.css (righe 570-588)) ---- */
+/* CTA Button */
+.cta-button {
+  border-radius: 50px;
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #8b5a2b;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 10px;
+}

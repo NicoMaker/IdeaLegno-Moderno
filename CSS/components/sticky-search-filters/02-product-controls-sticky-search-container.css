@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/sticky-search-filters.css (a sua volta da CSS/custom-styles.css (righe 861-902)) ---- */
+
+
+.product-controls-sticky .search-container {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/utilities/z-index.css (a sua volta da CSS/styles.css (righe 942-959)) ---- */
+/* Z-index hierarchy */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}

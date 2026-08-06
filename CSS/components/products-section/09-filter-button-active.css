@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/products-section.css (a sua volta da CSS/styles.css (righe 579-760)) ---- */
+
+
+.filter-button.active,
+.filter-button.active:hover {
+  background-color: var(--ash-darkest) !important;
+  color: var(--white);
+  transform: none;
+}

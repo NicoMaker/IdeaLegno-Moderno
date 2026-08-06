@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-ipad.css (a sua volta da CSS/custom-styles.css (righe 1147-1201)) ---- */
+
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1em;
+  background-color: #f5f1e8; /* stesso sfondo del sito */
+  color: #333;
+  transition: all 0.3s ease;
+}
+

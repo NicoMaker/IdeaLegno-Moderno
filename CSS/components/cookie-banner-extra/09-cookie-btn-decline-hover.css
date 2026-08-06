@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
+
+
+.cookie-btn.decline:hover {
+  background: rgba(255, 248, 231, 0.12);
+}

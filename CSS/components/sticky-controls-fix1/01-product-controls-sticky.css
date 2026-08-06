@@ -1,0 +1,22 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
+/* ============================================================
+   FIX DEFINITIVO PER CONTROLLI STICKY
+   AGGIUNGI QUESTO ALLA FINE DI styles.css
+   ============================================================ */
+
+/* Controlli Sticky - Barra di ricerca e filtri */
+.product-controls-sticky {
+  position: sticky;
+  top: 80px; /* Verrà aggiornato da JavaScript */
+  z-index: 100 !important; /* IMPORTANTE: Sopra le card */
+  background-color: #f5f1e8 !important; /* Sfondo OPACO - stesso colore di --ash-lightest */
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow var(--transition-base);
+  /* AGGIUNGI QUESTE PROPRIETÀ CRITICHE */
+  width: 100%;
+  isolation: isolate; /* Crea un nuovo stacking context */
+}

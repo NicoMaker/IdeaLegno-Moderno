@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-floating-buttons.css (a sua volta da CSS/modern.css (righe 258-351)) ---- */
+
+.back-to-top:hover {
+  background: var(--accent-rust);
+}

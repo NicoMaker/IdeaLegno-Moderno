@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-product-page.css (a sua volta da CSS/modern.css (righe 352-371)) ---- */
+
+.main-product-image:hover img {
+  transform: scale(1.04);
+}

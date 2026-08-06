@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/header-custom.css (a sua volta da CSS/custom-styles.css (righe 1-50)) ---- */
+/* Stili personalizzati per migliorare l'UX design */
+
+/* Header e Layout */
+header {
+  /* padding rimosso: ora gestito da .header-content */
+}

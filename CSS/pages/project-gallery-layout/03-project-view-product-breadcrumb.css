@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
+
+
+.project-view .product-breadcrumb {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}

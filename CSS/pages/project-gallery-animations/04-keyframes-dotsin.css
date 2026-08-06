@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+
+
+@keyframes dotsIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

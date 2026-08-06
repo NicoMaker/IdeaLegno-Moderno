@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/gold-scopri-di-piu.css (a sua volta da CSS/gold-luxury.css (righe 98-105)) ---- */
+/* ---------- "Scopri di più" ---------- */
+.more-info-btn {
+  color: var(--gold-dark);
+}

@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/gold-scopri-di-piu.css (a sua volta da CSS/gold-luxury.css (righe 98-105)) ---- */
+
+.more-info-btn:hover {
+  color: var(--gold);
+}
+

@@ -1,0 +1,6 @@
+/* ---- estratto da CSS/gold-luxury.css (righe 93-97) ---- */
+/* ---------- Logo: bagliore dorato all'hover ---------- */
+.logo-link:hover .logo {
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+}
+

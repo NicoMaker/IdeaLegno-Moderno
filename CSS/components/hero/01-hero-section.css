@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/components/hero.css (a sua volta da CSS/styles.css (righe 351-440)) ---- */
+/* ===== Hero Section ===== */
+.hero-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--ash-light) 0%,
+    var(--ash-medium) 100%
+  );
+}

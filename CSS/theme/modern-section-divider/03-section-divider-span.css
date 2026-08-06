@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/theme/modern-section-divider.css (a sua volta da CSS/modern.css (righe 233-257)) ---- */
+
+.section-divider span {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-rust);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+

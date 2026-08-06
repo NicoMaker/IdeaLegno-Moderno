@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+/* ===== Header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
+}

@@ -1,0 +1,16 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
+
+
+.project-view .product-title::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 3px;
+  margin: 0.7rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-warm, #bf8b67),
+    var(--accent-rust, #a0522d)
+  );
+}

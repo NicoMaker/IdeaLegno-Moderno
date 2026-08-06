@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/utilities/animations-custom.css (a sua volta da CSS/custom-styles.css (righe 482-513)) ---- */
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+/* Map Section */
+.map-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 3px solid #ffcc80;
+  text-align: center;
+}

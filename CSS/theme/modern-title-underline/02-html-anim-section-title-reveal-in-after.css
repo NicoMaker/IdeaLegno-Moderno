@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/modern-title-underline.css (a sua volta da CSS/modern.css (righe 138-149)) ---- */
+
+html.anim .section-title.reveal-in::after {
+  transform: scaleX(1);
+}
+

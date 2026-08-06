@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.footer-map {
+  margin-top: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 300px;
+  background-color: var(--gray-medium);
+}

@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Assicura che il layout sia consistente */
+.footer-grid > .footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

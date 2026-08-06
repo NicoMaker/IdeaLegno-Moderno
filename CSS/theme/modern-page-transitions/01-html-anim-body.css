@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+/* ============================================================
+   13. LIVELLO EXTRA — parallasse, blur-reveal, transizioni pagina
+   ============================================================ */
+
+/* ── Transizione di ENTRATA pagina (pura CSS: robusta anche senza JS) ── */
+html.anim body {
+  animation: pageEnter 0.85s var(--ease-out) both;
+}

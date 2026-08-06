@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/theme/modern-floating-buttons.css (a sua volta da CSS/modern.css (righe 258-351)) ---- */
+
+@keyframes callPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

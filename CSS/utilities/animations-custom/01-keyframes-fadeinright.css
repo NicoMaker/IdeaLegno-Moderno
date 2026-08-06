@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/utilities/animations-custom.css (a sua volta da CSS/custom-styles.css (righe 482-513)) ---- */
+/* Animazioni */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

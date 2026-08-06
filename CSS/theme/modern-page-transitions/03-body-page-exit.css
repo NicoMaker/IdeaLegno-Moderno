@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+
+
+/* ── Transizione di USCITA pagina: semplice dissolvenza, senza sipario ── */
+body.page-exit {
+  animation: pageExit 0.28s ease forwards;
+}

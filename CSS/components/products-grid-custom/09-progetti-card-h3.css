@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-custom.css (a sua volta da CSS/custom-styles.css (righe 166-249)) ---- */
+
+
+.Progetti-card h3 {
+  padding: 15px 20px 5px;
+  color: #333;
+  font-size: 1.3em;
+  font-weight: 600;
+}

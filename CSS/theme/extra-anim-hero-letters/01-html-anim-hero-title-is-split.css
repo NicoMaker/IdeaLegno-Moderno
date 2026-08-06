@@ -1,0 +1,20 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-hero-letters.css (a sua volta da CSS/extra-animations.css (righe 1-46)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   EXTRA-ANIMATIONS.CSS — IdeaLegno
+   Secondo layer di animazioni sopra modern.css:
+   • Titolo hero lettera per lettera + typewriter
+   • Tilt 3D con riflesso sulle card
+   • Bottoni magnetici + effetto ripple
+   • Cursore personalizzato (solo desktop)
+   • Particelle di segatura dorata nella hero (canvas)
+   • Contatori animati nella sezione Storia
+   • Transizioni slide nelle pagine progetto
+   Usa solo le variabili colore già definite in styles.css.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ---------- 1. Titolo hero: lettere che salgono una a una ---------- */
+html.anim .hero-title.is-split {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}

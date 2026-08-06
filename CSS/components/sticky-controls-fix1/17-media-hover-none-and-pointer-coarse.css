@@ -1,0 +1,20 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
+
+
+/* Disabilita effetti hover su dispositivi touch */
+@media (hover: none) and (pointer: coarse) {
+  .filter-button:hover {
+    background-color: var(--surface);
+    color: var(--text-secondary);
+    border-color: var(--gray-medium);
+    transform: none;
+    box-shadow: none;
+  }
+
+  .filter-button.active:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+  }
+}
+

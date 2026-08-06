@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/sticky-search-safari-fix.css (a sua volta da CSS/custom-styles.css (righe 1692-1765)) ---- */
+
+
+/* Evidenziazione link "Progetti" nelle pagine secondarie */
+.nav-list a.active,
+.mobile-nav-list a.active {
+  color: #b8860b !important;
+  font-weight: 600;
+  border-bottom: 2px solid #b8860b;
+  padding-bottom: 2px;
+}

@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+
+
+.project-view .slide.slide-in-next {
+  animation: gallerySlideNext 0.45s var(--ease-out) both;
+}

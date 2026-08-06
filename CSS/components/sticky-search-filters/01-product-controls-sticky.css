@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/sticky-search-filters.css (a sua volta da CSS/custom-styles.css (righe 861-902)) ---- */
+/* STICKY SEARCH AND FILTERS */
+.product-controls-sticky {
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  background-color: #f5f1e8;
+  padding: 5px 0 25px 0;
+  margin-bottom: 40px;
+  transition: padding 0.2s ease;
+}

@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/utilities/responsive-tweaks.css (a sua volta da CSS/styles.css (righe 1086-1099)) ---- */
+
+
+/* Nasconde il br su schermi desktop */
+@media (min-width: 1024px) {
+  .mobile-break {
+    display: none;
+  }
+}
+

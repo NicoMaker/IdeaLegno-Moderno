@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.map-section p {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}

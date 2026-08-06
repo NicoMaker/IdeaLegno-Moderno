@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/layout/footer-hover-effects.css (a sua volta da CSS/custom-styles.css (righe 1202-1300)) ---- */
+
+
+.footer-list .footer-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffcc80;
+  transition: width 0.3s ease;
+}

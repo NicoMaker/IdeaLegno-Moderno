@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-button-ripple.css (a sua volta da CSS/extra-animations.css (righe 122-165)) ---- */
+
+
+.ripple-ink {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 248, 231, 0.45);
+  transform: scale(0);
+  pointer-events: none;
+  animation: rippleGrow 0.65s var(--ease-out) forwards;
+  z-index: 2;
+}

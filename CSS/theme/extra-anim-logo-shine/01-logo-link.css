@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-logo-shine.css (a sua volta da CSS/extra-animations.css (righe 342-371)) ---- */
+/* ---------- 13. Logo: riflesso al passaggio ---------- */
+.logo-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+}

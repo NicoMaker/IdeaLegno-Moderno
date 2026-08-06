@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-typewriter.css (a sua volta da CSS/extra-animations.css (righe 47-78)) ---- */
+/* ---------- 2. Typewriter sotto il sottotitolo hero ---------- */
+.hero-rotator {
+  min-height: 1.6em;
+  margin-top: 0.4rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  font-style: italic;
+  color: var(--accent-cream, #fff8e7);
+  letter-spacing: 0.02em;
+  opacity: 0;
+}

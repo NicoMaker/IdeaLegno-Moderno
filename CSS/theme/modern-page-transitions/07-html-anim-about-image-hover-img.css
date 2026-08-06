@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+
+html.anim .about-image:hover img {
+  transform: scale(1.12) translateY(var(--par, 0px));
+}

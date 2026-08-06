@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.slider-container {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    var(--ash-light, #e8dcc8) 0%,
+    var(--ash-lightest, #f5f1e8) 55%,
+    var(--accent-cream, #fff8e7) 100%
+  );
+}

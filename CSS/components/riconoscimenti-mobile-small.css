@@ -1,0 +1,14 @@
+/* ---- estratto da CSS/styles.css (righe 1995-2007) ---- */
+/* ============================================================
+   MOBILE PICCOLO (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .riconoscimento-card img {
+    max-height: 220px;
+  }
+
+  .riconoscimento-card figcaption {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}

@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.product-description li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}

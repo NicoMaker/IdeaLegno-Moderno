@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-ipad.css (a sua volta da CSS/custom-styles.css (righe 1147-1201)) ---- */
+/* Griglia prodotti / novità */
+.novita-container,
+.progetti-container,
+.pc-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  margin: 30px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+}

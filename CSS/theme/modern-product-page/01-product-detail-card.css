@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/modern-product-page.css (a sua volta da CSS/modern.css (righe 352-371)) ---- */
+/* ---------- 11. Pagina prodotto ---------- */
+.product-detail-card,
+.main-product-image,
+.slider-container {
+  transition: box-shadow 0.45s var(--ease-out);
+}

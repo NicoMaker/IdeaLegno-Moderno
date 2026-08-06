@@ -1,0 +1,27 @@
+/* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
+
+
+/* Bottone "Vedi i progetti": rende evidente che la scheda è cliccabile */
+.feature-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto; /* allinea i bottoni in fondo a tutte le schede */
+  /* spazio sopra il bottone senza spingerlo a tutta larghezza */
+  margin-bottom: 0;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-warm, #bf8b67),
+    var(--accent-rust, #a0522d)
+  );
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 8px 20px -8px rgba(160, 82, 45, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}

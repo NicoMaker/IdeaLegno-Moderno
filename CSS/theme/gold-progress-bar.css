@@ -1,0 +1,7 @@
+/* ---- estratto da CSS/gold-luxury.css (righe 38-43) ---- */
+/* ---------- Barra di progresso lettura ---------- */
+.scroll-progress {
+  background: var(--gold-gradient-diag) !important;
+  background-size: 200% 100% !important;
+}
+

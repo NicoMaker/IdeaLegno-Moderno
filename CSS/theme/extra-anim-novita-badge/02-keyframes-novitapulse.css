@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-novita-badge.css (a sua volta da CSS/extra-animations.css (righe 257-273)) ---- */
+
+
+@keyframes novitaPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(160, 82, 45, 0.45);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 10px rgba(160, 82, 45, 0);
+  }
+}
+

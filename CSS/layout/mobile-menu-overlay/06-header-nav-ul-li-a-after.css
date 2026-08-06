@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/layout/mobile-menu-overlay.css (a sua volta da CSS/custom-styles.css (righe 86-143)) ---- */
+
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffcc80;
+  transition: width 0.3s ease;
+}

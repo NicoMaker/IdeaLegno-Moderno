@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-counters.css (a sua volta da CSS/extra-animations.css (righe 189-256)) ---- */
+
+.stats-strip.stats-in .stat-item:nth-child(3) {
+  animation-delay: 0.34s;
+}

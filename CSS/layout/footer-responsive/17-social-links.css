@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Spazio tra icone social e scritta Legenda */
+.social-links {
+  margin-bottom: 1.5rem; /* aumenta/diminuisci a gusto */
+}

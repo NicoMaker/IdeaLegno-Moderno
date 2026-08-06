@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/gold-sector-cards.css (a sua volta da CSS/gold-luxury.css (righe 106-131)) ---- */
+
+.feature-card__cta {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  box-shadow: 0 8px 20px -8px rgba(201, 162, 39, 0.6) !important;
+}

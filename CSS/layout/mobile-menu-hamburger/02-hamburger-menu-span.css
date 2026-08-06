@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/layout/mobile-menu-hamburger.css (a sua volta da CSS/custom-styles.css (righe 51-85)) ---- */
+
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}

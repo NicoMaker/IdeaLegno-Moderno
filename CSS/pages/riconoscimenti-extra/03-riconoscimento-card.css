@@ -1,0 +1,16 @@
+/* ---- regola CSS estratta da CSS/pages/riconoscimenti-extra.css (a sua volta da CSS/idealegno-extra.css (righe 1-58)) ---- */
+
+
+.riconoscimento-card {
+  margin: 0;
+  max-width: 720px;
+  width: 100%;
+  background: var(--surface, #fff);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44, 36, 22, 0.12);
+  border: 1px solid var(--gray-medium, #d4cfc5);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}

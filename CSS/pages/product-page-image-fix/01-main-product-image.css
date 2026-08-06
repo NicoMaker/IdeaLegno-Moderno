@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-image-fix.css (a sua volta da CSS/product-page.css (righe 337-385)) ---- */
+/* ============================================================
+   RIMUOVE TUTTI I CONTORNI DALLE IMMAGINI PAGINA PRODOTTO
+   ============================================================ */
+
+/* 1. Nessun bordo/padding/ombra sull'immagine principale */
+.main-product-image {
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important; /* se c'è uno sfondo sotto */
+}

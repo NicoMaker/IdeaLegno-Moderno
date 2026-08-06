@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/components/sectors-section-main.css (a sua volta da CSS/sectors-section.css (righe 1-53)) ---- */
+
+
+/* La scheda "Tutti i progetti" si distingue leggermente dalle categorie */
+.idealegno-explore .feature-card--all {
+  background: linear-gradient(
+    160deg,
+    var(--gray-light, #f5f1e8),
+    var(--surface, #fffdf9)
+  );
+  border-color: rgba(160, 82, 45, 0.18);
+}

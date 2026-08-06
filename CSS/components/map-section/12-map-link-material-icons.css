@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.map-link .material-icons {
+  margin-right: 8px;
+  font-size: 20px;
+  background-color: transparent;
+  color: inherit;
+}

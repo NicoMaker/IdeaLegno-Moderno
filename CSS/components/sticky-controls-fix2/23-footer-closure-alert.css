@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+/* Stili per il footer alert */
+.footer-closure-alert {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  border-left: 5px solid #ffcc80;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-top: 18px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: pulse-red 1.5s infinite;
+}

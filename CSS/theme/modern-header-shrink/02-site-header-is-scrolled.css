@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-header-shrink.css (a sua volta da CSS/modern.css (righe 38-88)) ---- */
+
+.site-header.is-scrolled {
+  box-shadow: 0 8px 30px -12px rgba(44, 36, 22, 0.25);
+}

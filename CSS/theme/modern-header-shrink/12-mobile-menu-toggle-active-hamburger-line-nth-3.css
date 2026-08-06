@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/modern-header-shrink.css (a sua volta da CSS/modern.css (righe 38-88)) ---- */
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+

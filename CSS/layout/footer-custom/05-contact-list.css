@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/layout/footer-custom.css (a sua volta da CSS/custom-styles.css (righe 250-321)) ---- */
+
+
+.contact-list,
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

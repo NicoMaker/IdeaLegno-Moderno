@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/theme/gold-riconoscimenti.css (a sua volta da CSS/gold-luxury.css (righe 166-209)) ---- */
+
+
+.riconoscimento-card {
+  position: relative;
+  border: 2px solid var(--gold-soft) !important;
+  box-shadow:
+    0 10px 30px rgba(44, 36, 22, 0.14),
+    0 0 0 1px rgba(212, 175, 55, 0.28) !important;
+}

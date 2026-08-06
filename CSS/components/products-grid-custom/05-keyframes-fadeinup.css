@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-custom.css (a sua volta da CSS/custom-styles.css (righe 166-249)) ---- */
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,21 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+@media (max-width: 767px) {
+  .back-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .main-product-image {
+    height: 320px;
+  }
+
+  .prev,
+  .next {
+    padding: var(--spacing-sm);
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-header-shrink.css (a sua volta da CSS/modern.css (righe 38-88)) ---- */
+/* ---------- 2. Header: si compatta allo scroll ---------- */
+.site-header {
+  transition: box-shadow 0.4s ease;
+}

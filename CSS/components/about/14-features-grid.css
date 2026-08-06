@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/about.css (a sua volta da CSS/styles.css (righe 441-578)) ---- */
+
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}

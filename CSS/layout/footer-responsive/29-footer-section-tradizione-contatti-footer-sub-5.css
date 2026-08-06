@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Spazio tra "Tradizione e qualità" e "Contatti" */
+.footer-section-tradizione-contatti .footer-subtitle {
+  margin-top: 1.5rem !important; /* spazio verticale dopo Tradizione e qualità */
+}

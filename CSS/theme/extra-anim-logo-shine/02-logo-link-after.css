@@ -1,0 +1,20 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-logo-shine.css (a sua volta da CSS/extra-animations.css (righe 342-371)) ---- */
+
+
+.logo-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.7s var(--ease-out);
+}

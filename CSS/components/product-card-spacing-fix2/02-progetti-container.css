@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/product-card-spacing-fix2.css (a sua volta da CSS/styles.css (righe 1863-1903)) ---- */
+
+
+/* 2. Allinea le card in alto nella griglia (senza stiramento) */
+.progetti-container,
+.novita-container {
+  align-items: start !important;
+}

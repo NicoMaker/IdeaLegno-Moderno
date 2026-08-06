@@ -1,0 +1,10 @@
+/* ---- estratto da CSS/custom-styles.css (righe 715-723) ---- */
+/* Transizioni fluide per opacity */
+.more-info-btn,
+.filter-button {
+  transition:
+    opacity 0.15s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+

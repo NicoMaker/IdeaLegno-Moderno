@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/layout/mobile-menu-hamburger-fix.css (a sua volta da CSS/custom-styles.css (righe 1391-1432)) ---- */
+
+
+.mobile-menu-toggle .hamburger-line {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background-color: var(--primary);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  flex-shrink: 0;
+}

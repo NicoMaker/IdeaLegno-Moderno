@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
+
+
+.feature-card--link:hover .feature-card__cta,
+.feature-card--link:focus-visible .feature-card__cta {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -8px rgba(160, 82, 45, 0.75);
+}

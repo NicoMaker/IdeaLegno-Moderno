@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/category-colors.css ---- */
+
+
+.Progetti-card:hover .categoria-badge,
+.novita-card:hover .categoria-badge {
+  opacity: 0.85;
+  transform: scale(0.97);
+}

@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/gold-cta-button.css (a sua volta da CSS/gold-luxury.css (righe 61-80)) ---- */
+/* ---------- Bottone CTA principale (Hero) ---------- */
+.cta-button {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: var(--gold-shadow) !important;
+}

@@ -1,0 +1,11 @@
+/* ---- estratto da CSS/custom-styles.css (righe 1433-1442) ---- */
+/* ═══════ SOGLIA MENU ORRIZZONTALE ABBASSATA A 768px ═══════ */
+@media (min-width: 768px) {
+  .main-nav {
+    display: block;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+

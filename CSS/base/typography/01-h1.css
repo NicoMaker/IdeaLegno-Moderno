@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/base/typography.css (a sua volta da CSS/styles.css (righe 113-139)) ---- */
+/* ===== Typography ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}

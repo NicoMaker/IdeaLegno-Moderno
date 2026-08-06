@@ -1,0 +1,21 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
+
+
+.project-view .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  /* Box (cornice) di dimensione FISSA: identico per ogni foto,
+     verticale o orizzontale che sia. */
+  height: min(74vh, 700px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+  /* Solo il BORDO è colorato: lo sfondo resta neutro come la pagina. */
+  background: var(--background, var(--ash-lightest, #f5f1e8));
+  border: 3px solid var(--accent-warm, #bf8b67);
+  box-shadow: 0 18px 44px -26px rgba(44, 36, 22, 0.45);
+  /* Piccolo margine neutro tra la foto e il bordo colorato. */
+  padding: clamp(8px, 1.6vw, 18px);
+  box-sizing: border-box;
+}

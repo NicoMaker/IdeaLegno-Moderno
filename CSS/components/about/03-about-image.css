@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/about.css (a sua volta da CSS/styles.css (righe 441-578)) ---- */
+
+
+.about-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 80%;
+  margin: 0 auto;
+}

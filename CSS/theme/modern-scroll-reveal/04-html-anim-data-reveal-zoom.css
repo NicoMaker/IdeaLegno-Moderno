@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-scroll-reveal.css (a sua volta da CSS/modern.css (righe 150-172)) ---- */
+
+html.anim [data-reveal="zoom"] {
+  transform: scale(0.96) translateY(14px);
+}

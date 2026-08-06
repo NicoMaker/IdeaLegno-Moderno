@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
+
+
+/* Piccolo segnale al passaggio del mouse / focus */
+.feature-card--link h3 {
+  transition: color 0.3s ease;
+}

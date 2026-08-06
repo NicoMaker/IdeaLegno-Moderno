@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.footer-content {
+  width: 100%;
+  padding: 0 var(--spacing-md);
+  box-sizing: border-box;
+}

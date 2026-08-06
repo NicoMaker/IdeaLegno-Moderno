@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/gold-footer.css (a sua volta da CSS/gold-luxury.css (righe 223-251)) ---- */
+
+.footer-subtitle {
+  color: var(--gold-soft) !important;
+}

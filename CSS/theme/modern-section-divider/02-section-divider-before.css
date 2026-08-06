@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/modern-section-divider.css (a sua volta da CSS/modern.css (righe 233-257)) ---- */
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gray-medium);
+}

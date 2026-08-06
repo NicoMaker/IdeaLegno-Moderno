@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/theme/gold-stats-numbers.css (a sua volta da CSS/gold-luxury.css (righe 210-222)) ---- */
+
+.stat-value {
+  background: var(--gold-gradient-diag);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-soft); /* fallback se background-clip non supportato */
+}
+

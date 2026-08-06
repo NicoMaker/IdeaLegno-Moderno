@@ -1,0 +1,18 @@
+/* ---- regola CSS estratta da CSS/components/hero-scroll-arrow.css (a sua volta da CSS/custom-styles.css (righe 589-630)) ---- */
+/* Scroll Down Arrow */
+.scroll-down-arrow {
+  display: flex;
+  margin: 2rem auto 0;
+  position: relative;
+  color: white;
+  animation: bounce 2s infinite;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -1,0 +1,18 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+/* ============================================================
+   FIX DEFINITIVO - SENZA OMBRA SUI FILTRI
+   SOSTITUISCI IL CODICE PRECEDENTE CON QUESTO
+   ============================================================ */
+
+.product-controls-sticky {
+  position: sticky;
+  top: 80px;
+  z-index: 100 !important;
+  background-color: #f5f1e8 !important;
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-base);
+  width: 100%;
+  isolation: isolate;
+  border: none;
+}

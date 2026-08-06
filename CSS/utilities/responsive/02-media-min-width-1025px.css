@@ -1,0 +1,27 @@
+/* ---- regola CSS estratta da CSS/utilities/responsive.css (a sua volta da CSS/styles.css (righe 861-919)) ---- */
+
+
+@media (min-width: 1025px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .about-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+    max-width: none;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .progetti-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

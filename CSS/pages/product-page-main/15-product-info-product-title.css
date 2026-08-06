@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+/* Product Info */
+.product-info .product-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}

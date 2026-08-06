@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/components/sectors-section-anchors.css (a sua volta da CSS/sectors-section.css (righe 54-85)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   Ancoraggi dall'header
+   Le sezioni hanno un id (#Settori, #TuttiProgetti, #Dati) richiamato dalle
+   voci di menu. Lo scroll-margin evita che il titolo finisca sotto
+   l'header fisso quando si arriva dall'ancora.
+   ═══════════════════════════════════════════════════════════════════════════ */
+#Settori,
+#TuttiProgetti,
+#Dati {
+  scroll-margin-top: 96px;
+}

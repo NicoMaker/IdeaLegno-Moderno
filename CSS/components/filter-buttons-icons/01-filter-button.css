@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/filter-buttons-icons.css (a sua volta da CSS/custom-styles.css (righe 1663-1691)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   Pulsanti-filtro con l'icona della categoria (home / store / sailing …)
+   Coerenti con le schede in home: si capisce subito e si va diretti.
+   ═══════════════════════════════════════════════════════════════════════════ */
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}

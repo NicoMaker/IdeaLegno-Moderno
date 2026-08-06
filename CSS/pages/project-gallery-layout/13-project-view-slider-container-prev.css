@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
+
+
+/* Frecce più eleganti sopra lo sfondo scuro */
+.project-view .slider-container .prev,
+.project-view .slider-container .next {
+  z-index: 2;
+  background: rgba(255, 248, 231, 0.92) !important;
+  color: var(--ash-darkest, #5c4a3a) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/product-card-spacing-fix2.css (a sua volta da CSS/styles.css (righe 1863-1903)) ---- */
+/* ============================================================
+   FIX DEFINITIVO – Rimuove TUTTO lo spazio bianco
+   (sia tra titolo/categoria che DOPO le categorie)
+   ============================================================ */
+
+/* 1. Rimuove l'altezza fissa delle card e le adatta al contenuto */
+.Progetti-card,
+.novita-card {
+  min-height: auto !important; /* elimina i 520px fissi */
+  height: auto !important; /* altezza = contenuto effettivo */
+  align-self: start !important; /* non si stirano per riempire la riga */
+}

@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-mobile-menu-cascade.css (a sua volta da CSS/extra-animations.css (righe 372-404)) ---- */
+/* ---------- 14. Voci del menu mobile in cascata ---------- */
+html.anim .mobile-menu .mobile-nav-list li {
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity 0.4s var(--ease-out),
+    transform 0.4s var(--ease-out);
+}

@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}

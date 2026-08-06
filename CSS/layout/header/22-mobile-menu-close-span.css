@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+.mobile-menu-close span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-secondary);
+  transform-origin: center;
+}

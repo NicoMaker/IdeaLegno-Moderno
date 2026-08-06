@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/gold-filter-buttons.css (a sua volta da CSS/gold-luxury.css (righe 132-144)) ---- */
+/* ---------- Filtri progetti ---------- */
+.filter-button.active,
+.filter-button.active:hover {
+  background: var(--gold-gradient) !important;
+  color: #2c2416 !important;
+  border-color: var(--gold-dark) !important;
+  box-shadow: var(--gold-shadow) !important;
+}

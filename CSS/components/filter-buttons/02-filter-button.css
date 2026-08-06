@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/filter-buttons.css (a sua volta da CSS/custom-styles.css (righe 444-481)) ---- */
+
+
+.filter-button {
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  background-color: #8b5a2b;
+  color: white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1.1em;
+  box-shadow: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+.mobile-nav-list {
+  padding: var(--spacing-md);
+}

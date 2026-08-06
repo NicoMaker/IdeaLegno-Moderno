@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/product-card-spacing-fix1.css (a sua volta da CSS/styles.css (righe 1805-1862)) ---- */
+
+
+/* 3. Rimuove il margine superiore automatico che spingeva i badge in basso */
+.Progetti-card .categoria-badges-wrapper {
+  margin-top: 0.1rem !important;
+  padding-top: 0 !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+}

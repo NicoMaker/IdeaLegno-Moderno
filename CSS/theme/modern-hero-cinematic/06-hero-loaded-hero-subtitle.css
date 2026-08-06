@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-hero-cinematic.css (a sua volta da CSS/modern.css (righe 89-137)) ---- */
+
+.hero-loaded .hero-subtitle {
+  animation: riseIn 1.1s var(--ease-out) 0.35s forwards;
+}

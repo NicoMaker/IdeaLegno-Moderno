@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/base/typography-custom.css (a sua volta da CSS/custom-styles.css (righe 144-165)) ---- */
+/* Section Title */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+  letter-spacing: 1.5px;
+}

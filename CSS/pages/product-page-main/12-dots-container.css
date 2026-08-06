@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+/* Stili per i pallini di navigazione */
+.dots-container {
+  text-align: center;
+  padding-top: var(--spacing-sm);
+}

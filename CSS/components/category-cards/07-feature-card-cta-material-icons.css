@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
+
+
+.feature-card__cta .material-icons,
+.feature-card__cta .cta-arrow {
+  font-size: 1.15rem;
+  color: #fff;
+  transition: transform 0.3s ease;
+}

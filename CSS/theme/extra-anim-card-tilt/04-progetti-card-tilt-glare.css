@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-card-tilt.css (a sua volta da CSS/extra-animations.css (righe 79-121)) ---- */
+
+
+.Progetti-card .tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 248, 231, 0.28),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}

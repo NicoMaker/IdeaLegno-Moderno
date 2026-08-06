@@ -1,0 +1,7 @@
+/* ---- estratto da CSS/custom-styles.css (righe 730-735) ---- */
+/* Prevenzione layout shift */
+.more-info-btn {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+

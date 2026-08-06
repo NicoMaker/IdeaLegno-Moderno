@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   PROJECT-GALLERY.CSS — IdeaLegno
+   Layout delle pagine progetto centrato sulle immagini:
+   intestazione centrata (breadcrumb, titolo, badge), grande galleria con
+   sfondo sfumato dell'immagine stessa, miniature cliccabili, pulsante
+   di ritorno centrato. Nessun testo aggiuntivo.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.project-view {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2.5rem) 1rem 4rem;
+}

@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/modern-progress-bar.css (a sua volta da CSS/modern.css (righe 1-37)) ---- */
+
+
+::selection {
+  background: var(--accent-warm);
+  color: var(--white);
+}

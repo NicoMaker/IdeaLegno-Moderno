@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-card-tilt.css (a sua volta da CSS/extra-animations.css (righe 79-121)) ---- */
+
+
+html.anim .Progetti-card.is-tilting {
+  transition: box-shadow 0.35s ease;
+  box-shadow: 0 24px 48px -18px rgba(44, 36, 22, 0.4);
+}

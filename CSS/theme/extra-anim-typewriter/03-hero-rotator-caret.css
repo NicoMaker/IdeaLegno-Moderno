@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-typewriter.css (a sua volta da CSS/extra-animations.css (righe 47-78)) ---- */
+
+
+.hero-rotator .caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: var(--accent-warm, #bf8b67);
+  animation: caretBlink 0.9s steps(1) infinite;
+}

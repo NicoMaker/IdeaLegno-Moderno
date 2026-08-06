@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/products-section.css (a sua volta da CSS/styles.css (righe 579-760)) ---- */
+
+
+.prezzo {
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: var(--spacing-xs);
+}

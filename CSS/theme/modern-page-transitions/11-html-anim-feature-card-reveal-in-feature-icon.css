@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
+
+html.anim .feature-card.reveal-in .feature-icon {
+  animation: iconPop 0.7s var(--ease-out) 0.25s forwards;
+}

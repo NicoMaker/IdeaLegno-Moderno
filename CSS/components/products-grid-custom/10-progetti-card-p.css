@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-custom.css (a sua volta da CSS/custom-styles.css (righe 166-249)) ---- */
+
+
+.Progetti-card p {
+  padding: 0 20px 20px;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6;
+}
+

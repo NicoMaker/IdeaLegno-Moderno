@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/mobile-menu-overlay.css (a sua volta da CSS/custom-styles.css (righe 86-143)) ---- */
+
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+  width: 100%;
+}

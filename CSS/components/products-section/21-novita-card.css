@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/products-section.css (a sua volta da CSS/styles.css (righe 579-760)) ---- */
+
+
+/* Novita Card Specific Styles */
+.novita-card {
+  background-color: var(--accent-cream);
+  border-color: transparent;
+}

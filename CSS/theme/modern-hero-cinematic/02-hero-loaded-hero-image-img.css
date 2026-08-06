@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/modern-hero-cinematic.css (a sua volta da CSS/modern.css (righe 89-137)) ---- */
+
+.hero-loaded .hero-image img {
+  animation: heroZoom 8s var(--ease-out) forwards;
+}

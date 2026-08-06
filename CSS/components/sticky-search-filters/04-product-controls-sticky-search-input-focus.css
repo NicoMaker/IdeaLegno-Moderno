@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/components/sticky-search-filters.css (a sua volta da CSS/custom-styles.css (righe 861-902)) ---- */
+
+
+.product-controls-sticky .search-input:focus {
+  border-color: #5a3a1a;
+}

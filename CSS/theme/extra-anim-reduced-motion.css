@@ -1,0 +1,21 @@
+/* ---- estratto da CSS/extra-animations.css (righe 405-424) ---- */
+/* ---------- 15. Accessibilità: riduzione movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .ht-letter,
+  .stats-strip,
+  .stats-strip.stats-in .stat-item {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-rotator {
+    opacity: 1;
+    animation: none;
+  }
+
+  .hero-particles {
+    display: none !important;
+  }
+}

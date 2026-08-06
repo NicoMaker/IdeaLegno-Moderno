@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+
+
+/* Le frecce restano reattive al passaggio del mouse anche dopo l'entrata:
+   l'animazione usa translate, quindi lo scatto dell'hover va sulla scala. */
+.project-view .slider-container .prev,
+.project-view .slider-container .next {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    scale 0.25s var(--ease-out);
+}

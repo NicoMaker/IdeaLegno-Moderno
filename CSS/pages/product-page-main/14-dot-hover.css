@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.dot:hover,
+.dot.active {
+  background-color: var(--primary);
+}

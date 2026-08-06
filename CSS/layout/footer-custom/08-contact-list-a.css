@@ -1,0 +1,15 @@
+/* ---- regola CSS estratta da CSS/layout/footer-custom.css (a sua volta da CSS/custom-styles.css (righe 250-321)) ---- */
+
+
+.contact-list a,
+.social-list a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+}

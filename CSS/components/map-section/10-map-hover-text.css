@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.map-hover-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+}

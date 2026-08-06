@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/product-card-spacing-fix1.css (a sua volta da CSS/styles.css (righe 1805-1862)) ---- */
+
+
+.Progetti-card .descrizione {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  flex: 0 0 0 !important; /* rimuove il flex-grow */
+}

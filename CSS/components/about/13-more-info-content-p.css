@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/components/about.css (a sua volta da CSS/styles.css (righe 441-578)) ---- */
+
+
+.more-info-content p {
+  margin-bottom: var(--spacing-md);
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}

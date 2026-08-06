@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}

@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
+
+
+.cookie-btn {
+  padding: 0.55rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent-warm, #bf8b67);
+  color: #fff;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}

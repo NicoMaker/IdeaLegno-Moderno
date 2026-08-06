@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/modern-card-hover-zoom.css (a sua volta da CSS/modern.css (righe 173-201)) ---- */
+
+.Progetti-card img,
+.novita-card img {
+  transition: transform 0.8s var(--ease-out);
+}

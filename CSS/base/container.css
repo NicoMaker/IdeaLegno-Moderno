@@ -1,0 +1,8 @@
+/* ---- estratto da CSS/styles.css (righe 106-112) ---- */
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  padding: 0 var(--spacing-md);
+  box-sizing: border-box;
+}
+

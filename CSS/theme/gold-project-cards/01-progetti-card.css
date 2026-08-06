@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/theme/gold-project-cards.css (a sua volta da CSS/gold-luxury.css (righe 145-165)) ---- */
+/* ---------- Card progetti: alone dorato all'hover ---------- */
+.Progetti-card,
+.novita-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease !important;
+}

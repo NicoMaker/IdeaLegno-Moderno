@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/theme/modern-floating-buttons.css (a sua volta da CSS/modern.css (righe 258-351)) ---- */
+
+.back-to-top {
+  bottom: 22px;
+  background: var(--ash-darkest);
+  font-size: 20px;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+}

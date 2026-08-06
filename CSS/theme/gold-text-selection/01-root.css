@@ -1,0 +1,31 @@
+/* ---- regola CSS estratta da CSS/theme/gold-text-selection.css (a sua volta da CSS/gold-luxury.css (righe 1-37)) ---- */
+/* ============================================================
+   GOLD-LUXURY.CSS — IdeaLegno
+   Livello di accenti oro eleganti sopra il tema esistente.
+   Non tocca layout/struttura: aggiunge solo colore, bagliori
+   e piccoli ornamenti (bordi, sottolinee, nastro premi, testo
+   sfumato) coerenti con lo stile legno/artigianale del sito.
+   Va caricato PER ULTIMO (dopo modern.css).
+   ============================================================ */
+
+:root {
+  --gold: #c9a227;
+  --gold-soft: #e6c866;
+  --gold-light: #f6e7ae;
+  --gold-dark: #8a6a14;
+  --gold-gradient: linear-gradient(
+    135deg,
+    #f6e7ae 0%,
+    #d4af37 45%,
+    #9c7a1d 100%
+  );
+  --gold-gradient-diag: linear-gradient(
+    120deg,
+    #9c7a1d 0%,
+    #d4af37 25%,
+    #f6e7ae 50%,
+    #d4af37 75%,
+    #9c7a1d 100%
+  );
+  --gold-shadow: 0 8px 22px rgba(201, 162, 39, 0.38);
+}

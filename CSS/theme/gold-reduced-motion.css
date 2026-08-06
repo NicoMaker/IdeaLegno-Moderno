@@ -1,0 +1,9 @@
+/* ---- estratto da CSS/gold-luxury.css (righe 262-269) ---- */
+/* ---------- Riduzione motion per chi lo richiede ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button:hover,
+  .scroll-progress,
+  .cookie-btn:hover {
+    animation: none !important;
+  }
+}

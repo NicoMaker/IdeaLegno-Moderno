@@ -1,0 +1,7 @@
+/* ---- estratto da CSS/custom-styles.css (righe 724-729) ---- */
+/* Stato attivo visibile */
+.filter-button.active {
+  background-color: #5a3a1a !important;
+  opacity: 1 !important;
+}
+

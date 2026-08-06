@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/sectors-section-main.css (a sua volta da CSS/sectors-section.css (righe 1-53)) ---- */
+
+
+/* Tre colonne piene da tablet in su (sotto resta una colonna, da styles.css) */
+@media (min-width: 768px) {
+  .idealegno-explore .features-grid--sectors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* La quarta scheda occupa tutta la riga e resta centrata: non spezza
+     l'allineamento delle tre categorie sopra. */
+  .idealegno-explore .feature-card--all {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(460px, 100%);
+  }
+}

@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/search-bar-custom.css (a sua volta da CSS/custom-styles.css (righe 514-563)) ---- */
+
+
+.search-input:focus {
+  outline: none;
+  border-color: #5a3a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 90, 43, 0.2);
+}

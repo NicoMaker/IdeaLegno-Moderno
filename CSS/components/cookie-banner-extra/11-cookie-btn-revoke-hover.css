@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
+
+
+.cookie-btn.revoke:hover {
+  opacity: 1;
+  background: var(--ash-darkest, #5c4a3a);
+}

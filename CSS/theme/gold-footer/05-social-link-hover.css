@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/gold-footer.css (a sua volta da CSS/gold-luxury.css (righe 223-251)) ---- */
+
+.social-link:hover,
+.social-links a:hover {
+  background-color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: #2c2416 !important;
+}
+

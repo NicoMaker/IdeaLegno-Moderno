@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/components/category-colors.css ---- */
+/* ─────────────────────────────────────────────────────────────────────────────
+   category-colors.css — Badge categorie colorati + override bottoni filtro
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Badge nelle card (prodotti e novità) ───────────────────────────────── */
+
+.categoria-badges-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centrato nella card */
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto; /* spinge verso il fondo della card */
+  padding-top: var(--spacing-sm);
+  padding-bottom: 2px;
+}

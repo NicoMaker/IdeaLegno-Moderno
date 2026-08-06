@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/product-card-final-fix.css (a sua volta da CSS/styles.css (righe 2115-2178)) ---- */
+
+
+/* Badge in basso, senza spazio extra */
+.progetti-container.pc-view .categoria-badges-wrapper {
+  margin-top: auto !important;
+  padding-top: 0.1rem !important;
+  flex-shrink: 0 !important;
+}

@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/product-card-height-fix.css (a sua volta da CSS/styles.css (righe 1100-1169)) ---- */
+
+
+@media (max-width: 480px) {
+  .Progetti-card {
+    min-height: 450px;
+  }
+
+  .container-immagine {
+    height: 220px; /* Immagine leggermente più piccola su mobile */
+  }
+}
+

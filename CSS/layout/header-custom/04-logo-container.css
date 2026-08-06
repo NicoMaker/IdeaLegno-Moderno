@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/layout/header-custom.css (a sua volta da CSS/custom-styles.css (righe 1-50)) ---- */
+
+
+.logo-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 4px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}

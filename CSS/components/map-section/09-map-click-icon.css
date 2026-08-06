@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/components/map-section.css (a sua volta da CSS/custom-styles.css (righe 322-443)) ---- */
+
+
+.map-click-icon {
+  font-size: 48px;
+  color: #fff;
+  background-color: transparent;
+  margin-bottom: 10px;
+}

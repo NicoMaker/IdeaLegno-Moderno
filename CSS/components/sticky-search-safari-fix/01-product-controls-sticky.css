@@ -1,0 +1,18 @@
+/* ---- regola CSS estratta da CSS/components/sticky-search-safari-fix.css (a sua volta da CSS/custom-styles.css (righe 1692-1765)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX SAFARI — Barra ricerca/filtri progetti non rimane fissa allo scroll
+   su iPhone/Safari. Causa: Safari disattiva "position: sticky" su un
+   elemento se un QUALSIASI antenato (anche <html> o <body>) ha "overflow"
+   diverso da "visible" — incluso "overflow-x: clip" usato più sopra in
+   questo file per evitare lo scroll orizzontale. Chrome non ha questa
+   limitazione, per questo il problema si vede solo su Safari.
+
+   Soluzione: la barra viene "pinnata" via JavaScript (sticky-controls.js)
+   aggiungendo la classe .is-pinned e usando position: fixed, che NON
+   dipende dagli antenati e quindi funziona anche su Safari. Il div
+   #product-controls-placeholder mantiene lo spazio nel flusso del
+   documento quando la barra passa a fixed, per evitare "salti" di layout.
+   ═══════════════════════════════════════════════════════════════════════════ */
+#product-controls-sticky {
+  position: relative;
+}

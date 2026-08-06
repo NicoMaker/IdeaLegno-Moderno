@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.social-link:hover {
+  background-color: var(--accent-warm);
+  transform: translateY(-3px);
+}

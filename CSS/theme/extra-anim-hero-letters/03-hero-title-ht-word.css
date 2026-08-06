@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-hero-letters.css (a sua volta da CSS/extra-animations.css (righe 1-46)) ---- */
+
+
+/* Ogni parola è un blocco unico: il testo va a capo solo tra le parole,
+   mai al loro interno (fix per titoli lunghi su mobile) */
+.hero-title .ht-word {
+  display: inline-block;
+  white-space: nowrap;
+}

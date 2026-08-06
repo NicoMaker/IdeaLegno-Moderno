@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-search-glow.css (a sua volta da CSS/extra-animations.css (righe 274-287)) ---- */
+/* ---------- 10. Barra di ricerca: bagliore al focus ---------- */
+.search-input {
+  transition:
+    box-shadow 0.35s var(--ease-out),
+    transform 0.35s var(--ease-out);
+}

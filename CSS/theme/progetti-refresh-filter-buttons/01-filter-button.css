@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/theme/progetti-refresh-filter-buttons.css (a sua volta da CSS/progetti-controls-refresh.css (righe 159-259)) ---- */
+/* ------------------------------------------------------------
+   4. BOTTONI FILTRO: lift+scale, shine all'hover, anello dorato
+      pulsante sul filtro attivo. I colori per categoria restano
+      quelli gestiti da category-colors.js (non li tocchiamo).
+   ------------------------------------------------------------ */
+
+.filter-button {
+  position: relative;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}

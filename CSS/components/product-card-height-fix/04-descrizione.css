@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/product-card-height-fix.css (a sua volta da CSS/styles.css (righe 1100-1169)) ---- */
+
+
+/* La descrizione occupa lo spazio rimanente */
+.descrizione {
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: auto; /* Spinge prezzo e categoria in basso */
+  padding-bottom: var(--spacing-sm);
+  flex-grow: 1; /* Si espande per riempire lo spazio */
+}

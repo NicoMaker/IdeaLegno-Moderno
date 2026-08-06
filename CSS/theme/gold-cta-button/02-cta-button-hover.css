@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/gold-cta-button.css (a sua volta da CSS/gold-luxury.css (righe 61-80)) ---- */
+
+.cta-button:hover {
+  background: var(--gold-gradient-diag) !important;
+  background-size: 200% 100% !important;
+  animation: goldShimmer 1.8s linear infinite;
+  color: #2c2416 !important;
+  box-shadow: 0 12px 32px rgba(201, 162, 39, 0.5) !important;
+}

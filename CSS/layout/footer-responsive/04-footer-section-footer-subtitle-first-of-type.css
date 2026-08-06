@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* solo il sottotitolo Contatti nel footer */
+.footer-section .footer-subtitle:first-of-type {
+  margin-top: 1rem; /* aumenta se vuoi più spazio */
+}

@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.footer-bottom {
+  text-align: center;
+  padding: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--spacing-xl);
+  opacity: 0.8;
+}
+

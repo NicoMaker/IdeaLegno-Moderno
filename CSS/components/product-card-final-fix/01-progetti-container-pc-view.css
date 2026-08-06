@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/components/product-card-final-fix.css (a sua volta da CSS/styles.css (righe 2115-2178)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+     FIX FINALE – Card altezza uniforme, testo intero
+     Sovrascrive tutti gli stili precedenti
+     ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Griglia: tutte le righe alte uguali */
+.progetti-container.pc-view {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: var(--spacing-lg) !important;
+  grid-auto-rows: 1fr !important; /* CHIAVE: stessa altezza per ogni riga */
+  align-items: stretch !important;
+}

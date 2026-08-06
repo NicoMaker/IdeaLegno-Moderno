@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/search-bar.css (a sua volta da CSS/styles.css (righe 960-996)) ---- */
+/* Search container */
+.search-container {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

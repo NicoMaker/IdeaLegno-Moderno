@@ -1,0 +1,14 @@
+/* ---- regola CSS estratta da CSS/components/products-grid-tablet-mobile.css (a sua volta da CSS/custom-styles.css (righe 1103-1146)) ---- */
+
+
+/* TABLET: 2 per riga */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .novita-container,
+  .progetti-container,
+  .pc-view {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px auto;
+    justify-items: center;
+  }
+}

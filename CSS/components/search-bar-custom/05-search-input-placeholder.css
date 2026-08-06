@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/components/search-bar-custom.css (a sua volta da CSS/custom-styles.css (righe 514-563)) ---- */
+
+
+.search-input::placeholder {
+  color: #999;
+}

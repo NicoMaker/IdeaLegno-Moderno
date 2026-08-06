@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/components/hero-cta.css (a sua volta da CSS/custom-styles.css (righe 648-674)) ---- */
+
+
+.cta-button.cta-button-secondary:hover {
+  background-color: white;
+  color: #8b5a2b;
+  transform: translateY(-3px);
+}

@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/riconoscimenti-custom.css (a sua volta da CSS/custom-styles.css (righe 1482-1542)) ---- */
+
+
+/* IMMAGINE: sempre a tutta larghezza, altezza adattiva, mai ritagliata */
+.riconoscimento-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center;
+  background-color: var(--gray-light, #f9f7f4);
+}

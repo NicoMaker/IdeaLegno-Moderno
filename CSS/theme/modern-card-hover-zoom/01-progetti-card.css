@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/theme/modern-card-hover-zoom.css (a sua volta da CSS/modern.css (righe 173-201)) ---- */
+/* ---------- 6. Card: sollevamento e zoom immagine ---------- */
+.Progetti-card,
+.novita-card,
+.feature-card {
+  transition:
+    transform 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out) !important;
+}

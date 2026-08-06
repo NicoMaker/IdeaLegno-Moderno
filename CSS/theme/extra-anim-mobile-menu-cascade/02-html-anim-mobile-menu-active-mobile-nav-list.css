@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-mobile-menu-cascade.css (a sua volta da CSS/extra-animations.css (righe 372-404)) ---- */
+
+
+html.anim .mobile-menu.active .mobile-nav-list li {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -1,0 +1,11 @@
+/* ---- regola CSS estratta da CSS/theme/modern-scroll-reveal.css (a sua volta da CSS/modern.css (righe 150-172)) ---- */
+/* ---------- 5. Reveal allo scroll ---------- */
+html.anim [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--reveal-duration) var(--ease-out),
+    transform var(--reveal-duration) var(--ease-out);
+  transition-delay: calc(var(--reveal-index, 0) * 90ms);
+  will-change: opacity, transform;
+}

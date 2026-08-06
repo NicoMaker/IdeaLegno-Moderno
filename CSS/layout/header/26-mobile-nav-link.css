@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
+
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-bottom: 1px solid var(--gray-light);
+  transition: all var(--transition-fast);
+  position: relative;
+}

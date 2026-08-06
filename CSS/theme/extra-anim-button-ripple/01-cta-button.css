@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-button-ripple.css (a sua volta da CSS/extra-animations.css (righe 122-165)) ---- */
+/* ---------- 4. Effetto ripple sui bottoni ---------- */
+.cta-button,
+.filter-button,
+.more-info-btn,
+.back-button,
+.search-input-wrapper {
+  position: relative;
+  overflow: hidden;
+}

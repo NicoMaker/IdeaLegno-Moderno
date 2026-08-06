@@ -1,0 +1,9 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Tutti i titoli allineati in alto */
+.footer-section .footer-title,
+.footer-section .footer-subtitle {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

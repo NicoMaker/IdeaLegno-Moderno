@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/components/product-card-final-fix.css (a sua volta da CSS/styles.css (righe 2115-2178)) ---- */
+
+
+/* Ogni card occupa tutta l'altezza della riga, senza limiti */
+.progetti-container.pc-view .Progetti-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important; /* lascia che la griglia decida */
+  min-height: unset !important;
+  max-height: unset !important;
+  overflow: visible !important; /* il testo non viene tagliato */
+  align-self: stretch !important;
+}

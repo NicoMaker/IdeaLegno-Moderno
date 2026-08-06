@@ -1,0 +1,10 @@
+/* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
+
+
+.hero-closure-banner span:first-child {
+  font-size: 32px;
+  vertical-align: middle;
+  margin-right: 15px;
+  display: inline-block;
+  animation: shake 0.5s ease infinite;
+}

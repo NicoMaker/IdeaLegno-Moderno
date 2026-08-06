@@ -1,0 +1,8 @@
+/* ---- regola CSS estratta da CSS/utilities/layout-overflow-fix.css (a sua volta da CSS/styles.css (righe 2008-2114)) ---- */
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}

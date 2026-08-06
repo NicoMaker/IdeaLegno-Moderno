@@ -1,0 +1,61 @@
+/* ---- regola CSS estratta da CSS/utilities/responsive-custom.css (a sua volta da CSS/custom-styles.css (righe 762-860)) ---- */
+
+
+@media (max-width: 480px) {
+  .main-container {
+    margin-top: 80px;
+    padding-top: 20px;
+  }
+
+  .filter-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .contact-list a,
+  .social-list a {
+    font-size: 14px;
+  }
+
+  #map-container {
+    height: 180px;
+  }
+
+  .mobile-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-bottom: 30px;
+  }
+
+  header nav ul li a {
+    font-size: 1.3em;
+    padding: 12px;
+  }
+
+  .opening-soon-banner {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .search-input {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  .novita-container,
+  .progetti-container,
+  .pc-view {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 5px;
+    margin: 20px auto;
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  .Progetti-card {
+    max-width: 100%;
+  }
+}
+

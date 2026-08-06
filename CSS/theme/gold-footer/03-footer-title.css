@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/gold-footer.css (a sua volta da CSS/gold-luxury.css (righe 223-251)) ---- */
+
+.footer-title {
+  position: relative;
+  display: inline-block;
+  color: var(--gold-light) !important;
+}

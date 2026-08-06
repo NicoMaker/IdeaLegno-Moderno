@@ -1,0 +1,17 @@
+/* ---- regola CSS estratta da CSS/layout/footer-hover-effects.css (a sua volta da CSS/custom-styles.css (righe 1202-1300)) ---- */
+
+
+/* Social icons */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}

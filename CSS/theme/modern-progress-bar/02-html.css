@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/modern-progress-bar.css (a sua volta da CSS/modern.css (righe 1-37)) ---- */
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}

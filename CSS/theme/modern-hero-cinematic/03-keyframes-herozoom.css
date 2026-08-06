@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/theme/modern-hero-cinematic.css (a sua volta da CSS/modern.css (righe 89-137)) ---- */
+
+@keyframes heroZoom {
+  to {
+    transform: scale(1.02);
+  }
+}

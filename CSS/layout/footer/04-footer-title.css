@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer.css (a sua volta da CSS/styles.css (righe 761-860)) ---- */
+
+
+.footer-title {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+}

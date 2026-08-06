@@ -1,0 +1,16 @@
+/* ---- regola CSS estratta da CSS/components/sectors-section-main.css (a sua volta da CSS/sectors-section.css (righe 1-53)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   sectors-section.css — IdeaLegno
+   Stili delle sezioni generate da JS/ui/sectors-section.js:
+
+   Un'unica sezione #Settori ("I Nostri Settori") che contiene:
+     • le 3 schede categoria in riga
+     • la scheda "Tutti i progetti" (#TuttiProgetti) centrata sotto
+     • la barra con i numeri (#Dati)
+
+   La stessa sezione compare in home e nelle pagine progetto.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.idealegno-explore .features-grid--sectors {
+  margin-top: var(--spacing-xl, 2rem);
+}

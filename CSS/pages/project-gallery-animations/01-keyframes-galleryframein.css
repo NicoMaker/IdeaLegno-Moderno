@@ -1,0 +1,19 @@
+/* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMAZIONI DELLA GALLERIA
+   1) entrata di frecce, pallini e cornice al caricamento della pagina
+   2) cambio foto: la nuova entra dal verso in cui stai navigando
+   Le classi .slide-in-next / .slide-in-prev le mette JS/product/slider.js.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Entrata al caricamento ── */
+@keyframes galleryFrameIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

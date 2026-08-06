@@ -1,0 +1,6 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-typewriter.css (a sua volta da CSS/extra-animations.css (righe 47-78)) ---- */
+
+
+.hero-loaded .hero-rotator {
+  animation: riseIn 1.1s var(--ease-out) 0.75s forwards;
+}

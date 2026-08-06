@@ -1,0 +1,13 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-slider-transition.css (a sua volta da CSS/extra-animations.css (righe 288-313)) ---- */
+
+
+@keyframes slideSwap {
+  from {
+    opacity: 0;
+    transform: scale(1.03) translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}

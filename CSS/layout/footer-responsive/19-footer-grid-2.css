@@ -1,0 +1,7 @@
+/* ---- regola CSS estratta da CSS/layout/footer-responsive.css (a sua volta da CSS/styles.css (righe 1170-1363)) ---- */
+
+
+/* Allineamento verticale dei titoli nel footer */
+.footer-grid {
+  align-items: flex-start; /* già usato per allineare in alto le sezioni */
+}

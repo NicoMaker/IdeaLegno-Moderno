@@ -1,0 +1,5 @@
+/* ---- regola CSS estratta da CSS/theme/extra-anim-slider-transition.css (a sua volta da CSS/extra-animations.css (righe 288-313)) ---- */
+/* ---------- 11. Slider pagine progetto: dissolvenza+scorrimento ---------- */
+html.anim .slider-container .slide {
+  animation: slideSwap 0.55s var(--ease-out);
+}

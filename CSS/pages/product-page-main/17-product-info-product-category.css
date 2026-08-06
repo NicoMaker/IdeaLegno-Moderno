@@ -1,0 +1,12 @@
+/* ---- regola CSS estratta da CSS/pages/product-page-main.css (a sua volta da CSS/product-page.css (righe 1-336)) ---- */
+
+
+.product-info .product-category {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background-color: var(--gray-light);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
