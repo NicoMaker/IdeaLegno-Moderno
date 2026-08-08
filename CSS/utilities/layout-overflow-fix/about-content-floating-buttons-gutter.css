@@ -1,0 +1,13 @@
+/* Fix: da tablet/desktop in su (>=1025px) il .container non ha un max-width,
+   quindi il testo della sezione "La Nostra Storia" (#storia .about-content)
+   arriva quasi fino al bordo destro della finestra. I pulsanti flottanti
+   WhatsApp/telefono/torna-su sono in position: fixed; right: 22px (larghi
+   48px), quindi restano sempre nella stessa fascia verticale a destra e
+   finiscono sopra alle ultime parole delle righe di testo.
+   Riserviamo qui uno spazio a destra del testo così le righe non arrivano
+   più sotto ai pulsanti. */
+@media (min-width: 1025px) {
+  #storia .about-content {
+    padding-right: 90px;
+  }
+}
