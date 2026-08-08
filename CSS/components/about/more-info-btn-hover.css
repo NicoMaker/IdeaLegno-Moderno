@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/about.css (a sua volta da CSS/styles.css (righe 441-578)) ---- */
 
-
 .more-info-btn:hover {
   color: var(--secondary);
   gap: var(--spacing-sm);

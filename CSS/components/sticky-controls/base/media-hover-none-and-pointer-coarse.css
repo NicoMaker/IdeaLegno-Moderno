@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
 
-
 /* Disabilita effetti hover su dispositivi touch */
 @media (hover: none) and (pointer: coarse) {
   .filter-button:hover {
@@ -17,4 +16,3 @@
     border-color: var(--primary);
   }
 }
-

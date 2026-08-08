@@ -26,4 +26,3 @@ function _getCountdownHTML(transizione) {
     "</div>"
   );
 }
-

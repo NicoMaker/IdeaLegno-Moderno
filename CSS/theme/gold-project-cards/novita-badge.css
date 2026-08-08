@@ -1,10 +1,8 @@
 /* ---- regola CSS estratta da CSS/theme/gold-project-cards.css (a sua volta da CSS/gold-luxury.css (righe 145-165)) ---- */
 
-
 /* Badge "Novità" in oro */
 .novita-badge {
   background: var(--gold-gradient) !important;
   color: #2c2416 !important;
   box-shadow: 0 4px 14px rgba(201, 162, 39, 0.45);
 }
-

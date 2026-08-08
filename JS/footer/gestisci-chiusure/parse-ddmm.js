@@ -24,4 +24,3 @@ function _parseDDMM(ddmm, year) {
   const [day, month] = ddmm.split("/").map(Number);
   return new Date(year, month - 1, day, 0, 0, 0, 0);
 }
-

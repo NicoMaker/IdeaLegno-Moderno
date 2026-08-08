@@ -12,4 +12,3 @@ function _calcolaTitoloOrari(transizione, nomeStagione) {
   if (nomeStagione) return "Orario " + nomeStagione;
   return "Orario";
 }
-

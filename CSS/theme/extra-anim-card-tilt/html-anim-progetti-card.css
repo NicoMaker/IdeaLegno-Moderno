@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-card-tilt.css (a sua volta da CSS/extra-animations.css (righe 79-121)) ---- */
 
-
 html.anim .Progetti-card {
   transform-style: preserve-3d;
   will-change: transform;

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
 
-
 /* Nota: product-page.css blocca le frecce con
    "transform: translateY(-50%) !important" (serve a tenerle centrate e ferme
    al click). Una dichiarazione !important vince sui keyframe, quindi qui NON

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
 
-
 /* ── Icone feature: rimbalzo quando la card appare ── */
 html.anim .feature-card .feature-icon {
   opacity: 0;

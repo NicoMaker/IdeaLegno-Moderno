@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/sectors-section-main.css (a sua volta da CSS/sectors-section.css (righe 1-53)) ---- */
 
-
 /* Tre colonne piene da tablet in su (sotto resta una colonna, da styles.css) */
 @media (min-width: 768px) {
   .idealegno-explore .features-grid--sectors {

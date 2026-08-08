@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/layout/header.css (a sua volta da CSS/styles.css (righe 140-350)) ---- */
 
-
 .mobile-nav-link.active::before {
   content: "";
   position: absolute;
@@ -12,4 +11,3 @@
   background-color: var(--primary);
   border-radius: 2px;
 }
-

@@ -80,4 +80,3 @@ function getClosuresHTML(data, oggiReal) {
 
   return html;
 }
-

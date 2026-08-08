@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/sticky-controls-fix2.css (a sua volta da CSS/styles.css (righe 1537-1804)) ---- */
 
-
 .product-controls-sticky::before {
   content: "";
   position: absolute;

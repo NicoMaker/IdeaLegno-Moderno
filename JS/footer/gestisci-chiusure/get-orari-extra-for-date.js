@@ -14,4 +14,3 @@ function getOrariExtraForDate(data, dataFormattata, dayOfWeek) {
 }
 
 // ── Fine chiusura consecutiva (si ferma se cambia il motivo) ─
-

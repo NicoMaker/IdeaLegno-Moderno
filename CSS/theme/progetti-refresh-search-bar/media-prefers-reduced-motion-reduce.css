@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/progetti-refresh-search-bar.css (a sua volta da CSS/progetti-controls-refresh.css (righe 72-158)) ---- */
 
-
 @media (prefers-reduced-motion: reduce) {
   .search-input,
   .search-icon,
@@ -8,4 +7,3 @@
     transition: none !important;
   }
 }
-

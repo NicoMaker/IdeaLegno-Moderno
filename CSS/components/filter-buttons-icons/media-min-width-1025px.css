@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/filter-buttons-icons.css (a sua volta da CSS/custom-styles.css (righe 1663-1691)) ---- */
 
-
 /* Quarta scheda "Tutti i progetti": su desktop resta centrata sotto le
    altre tre, senza restringere le schede delle categorie. */
 @media (min-width: 1025px) {
@@ -10,4 +9,3 @@
     width: min(360px, 100%);
   }
 }
-

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/products-grid-ipad.css (a sua volta da CSS/custom-styles.css (righe 1147-1201)) ---- */
 
-
 /* MOBILE piccolo: 1 per riga (< 600px) */
 @media (max-width: 599px) {
   .novita-container,

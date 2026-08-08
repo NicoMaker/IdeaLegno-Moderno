@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
 
-
 /* ── Immagini card: rivelazione con "tendina" dal basso ── */
 html.anim .Progetti-card [data-reveal-img],
 html.anim .novita-card [data-reveal-img] {

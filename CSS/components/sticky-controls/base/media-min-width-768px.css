@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
 
-
 @media (min-width: 768px) {
   .product-controls-sticky {
     padding-left: var(--spacing-md);

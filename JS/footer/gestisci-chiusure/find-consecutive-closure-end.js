@@ -26,4 +26,3 @@ function findConsecutiveClosureEnd(startDate, unifiedFerieDates, motiviMap) {
 }
 
 // ── Controllo chiusura per un singolo giorno ─────────────────
-

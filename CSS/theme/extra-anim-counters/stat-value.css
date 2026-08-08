@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-counters.css (a sua volta da CSS/extra-animations.css (righe 189-256)) ---- */
 
-
 .stat-value {
   font-family: "Playfair Display", serif;
   font-size: clamp(1.9rem, 4vw, 2.8rem);

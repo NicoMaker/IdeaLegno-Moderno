@@ -3,4 +3,3 @@ function getUnifiedFerieDates(data, year) {
   const { dateSet } = _buildChiusureMap(data, year);
   return dateSet;
 }
-

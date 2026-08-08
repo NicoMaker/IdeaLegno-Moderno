@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
 
-
 @media (max-width: 600px) {
   .cookie-banner {
     flex-direction: column;

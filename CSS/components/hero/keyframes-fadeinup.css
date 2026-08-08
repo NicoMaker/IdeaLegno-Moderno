@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/hero.css (a sua volta da CSS/styles.css (righe 351-440)) ---- */
 
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -11,4 +10,3 @@
     transform: translateY(0);
   }
 }
-

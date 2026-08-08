@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/base/typography-custom.css (a sua volta da CSS/custom-styles.css (righe 144-165)) ---- */
 
-
 .section-title:after {
   content: "";
   position: absolute;
@@ -11,4 +10,3 @@
   background-color: #ffcc80;
   border-radius: 3px;
 }
-

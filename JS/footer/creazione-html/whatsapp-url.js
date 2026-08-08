@@ -8,4 +8,3 @@ function getWhatsappURL(contatti) {
   const numSoloCifre = contatti.telefono.replace(/[^\d]/g, "");
   return `https://wa.me/${numSoloCifre}`;
 }
-

@@ -10,4 +10,3 @@ function msUntilNextShopMidnight() {
   if (rem <= 0) rem += 24 * 3600000;
   return rem + 1000;
 }
-

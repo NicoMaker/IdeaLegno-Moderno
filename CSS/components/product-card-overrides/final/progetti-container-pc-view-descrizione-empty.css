@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/product-card-final-fix.css (a sua volta da CSS/styles.css (righe 2115-2178)) ---- */
 
-
 /* Descrizione vuota: nascondi */
 .progetti-container.pc-view .descrizione:empty {
   display: none !important;

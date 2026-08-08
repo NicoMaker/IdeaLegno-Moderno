@@ -10,4 +10,3 @@ function getMotivoChiusuraForDate(data, dataFormattata) {
 }
 
 // ── Orari Extra ──────────────────────────────────────────────
-

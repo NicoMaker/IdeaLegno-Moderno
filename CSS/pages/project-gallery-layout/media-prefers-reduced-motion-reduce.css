@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/pages/project-gallery-layout.css (a sua volta da CSS/project-gallery.css (righe 1-171)) ---- */
 
-
 @media (prefers-reduced-motion: reduce) {
   html.anim .project-hero,
   html.anim .back-button-row {
@@ -9,4 +8,3 @@
     transform: none;
   }
 }
-

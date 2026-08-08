@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/riconoscimenti-custom.css (a sua volta da CSS/custom-styles.css (righe 1482-1542)) ---- */
 
-
 .riconoscimento-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 44px rgba(44, 36, 22, 0.2);

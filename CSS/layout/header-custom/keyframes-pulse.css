@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/layout/header-custom.css (a sua volta da CSS/custom-styles.css (righe 1-50)) ---- */
 
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -9,4 +8,3 @@
     transform: scale(1.05);
   }
 }
-

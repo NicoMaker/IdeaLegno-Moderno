@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/product-card-spacing-fix2.css (a sua volta da CSS/styles.css (righe 1863-1903)) ---- */
 
-
 /* 5. Impedisce ai badge di essere spinti in basso */
 .Progetti-card .categoria-badges-wrapper,
 .novita-card .categoria-badges-wrapper {
@@ -9,4 +8,3 @@
   flex-grow: 0 !important;
   flex-shrink: 0 !important;
 }
-

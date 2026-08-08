@@ -34,4 +34,3 @@ function _buildChiusureMap(data, year) {
 }
 
 // ── API pubblica ─────────────────────────────────────────────
-

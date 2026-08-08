@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/category-colors.css ---- */
 
-
 /* Annulla il marrone fisso dell'active per permettere i colori per categoria */
 .filter-button.active,
 .filter-button.active:hover {

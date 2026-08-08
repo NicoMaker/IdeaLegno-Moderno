@@ -17,4 +17,3 @@ function calcolaPasqua(anno) {
 
   return new Date(anno, mese - 1, giorno);
 }
-

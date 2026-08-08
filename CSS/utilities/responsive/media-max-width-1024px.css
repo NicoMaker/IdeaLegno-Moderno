@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/utilities/responsive.css (a sua volta da CSS/styles.css (righe 861-919)) ---- */
 
-
 @media (max-width: 1024px) {
   .progetti-container,
   .novita-container {
@@ -11,4 +10,3 @@
     min-height: 60vh;
   }
 }
-

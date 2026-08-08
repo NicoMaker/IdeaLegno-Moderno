@@ -1,8 +1,6 @@
 /* ---- regola CSS estratta da CSS/utilities/z-index.css (a sua volta da CSS/styles.css (righe 942-959)) ---- */
 
-
 .Progetti-card {
   z-index: 1;
   position: relative;
 }
-

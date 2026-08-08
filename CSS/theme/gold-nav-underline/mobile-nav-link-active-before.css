@@ -3,4 +3,3 @@
 .mobile-nav-link.active::before {
   background-color: var(--gold) !important;
 }
-

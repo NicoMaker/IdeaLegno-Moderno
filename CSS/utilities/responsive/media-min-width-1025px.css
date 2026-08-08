@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/utilities/responsive.css (a sua volta da CSS/styles.css (righe 861-919)) ---- */
 
-
 @media (min-width: 1025px) {
   .hero-section {
     min-height: 100vh;

@@ -1,7 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-logo-shine.css (a sua volta da CSS/extra-animations.css (righe 342-371)) ---- */
 
-
 .logo-link:hover::after {
   left: 140%;
 }
-

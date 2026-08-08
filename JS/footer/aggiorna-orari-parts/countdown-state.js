@@ -8,4 +8,3 @@
 // ── Countdown cambio stagione ───────────────────────────────
 let _countdownInterval = null;
 let _stagionePrecedente = null; // traccia la stagione attiva per rilevare i cambi
-

@@ -8,4 +8,3 @@
   -webkit-text-fill-color: transparent;
   color: var(--gold-soft); /* fallback se background-clip non supportato */
 }
-

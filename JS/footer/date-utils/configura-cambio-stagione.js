@@ -5,4 +5,3 @@ function configuraCambioStagione(data) {
     _meseInvernale = data.cambioStagione.meseInvernale || 10;
   }
 }
-

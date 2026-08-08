@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/category-cards.css (a sua volta da CSS/custom-styles.css (righe 1586-1662)) ---- */
 
-
 .feature-card--link:focus-visible {
   outline: 3px solid var(--accent-warm, #bf8b67);
   outline-offset: 4px;

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/products-grid-tablet-mobile.css (a sua volta da CSS/custom-styles.css (righe 1103-1146)) ---- */
 
-
 /* MOBILE: 1 per riga */
 @media (max-width: 768px) {
   .novita-container,
@@ -15,4 +14,3 @@
     width: 100%;
   }
 }
-

@@ -4,4 +4,3 @@ function _motivo(voce) {
 }
 
 // ── Costruisce Set date + Map data→motivo da "chiusure" ──────
-

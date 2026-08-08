@@ -50,4 +50,3 @@ function _avviaCountdownStagione(dataCambio, nomeAttiva, nomeProssima) {
   _tick();
   _countdownInterval = setInterval(_tick, 1000);
 }
-

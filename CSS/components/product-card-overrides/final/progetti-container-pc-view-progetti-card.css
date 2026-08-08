@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/product-card-final-fix.css (a sua volta da CSS/styles.css (righe 2115-2178)) ---- */
 
-
 /* Ogni card occupa tutta l'altezza della riga, senza limiti */
 .progetti-container.pc-view .Progetti-card {
   display: flex !important;

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/progetti-refresh-filter-buttons.css (a sua volta da CSS/progetti-controls-refresh.css (righe 159-259)) ---- */
 
-
 @media (hover: none) and (pointer: coarse) {
   .filter-button:not(.active)::after {
     display: none;

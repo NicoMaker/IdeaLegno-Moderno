@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/hero-mobile-fix.css (a sua volta da CSS/custom-styles.css (righe 1301-1346)) ---- */
 
-
 /* Per schermi molto piccoli (≤ 400px) */
 @media (max-width: 400px) {
   .hero-title {
@@ -11,4 +10,3 @@
     padding: 10px 12px !important;
   }
 }
-

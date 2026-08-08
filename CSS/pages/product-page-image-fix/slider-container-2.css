@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/pages/product-page-image-fix.css (a sua volta da CSS/product-page.css (righe 337-385)) ---- */
 
-
 /* 3. Rimuove il padding interno del contenitore che potrebbe creare un bordo falso */
 .slider-container {
   padding: 0 !important;

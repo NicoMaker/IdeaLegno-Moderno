@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/layout/mobile-menu-hamburger-fix.css (a sua volta da CSS/custom-styles.css (righe 1391-1432)) ---- */
 
-
 /* Quando il menu è aperto: linea superiore e inferiore ruotano per formare la X */
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg) !important;

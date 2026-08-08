@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/utilities/z-index.css (a sua volta da CSS/styles.css (righe 942-959)) ---- */
 
-
 .product-controls-sticky {
   z-index: 100;
   position: sticky;

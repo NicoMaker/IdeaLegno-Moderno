@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-hero-letters.css (a sua volta da CSS/extra-animations.css (righe 1-46)) ---- */
 
-
 .hero-loaded .hero-title.is-split .ht-letter {
   animation: letterRise 0.7s var(--ease-out) forwards;
   animation-delay: calc(0.12s + var(--li) * 0.035s);

@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/riconoscimenti.css (a sua volta da CSS/styles.css (righe 1904-1964)) ---- */
 
-
 /* Didascalia sotto l'immagine */
 .riconoscimento-card figcaption {
   padding: 1rem 1.25rem;
@@ -12,4 +11,3 @@
   background: var(--accent-cream, #fff8e7);
   border-top: 3px solid var(--accent-warm, #bf8b67);
 }
-

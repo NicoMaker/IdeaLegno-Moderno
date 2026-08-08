@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/gold-riconoscimenti.css (a sua volta da CSS/gold-luxury.css (righe 166-209)) ---- */
 
-
 /* Nastro dorato d'angolo, stile "medaglia" */
 .riconoscimento-card::after {
   content: "★ PREMIATI";
@@ -21,4 +20,3 @@
   z-index: 3;
   pointer-events: none;
 }
-

@@ -1,7 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-slider-transition.css (a sua volta da CSS/extra-animations.css (righe 288-313)) ---- */
 
-
 html.anim .dots-container .dot:hover {
   transform: scale(1.35);
 }
-

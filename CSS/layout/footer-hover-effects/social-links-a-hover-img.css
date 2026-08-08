@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/layout/footer-hover-effects.css (a sua volta da CSS/custom-styles.css (righe 1202-1300)) ---- */
 
-
 .social-links a:hover img {
   filter: brightness(1.15) drop-shadow(0 0 4px rgba(255, 204, 128, 0.6));
 }

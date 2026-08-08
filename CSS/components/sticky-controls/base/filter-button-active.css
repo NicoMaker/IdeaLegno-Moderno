@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/sticky-controls-fix1.css (a sua volta da CSS/styles.css (righe 1364-1536)) ---- */
 
-
 .filter-button.active {
   background-color: var(--primary);
   color: var(--white);

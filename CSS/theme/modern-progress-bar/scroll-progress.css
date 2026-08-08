@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/modern-progress-bar.css (a sua volta da CSS/modern.css (righe 1-37)) ---- */
 
-
 /* ---------- 1. Barra di progresso lettura ---------- */
 .scroll-progress {
   position: fixed;
@@ -14,4 +13,3 @@
   z-index: 1200;
   pointer-events: none;
 }
-

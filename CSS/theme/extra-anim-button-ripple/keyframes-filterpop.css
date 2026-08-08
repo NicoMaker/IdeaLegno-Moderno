@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/extra-anim-button-ripple.css (a sua volta da CSS/extra-animations.css (righe 122-165)) ---- */
 
-
 @keyframes filterPop {
   0% {
     transform: scale(0.92);
@@ -12,4 +11,3 @@
     transform: scale(1);
   }
 }
-

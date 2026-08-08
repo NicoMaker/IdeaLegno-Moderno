@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/theme/modern-page-transitions.css (a sua volta da CSS/modern.css (righe 395-512)) ---- */
 
-
 /* ── Parallasse (trasformazioni applicate dal JS via --par) ── */
 html.anim .hero-image {
   top: -10%;

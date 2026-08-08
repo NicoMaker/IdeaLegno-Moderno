@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/pages/project-gallery-animations.css (a sua volta da CSS/project-gallery.css (righe 172-312)) ---- */
 
-
 html.anim .project-view .slider-container .next {
   animation: arrowInRight 0.7s var(--ease-out) 0.55s both;
 }

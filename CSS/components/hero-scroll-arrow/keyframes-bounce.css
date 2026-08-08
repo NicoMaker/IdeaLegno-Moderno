@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/hero-scroll-arrow.css (a sua volta da CSS/custom-styles.css (righe 589-630)) ---- */
 
-
 @keyframes bounce {
   0%,
   20%,
@@ -16,4 +15,3 @@
     transform: translateY(-5px);
   }
 }
-

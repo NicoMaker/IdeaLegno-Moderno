@@ -1,6 +1,5 @@
 /* ---- regola CSS estratta da CSS/components/product-card-spacing-fix1.css (a sua volta da CSS/styles.css (righe 1805-1862)) ---- */
 
-
 /* 2. Riduce il gap tra gli elementi della card */
 .Progetti-card .Progetti-card-content {
   gap: 0.25rem !important;

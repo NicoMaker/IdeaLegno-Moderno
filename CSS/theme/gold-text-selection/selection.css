@@ -1,9 +1,7 @@
 /* ---- regola CSS estratta da CSS/theme/gold-text-selection.css (a sua volta da CSS/gold-luxury.css (righe 1-37)) ---- */
 
-
 /* ---------- Selezione testo ---------- */
 ::selection {
   background: var(--gold-soft);
   color: var(--black, #2c2416);
 }
-
