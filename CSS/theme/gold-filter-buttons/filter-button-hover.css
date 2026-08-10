@@ -1,6 +1,11 @@
 /* ---- regola CSS estratta da CSS/theme/gold-filter-buttons.css (a sua volta da CSS/gold-luxury.css (righe 132-144)) ---- */
 
-.filter-button:hover {
+/* Esclude i pulsanti gestiti per categoria (Tutti/Casa/Commerciale/Nautico,
+   identificati da [data-category]): il loro hover è già colorato via JS
+   da category-colors.js, che imposta sfondo scuro + testo bianco.
+   Applicare qui il testo "oro scuro" li rendeva illeggibili
+   (testo scuro su sfondo scuro). */
+.filter-button:not([data-category]):hover {
   border-color: var(--gold) !important;
   color: var(--gold-dark) !important;
 }
