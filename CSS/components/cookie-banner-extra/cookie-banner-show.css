@@ -1,7 +1,0 @@
-/* ---- regola CSS estratta da CSS/components/cookie-banner-extra.css (a sua volta da CSS/idealegno-extra.css (righe 59-194)) ---- */
-
-.cookie-banner.show {
-  transform: translate(-50%, 0);
-  opacity: 1;
-  pointer-events: auto;
-}

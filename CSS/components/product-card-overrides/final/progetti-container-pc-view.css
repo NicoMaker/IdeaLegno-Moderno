@@ -4,11 +4,15 @@
      Sovrascrive tutti gli stili precedenti
      ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Griglia: tutte le righe alte uguali */
+/* Griglia: tutte le righe alte uguali.
+   NB: niente grid-template-columns/gap qui: il numero di colonne e lo
+   spazio tra le card restano decisi dalle media query responsive
+   (mobile 1 colonna, tablet 2, desktop 2/3). Questa regola forzava
+   sempre "repeat(auto-fill, minmax(300px, 1fr))" con !important, il
+   che rompeva il centraggio delle card su mobile perché sovrascriveva
+   qualunque regola responsive successiva. */
 .progetti-container.pc-view {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-  gap: var(--spacing-lg) !important;
   grid-auto-rows: 1fr !important; /* CHIAVE: stessa altezza per ogni riga */
   align-items: stretch !important;
 }

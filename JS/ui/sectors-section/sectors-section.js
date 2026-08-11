@@ -47,7 +47,7 @@
 
   // Cartelle di primo livello del sito: se la pagina si trova qui dentro,
   // la home sta un livello sopra.
-  var SUBFOLDERS = ["projects", "news", "contact", "cookies"];
+  var SUBFOLDERS = ["projects", "news", "contact"];
 
   // Ancore usate dai link nell'header e dai collegamenti esterni.
   var SECTORS_ID = "Settori";

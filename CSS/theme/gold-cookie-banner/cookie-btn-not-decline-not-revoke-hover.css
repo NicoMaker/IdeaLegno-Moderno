@@ -1,6 +1,0 @@
-/* ---- regola CSS estratta da CSS/theme/gold-cookie-banner.css (a sua volta da CSS/gold-luxury.css (righe 252-261)) ---- */
-
-.cookie-btn:not(.decline):not(.revoke):hover {
-  background: var(--gold-gradient-diag) !important;
-  background-size: 200% 100% !important;
-}
