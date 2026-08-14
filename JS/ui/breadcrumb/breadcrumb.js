@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const productName = h1 ? h1.innerText.trim() : "Prodotto";
 
     container.innerHTML = `
-      <a href="../index.html">Home</a>
+      <a href="../../index.html">Home</a>
       <span class="sep">›</span>
-      <a href="../index.html#Prodotti">Progetti</a>
+      <a href="../../index.html#Prodotti">Progetti</a>
       <span class="sep">›</span>
       <span>${productName}</span>
     `;

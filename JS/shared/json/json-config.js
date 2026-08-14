@@ -13,10 +13,10 @@
 const JsonConfig = (() => {
   // Qui cambi SOLO i nomi dei file JSON (se un domani li rinomini/sposti).
   const files = {
-    progetti: "progetti.json",
-    footer: "footer.json",
-    palette: "palette.json",
-    hero: "hero.json",
+    progetti: "Contenuti/progetti.json",
+    footer: "Config/footer.json",
+    palette: "Config/palette.json",
+    hero: "Contenuti/hero.json",
   };
 
   const paths = {

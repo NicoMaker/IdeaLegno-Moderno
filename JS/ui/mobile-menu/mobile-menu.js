@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function ensureMobileMenuHeader() {
     if (mobileMenu.querySelector(".mobile-menu-header")) return;
     const isSubpage = window.location.pathname.includes("/Projects/");
-    const logoPath = isSubpage ? "../Img/IDEALEGNO.jpg" : "Img/IDEALEGNO.jpg";
-    const homeLink = isSubpage ? "../index.html" : "index.html";
+    const logoPath = isSubpage
+      ? "../../Img/Logo/IDEALEGNO.jpg"
+      : "Img/Logo/IDEALEGNO.jpg";
+    const homeLink = isSubpage ? "../../index.html" : "index.html";
 
     const header = document.createElement("div");
     header.className = "mobile-menu-header";

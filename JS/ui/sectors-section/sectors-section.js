@@ -25,10 +25,10 @@
 // --------
 // Il link alla home viene calcolato automaticamente:
 //   • pagina in radice (index.html)            → "index.html"
-//   • pagina in sottocartella (Projects/…)     → "../index.html"
+//   • pagina in sottocartella (Projects/Categoria/…) → "../../index.html"
 // Si può comunque forzare il percorso con l'attributo data-home:
 //
-//     <div data-idealegno-sectors data-home="../index.html"></div>
+//     <div data-idealegno-sectors data-home="../../index.html"></div>
 //
 // Il valore viene poi copiato su .features-grid[data-home], che è ciò che
 // legge category-cards.js per portare l'utente alla home con il filtro giusto.
@@ -40,7 +40,7 @@
 // le trovano regolarmente.
 //
 //     <script defer src="JS/ui/sectors-section.js"></script>       (home)
-//     <script defer src="../JS/ui/sectors-section.js"></script>    (sottocartelle)
+//     <script defer src="../../JS/ui/sectors-section.js"></script> (sottocartelle)
 // ─────────────────────────────────────────────────────────────────────────────
 (function () {
   "use strict";
@@ -107,12 +107,14 @@
       .replace(/"/g, "&quot;");
   }
 
-  // Siamo in una pagina interna (Projects/…) o nella home?
+  // Siamo in una pagina interna (Projects/…, anche annidata in sottocartelle
+  // di categoria come Projects/Home/, Projects/Commerciale/, ecc.) o nella home?
   function isSubpage() {
     var parts = location.pathname.split("/").filter(Boolean);
     parts.pop(); // toglie il nome del file
-    var folder = (parts[parts.length - 1] || "").toLowerCase();
-    return SUBFOLDERS.indexOf(folder) !== -1;
+    return parts.some(function (part) {
+      return SUBFOLDERS.indexOf(part.toLowerCase()) !== -1;
+    });
   }
 
   // Percorso della home: esplicito (data-home) oppure dedotto dall'URL.
@@ -120,7 +122,7 @@
     var explicit = host.getAttribute("data-home");
     if (explicit) return explicit;
 
-    return isSubpage() ? "../index.html" : "index.html";
+    return isSubpage() ? "../../index.html" : "index.html";
   }
 
   // La barra dei numeri va solo in home, salvo indicazione contraria.

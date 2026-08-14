@@ -3,92 +3,123 @@
     {
       "nome": "Scale",
       "immagine": "Projects/Img/Home/Scala/Scala/Scala1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/scale.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/scale.html"
     },
     {
       "nome": "Scale con cassetto",
       "immagine": "Projects/Img/Home/Scala/Scala_Cassetto/Scala1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/scale-con-cassetto.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/scale-con-cassetto.html"
     },
     {
       "nome": "Scale ellittiche",
       "immagine": "Projects/Img/Home/Scala/Scala_Ellittica/Scala1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/scale-ellittiche.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/scale-ellittiche.html"
     },
     {
       "nome": "Vineria a Parete",
       "immagine": "Projects/Img/Home/Vineria_Parete/Parete1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/vineria-a-parete.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/vineria-a-parete.html"
     },
     {
       "nome": "Pareti Luminose",
       "immagine": "Projects/Img/Commerciale/Parete_Luminosa/Parete1.jpg",
-      "categorie": ["Commerciale"],
-      "link": "Projects/pareti-luminose.html"
+      "categorie": [
+        "Commerciale"
+      ],
+      "link": "Projects/Commerciale/pareti-luminose.html"
     },
     {
       "nome": "Tavoli da Cucina",
       "immagine": "Projects/Img/Home/Tavolo/Tavolo1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/tavoli-da-cucina.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/tavoli-da-cucina.html"
     },
     {
       "nome": "Camerette",
       "immagine": "Projects/Img/Home/Cameretta/Cameretta1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/camerette.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/camerette.html"
     },
     {
       "nome": "Arredamenti Ristorante",
       "immagine": "Projects/Img/Commerciale/Ristorante/Ristorante1.jpg",
-      "categorie": ["Commerciale"],
-      "link": "Projects/arredamenti-ristorante.html"
+      "categorie": [
+        "Commerciale"
+      ],
+      "link": "Projects/Commerciale/arredamenti-ristorante.html"
     },
     {
       "nome": "Arredamenti Bagno",
       "immagine": "Projects/Img/Home/Bagno/Bagno1.jpg",
-      "categorie": ["Casa", "Commerciale"],
-      "link": "Projects/arredamenti-bagno.html"
+      "categorie": [
+        "Casa",
+        "Commerciale"
+      ],
+      "link": "Projects/Home/arredamenti-bagno.html"
     },
     {
       "nome": "Porta Cannettata Scorrevole",
       "immagine": "Projects/Img/Home/Porta_Cannetata_Scorrevole/Porta1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/porta-cannettata-scorrevole.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/porta-cannettata-scorrevole.html"
     },
     {
       "nome": "Appartamento Arredato",
       "immagine": "Projects/Img/Home/Appartamento_Arredato/Appartamento1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/appartamento-arredato.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/appartamento-arredato.html"
     },
     {
       "nome": "Tavolino",
       "immagine": "Projects/Img/Nautico/Tavolino/Tavolino1.jpg",
-      "categorie": ["Nautico"],
-      "link": "Projects/tavolino.html"
+      "categorie": [
+        "Nautico"
+      ],
+      "link": "Projects/Nautico/tavolino.html"
     },
     {
       "nome": "Panca",
       "immagine": "Projects/Img/Home/Panca/Panca_Disegno.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/panca.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/panca.html"
     },
     {
       "nome": "Armadio Nicchia",
       "immagine": "Projects/Img/Home/Armadio_Nichia/Armadio1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/armadio-nicchia.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/armadio-nicchia.html"
     },
     {
       "nome": "Deposito attrezzi con cuccia cane",
       "immagine": "Projects/Img/Home/Deposito_Attrezzi_con_cucina_cane/Deposito1.jpg",
-      "categorie": ["Casa"],
-      "link": "Projects/deposito-attrezzi-con-cuccia-cane.html"
+      "categorie": [
+        "Casa"
+      ],
+      "link": "Projects/Home/deposito-attrezzi-con-cuccia-cane.html"
     }
   ]
 }
