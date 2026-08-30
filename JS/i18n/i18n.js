@@ -224,6 +224,16 @@
       ".mobile-menu-logo-link",
       ".footer-brand",
       ".footer-logo",
+      /* Le icone "Material Icons" (telefono, email, indirizzo nel footer,
+         ecc.) sono in realtà parole normali ("phone", "email",
+         "location_on") rese come glifo grazie al font delle icone. Se
+         Google Translate le tocca, la legatura si rompe e prima
+         dell'icona compare un carattere estraneo. Vanno sempre escluse
+         dalla traduzione. */
+      ".material-icons",
+      ".material-symbols-outlined",
+      ".material-symbols-rounded",
+      "[class*='material-icon']",
     ];
 
     selectors.forEach(function (selector) {
