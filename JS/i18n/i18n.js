@@ -75,22 +75,27 @@
   /* ---------------------------------------------------------------- */
 
   function setGoogTransCookie(lang) {
-    var cookieValue = lang === SITE_SOURCE_LANG ? "" : "/" + SITE_SOURCE_LANG + "/" + lang;
+    var cookieValue =
+      lang === SITE_SOURCE_LANG ? "" : "/" + SITE_SOURCE_LANG + "/" + lang;
     var expired = "expires=Thu, 01 Jan 1970 00:00:00 UTC;";
     var host = window.location.hostname;
 
     /* Rimuove eventuali cookie precedenti su tutte le varianti di path/dominio */
     document.cookie = "googtrans=; " + expired + " path=/;";
     if (host) {
-      document.cookie = "googtrans=; " + expired + " path=/; domain=" + host + ";";
-      document.cookie = "googtrans=; " + expired + " path=/; domain=." + host + ";";
+      document.cookie =
+        "googtrans=; " + expired + " path=/; domain=" + host + ";";
+      document.cookie =
+        "googtrans=; " + expired + " path=/; domain=." + host + ";";
     }
 
     if (cookieValue) {
       document.cookie = "googtrans=" + cookieValue + "; path=/;";
       if (host) {
-        document.cookie = "googtrans=" + cookieValue + "; path=/; domain=" + host + ";";
-        document.cookie = "googtrans=" + cookieValue + "; path=/; domain=." + host + ";";
+        document.cookie =
+          "googtrans=" + cookieValue + "; path=/; domain=" + host + ";";
+        document.cookie =
+          "googtrans=" + cookieValue + "; path=/; domain=." + host + ";";
       }
     }
   }
@@ -116,7 +121,7 @@
           includedLanguages: SUPPORTED_LANGS.join(","),
           autoDisplay: false,
         },
-        "google_translate_element"
+        "google_translate_element",
       );
       /* eslint-enable no-undef */
     };
@@ -173,8 +178,12 @@
       var button = document.createElement("button");
       button.type = "button";
       button.className =
-        "lang-switcher-btn" + (activeLang === langInfo.code ? " is-active" : "");
-      button.setAttribute("aria-pressed", activeLang === langInfo.code ? "true" : "false");
+        "lang-switcher-btn" +
+        (activeLang === langInfo.code ? " is-active" : "");
+      button.setAttribute(
+        "aria-pressed",
+        activeLang === langInfo.code ? "true" : "false",
+      );
       button.setAttribute("aria-label", langInfo.label);
       button.title = langInfo.label;
 
