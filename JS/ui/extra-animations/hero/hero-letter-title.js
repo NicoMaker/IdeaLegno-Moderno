@@ -6,6 +6,17 @@ function initLetterTitle() {
   var title = document.querySelector(".hero-title");
   if (!title || title.classList.contains("is-split")) return;
 
+  /* Se la pagina è tradotta (lingua diversa dall'italiano), NON spezzettiamo
+     il titolo in singole lettere: Google Translate traduce il testo intero
+     dei nodi DOM, e se lo troviamo già diviso in decine di <span> da una
+     lettera ciascuno la traduzione risulta corrotta/mischiata (lettere
+     tradotte singolarmente e fuori ordine). In quel caso lasciamo il titolo
+     come testo semplice, così viene tradotto correttamente. */
+  if (window.IdeaLegnoI18n && window.IdeaLegnoI18n.getLang() !== "it") {
+    title.classList.add("is-split");
+    return;
+  }
+
   var text = title.textContent;
   title.setAttribute("aria-label", text);
   title.textContent = "";

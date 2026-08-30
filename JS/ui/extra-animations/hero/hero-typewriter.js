@@ -19,6 +19,19 @@ function buildTypewriter(cfg) {
 
   var rotator = document.createElement("p");
   rotator.className = "hero-rotator";
+
+  /* Se la pagina è tradotta (lingua diversa dall'italiano) evitiamo di far
+     scrivere/cancellare il testo lettera per lettera in loop: quel testo
+     cambia in continuazione via JavaScript e Google Translate non riesce a
+     tenerlo tradotto (ogni "tick" lo sovrascrive con l'italiano originale).
+     Mostriamo quindi tutte le frasi già scritte per intero, così restano
+     correttamente tradotte da Google. */
+  if (window.IdeaLegnoI18n && window.IdeaLegnoI18n.getLang() !== "it") {
+    rotator.textContent = prefix + " " + words.join(" · ");
+    subtitle.parentNode.insertBefore(rotator, subtitle.nextSibling);
+    return;
+  }
+
   rotator.innerHTML =
     prefix + ' <span class="hr-word"></span><span class="caret"></span>';
   subtitle.parentNode.insertBefore(rotator, subtitle.nextSibling);
