@@ -11,8 +11,12 @@
   bottom: 20px;
   /* Il logo ha bordo visibile a header-padding(24px) + logo-container padding(4px) = 28px.
      Qui il "left" è il bordo del wrapper, quindi sottraiamo il padding del wrapper (5px)
-     e quello sinistro del bottone (13px) cosi la bandiera parte esattamente a 28px. */
-  left: 10px;
+     e quello sinistro del bottone (13px) cosi la bandiera parte esattamente a 28px.
+     .header-container ha max-width:1400px + margin:0 auto, quindi su schermi più larghi
+     di 1400px il logo si sposta verso il centro: qui replichiamo lo stesso offset con
+     calc(), altrimenti sopra i 1400px il selettore resterebbe incollato al bordo reale
+     del viewport mentre il logo scivola verso destra, disallineandosi. */
+  left: calc(max(0px, (100vw - 1400px) / 2) + 10px);
   z-index: 100000;
   display: flex;
   align-items: center;
